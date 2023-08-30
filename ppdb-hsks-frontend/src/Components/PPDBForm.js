@@ -1,7 +1,7 @@
 // src/components/PPDBForm.js
 import React, { useState } from 'react';
 import Input from './Atoms/Input';
-import Button from './Atoms/Button';
+import Button1 from './Atoms/Button1';
 
 const PPDBForm = () => {
   const [nama, setNama] = useState('');
@@ -42,7 +42,7 @@ const PPDBForm = () => {
           value={nomorTelepon}
           onChange={(e) => setNomorTelepon(e.target.value)}
         />
-        <Button label="Daftar" />
+        <Button1 label="Daftar" />
       </form>
     </div>
   );
