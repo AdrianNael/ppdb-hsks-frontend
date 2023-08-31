@@ -5,7 +5,7 @@ import akreditasi from "../../Assets/Images/page-1/akreditasi.svg";
 const Card = () => {
   return (
     <div>
-    <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+    <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] border-2 border-biruprimary">
     <div className="relative">
           <img
           className="rounded-t-lg"
@@ -31,9 +31,9 @@ const Card = () => {
             ></img>
           </div>
           <div className="font-bold text-sm mb-4">
-            <span className="text-TK">TK</span>
-            <span className="text-SD">SD</span>
-            <span className="text-SMP">SMP</span>
+            <span className="text-TK mr-1">TK</span>
+            <span className="text-SD mr-1">SD</span>
+            <span className="text-SMP mr-1">SMP</span>
             <span className="text-SMA">SMA</span>
           </div>
           <p className="text-SMP text-[11px] font-light">
@@ -53,10 +53,10 @@ const Card = () => {
             </ul>
           </div>
         </div>
-        <div className="fix-button flex items-end justify-center mb-2">
+        <div className="fix-button flex items-end justify-center">
           <button
             type="button"
-            className="rounded px-7 py-2 text-xs font-medium border-2 border-biruprimary text-biruprimary mb-2"
+            className="rounded px-7 py-2 text-xs font-medium border-2 border-biruprimary text-biruprimary mb-4"
             data-te-ripple-init
             data-te-ripple-color="light"
           >

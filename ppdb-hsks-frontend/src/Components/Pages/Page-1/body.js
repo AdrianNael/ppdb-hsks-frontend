@@ -4,6 +4,8 @@ import CardPutih from "../../Atoms/CardPutih"
 import CardBiru from "../../Atoms/CardBiru"
 import Button from "../../Atoms/Button";
 import GelombangBawah from "../../Atoms/GelombangBawah";
+import Footer from "../../Organisms/Footer"
+import CustomerServiceButton from "../../Atoms/CustomServiesButton";
 
 
 const body = () => {
@@ -34,12 +36,12 @@ const body = () => {
     <CardPutih/>
       </div>
       <div className="h-[9.375rem] -mb-3">
-        <GelombangBawah />
+      <GelombangBawah />
       </div>
       <div className="bg-biruprimary pb-4 mx-auto">
         <h4 className="text-white font-semibold mb-2 mx-8">Tahun Pelajaran</h4>
         <div className="flex justify-center w-full">
-          <select className="mx-auto border-2 bg-transparent text-biruprimary">
+          <select className="mx-auto border-2 bg-biruprimary text-white">
             <option>Pilih</option>
             <option>Tahun Pelajaran 2023/2024</option>
             <option>Tahun Pelajaran 2022/2023</option>
@@ -47,17 +49,133 @@ const body = () => {
           </select>
         </div>
       </div>
-      <div className="bg-biruprimary">
+      <div className="bg-biruprimary pb-5">
         <h4 className="text-white font-semibold mb-1 mx-8">
           Jenjang Sekolah :
         </h4>
-        <div className="grid grid-cols-2 gap-6 mr-4 ml-4">
-          <Button label="TK" className="ml-24" />
-          <Button label="SD" />
-          <Button label="SMP" className="ml-24" />
-          <Button label="SMA" />
+        <div className="grid grid-cols-2 gap-6 mr-4 ml-4 text-white">
+          <Button
+            label="TK"
+            onClick={handleButtonClick}
+            color="TK"
+            className="ml-24 bg-TK"
+          />
+          <Button label="SD" color="SD" className="bg-SD" />
+          <Button label="SMP" color="SMP" className="ml-24 bg-SMP" />
+          <Button label="SMA" color="SMA" className="bg-SMA" />
         </div>
-    </div>
+        <div className="mt-2">
+          <h4 className="mx-8 font-semibold text-white mb-4">
+            Pilih tingkatan :
+          </h4>
+          <div className="flex flex-col justify-center items-center text-biruprimary font-semibold">
+            <div className="grid grid-cold-5 grid-flow-col">
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                0
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                1
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                2
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                3
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                4
+              </button>
+            </div>
+            <div className="grid grid-cold-5 grid-flow-col">
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                5
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                6
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                7
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                8
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                9
+              </button>
+            </div>
+            <div className="grid grid-cold-3 grid-flow-col">
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                10
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                11
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                12
+              </button>
+            </div>
+          </div>
+          <div className="flex items-center justify-center mt-4">
+            <button className="bg-white rounded-lg px-4 py-2 text-sm text-biruprimary font-bold ">
+              SELANJUTNYA <span className="text-lg">👉</span>
+            </button>
+          </div>
+          <div className="border-t-4 border-white my-4 mx-8"></div>
+          <div className="text-white font-bold ">
+            <h4 className="ml-16">Lokasi yang dipilih :</h4>
+            <p className="ml-16 mt-3">Homeshooling Kak Seto Pusat</p>
+            <div className="flex items-center justify-center">
+              <span className="ml-12">Jenjang : </span>
+              <span className="ml-4">SD</span>
+              <span className="ml-10">|</span>
+              <span className="ml-12">Tingkatan : </span>
+              <span className="ml-4">3</span>
+            </div>
+          </div>
+          <div className="mx-8 mt-4">
+            <h4 className="font-semibold text-white">Program yang dipilih :</h4>
+            <p className="text-Emas">(Klik untuk vidio penjelasan)</p>
+            <div className="card mt-4">
+              <div className="card-row bg-white rounded-xl">
+                <div className="card-title flex p-4 justify-between">
+                  <h6 className="font-medium font-mono">Program 1</h6>
+                  <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
+                </div>
+                <div className="card-body px-4 py-2 text-slate-500">
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+            </div>
+            <div className="card mt-4">
+              <div className="card-row bg-white rounded-xl">
+                <div className="card-title flex p-4 justify-between">
+                  <h6 className="font-medium font-mono">Program 2</h6>
+                  <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
+                </div>
+                <div className="card-body px-4 py-2 text-slate-500">
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+            </div>
+            <div className="card mt-4">
+              <div className="card-row bg-white rounded-xl">
+                <div className="card-title flex p-4 justify-between">
+                  <h6 className="font-medium font-mono">Program 3</h6>
+                  <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
+                </div>
+                <div className="card-body px-4 py-2 text-slate-500">
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="button-position mt-4 flex justify-end">
+            <button className="rounded-[0.938rem] bg-white p-2 border-none text-biruprimary font-semibold w-40 mr-8">Selanjutnya 👉</button>
+          </div>
+        </div>
+      </div>
+      <Footer/>
+      <CustomerServiceButton/>
     </div>
   );
 };

@@ -30,9 +30,9 @@ const CardBiru = () => {
           />
         </div>
         <div className="font-bold text-sm mb-4 text-stroke">
-          <span className="text-TK">TK</span>
-          <span className="text-SD">SD</span>
-          <span className="text-SMP">SMP</span>
+          <span className="text-TK mr-1">TK</span>
+          <span className="text-SD mr-1">SD</span>
+          <span className="text-SMP mr-1">SMP</span>
           <span className="text-SMA">SMA</span>
         </div>
         <p className="text-[11px] font-light">Kota Tangerang Selatan, Banten</p>
@@ -50,10 +50,10 @@ const CardBiru = () => {
           </ul>
         </div>
       </div>
-      <div className="fix-button flex items-end justify-center mb-2">
+      <div className="fix-button flex items-end justify-center">
         <button
           type="button"
-          className="rounded px-7 py-2 text-xs font-medium border-2 border-white text-white"
+          className="rounded px-7 py-2 text-xs font-medium border-2 border-white text-white mb-4"
           data-te-ripple-init
           data-te-ripple-color="light"
         >
