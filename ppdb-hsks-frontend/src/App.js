@@ -1,22 +1,15 @@
 // src/App.js
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import PPDBForm from './Components/PPDBForm';
-import Kontak from './Components/Pages/Kontak';
-import Home from './Components/Pages/Home';
-import Header from './Components/Organisms/Header';
-import About from './Components/Pages/About'
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Header from "./Components/Organisms/Header";
+import Body1 from "./Components/Pages/Page-1/body";
 
 function App() {
   return (
     <Router>
-      <div>
+      <div className="overflow-scroll">
         <Header />
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Kontak} />
-        </Switch>
+        <Body1 />
       </div>
     </Router>
   );

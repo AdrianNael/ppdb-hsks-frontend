@@ -23,6 +23,10 @@ module.exports = {
           Emas: "#B8A200",
           Kuning: "#FBC72D",
           AbuAbu: "#9EA9C6",
+          TK: "#EEAC20",
+          SD: "#FF0000",
+          SMP: "#000080",
+          SMA: "#A5A4A4",
       },
       screens: {
         'mysm': '300px',
