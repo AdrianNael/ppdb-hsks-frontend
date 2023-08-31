@@ -5,13 +5,19 @@ import akreditasi from "../../Assets/Images/page-1/akreditasi.svg";
 const Card = () => {
   return (
     <div>
-      <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
-        <img
+    <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]">
+    <div className="relative">
+          <img
           className="rounded-t-lg"
           src={hskspusat}
           alt="kak seto pusat"
           width="100%"
-        ></img>
+          ></img>
+          <div className="font-black text-stroke-blue">
+          <h6 className="absolute font-bold text-xs w-3/4 text-white bottom-2 left-2">
+          HOMESCHOOLING KAK SETO PUSAT</h6>
+          </div>
+        </div>
         <div className="p-4">
           <div className="grid grid-cols-2">
             <h5 className="mb-2 text-sm font-medium leading-tight">

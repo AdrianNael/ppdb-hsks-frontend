@@ -5,3 +5,7 @@
 .text-stroke {
   -webkit-text-stroke: 0.3px white;
 }
+
+.text-stroke-blue{
+  -webkit-text-stroke: 0.5px #000080;
+}
