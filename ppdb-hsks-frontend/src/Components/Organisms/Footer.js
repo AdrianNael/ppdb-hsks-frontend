@@ -1,7 +1,7 @@
 import React from 'react';
 import facebook from '../../Assets/Images/page-1/facebook.svg'
 import instagram from '../../Assets/Images/page-1/instagram.svg'
-import youtube from '../../Assets/Images/page-1/facebook.svg'
+import youtube from '../../Assets/Images/page-1/youtube.svg'
 
 function Footer() {
   return (

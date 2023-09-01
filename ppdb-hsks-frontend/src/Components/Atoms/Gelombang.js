@@ -5,16 +5,16 @@ import Logo4 from "../../Assets/Images/page-1/Backpack.svg";
 
 const gelombang = () => {
   return (
-    <div className="relative -mt-1">
-      <div className="svg flex justify-between absolute top-3 left-0 right-0">
-        <img src={Logo3} alt="Book" className="inline bottom-24" />
-        <img src={Logo4} alt="Backpack" className="inline bottom-20 left-24" />
-      </div>
+    <div className="relative">
       <img
         src={Logo2}
         alt="gelombang biru"
         className="mx-fit w-full h-[100px] object-cover"
       />
+      <div className="svg flex justify-between absolute top-3 left-0 right-0">
+        <img src={Logo3} alt="Book" className="inline bottom-24" />
+        <img src={Logo4} alt="Backpack" className="inline bottom-20 left-24" />
+      </div>
     </div>
   );
 };

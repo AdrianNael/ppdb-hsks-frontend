@@ -4,7 +4,7 @@ import Gelombang from "../Atoms/Gelombang";
 
 const Header = () => {
   return (
-    <header>
+    <header className="-mb-1">
       <Navbar />
       <Gelombang />
     </header>

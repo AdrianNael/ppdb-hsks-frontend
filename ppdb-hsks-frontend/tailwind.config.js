@@ -30,7 +30,7 @@ module.exports = {
       },
       screens: {
         'mysm': '300px',
-        'mymd': '640px',
+        'lsm': '550px',
     }
   },
   },

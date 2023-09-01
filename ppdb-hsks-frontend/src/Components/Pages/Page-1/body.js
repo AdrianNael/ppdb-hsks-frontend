@@ -1,22 +1,20 @@
 import React from "react";
 import ButtonFormal from "../../Atoms/ButtonFormal";
-import CardPutih from "../../Atoms/CardPutih"
-import CardBiru from "../../Atoms/CardBiru"
+import CardPutih from "../../Atoms/CardPutih";
+import CardBiru from "../../Atoms/CardBiru";
 import Button from "../../Atoms/Button";
 import GelombangBawah from "../../Atoms/GelombangBawah";
-import Footer from "../../Organisms/Footer"
+import Footer from "../../Organisms/Footer";
 import CustomerServiceButton from "../../Atoms/CustomServiesButton";
-
 
 const body = () => {
   const handleButtonClick = () => {
     // Logika yang ingin Anda lakukan saat tombol ditekan
-    console.log('Tombol ditekan');
+    console.log("Tombol ditekan");
   };
 
-
   return (
-    <div>
+    <div className="pt-2">
       <div className="ml-[3rem]">
         <h4 className="font-bold text-2xl mt-1 mb-1">Registrasi PPDB</h4>
         <h4 className="font-bold text-2xl"> Sekolah Kak Seto</h4>
@@ -24,21 +22,23 @@ const body = () => {
           Sudah Registrasi? Klik Masuk Proses PPDB
         </h6>
       </div>
-        <ButtonFormal />
+      <ButtonFormal />
       <div>
-      <h4 class="ml-12 font-bold text-lg">Lokasi Sekolah :</h4>
-        <h6 className="ml-12 font-normal text-sm text-Emas">(Klik untuk penjelasan)</h6>
+        <h4 class="ml-12 font-bold text-lg">Lokasi Sekolah :</h4>
+        <h6 className="ml-12 font-normal text-sm text-Emas">
+          (Klik untuk penjelasan)
+        </h6>
       </div>
       <div class="lokasi-card grid grid-cols-2 auto-cols-max mx-8 gap-6 max-w-full mt-4">
-    <CardPutih/>
-    <CardBiru/>
-    <CardBiru/>
-    <CardPutih/>
+        <CardPutih />
+        <CardBiru />
+        <CardBiru />
+        <CardPutih />
       </div>
-      <div className="h-[9.375rem] -mb-3">
-      <GelombangBawah />
+      <div className="h-[9.375rem] z-50 lsm:mb-12 sm:mb-16 md:mb-24 lg:mb-48">
+        <GelombangBawah />
       </div>
-      <div className="bg-biruprimary pb-4 mx-auto">
+      <div className="bg-biruprimary -mt-2 pb-6 mx-auto -mb-1">
         <h4 className="text-white font-semibold mb-2 mx-8">Tahun Pelajaran</h4>
         <div className="flex justify-center w-full">
           <select className="mx-auto border-2 bg-biruprimary text-white">
@@ -49,7 +49,7 @@ const body = () => {
           </select>
         </div>
       </div>
-      <div className="bg-biruprimary pb-5">
+      <div className="bg-biruprimary pb-5 pt-3">
         <h4 className="text-white font-semibold mb-1 mx-8">
           Jenjang Sekolah :
         </h4>
@@ -135,47 +135,49 @@ const body = () => {
           <div className="mx-8 mt-4">
             <h4 className="font-semibold text-white">Program yang dipilih :</h4>
             <p className="text-Emas">(Klik untuk vidio penjelasan)</p>
-            <div className="card mt-4">
-              <div className="card-row bg-white rounded-xl">
-                <div className="card-title flex p-4 justify-between">
+            <div className="kartu mt-4 mx-3">
+              <div className="kartu-row bg-white rounded-xl">
+                <div className="kartu-title flex p-4 justify-between">
                   <h6 className="font-medium font-mono">Program 1</h6>
                   <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
                 </div>
-                <div className="card-body px-4 py-2 text-slate-500">
+                <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
                   <p>Lorem ipsum dolor sit amet.</p>
                 </div>
               </div>
             </div>
-            <div className="card mt-4">
-              <div className="card-row bg-white rounded-xl">
-                <div className="card-title flex p-4 justify-between">
+            <div className="kartu mt-4 mx-3">
+              <div className="kartu-row bg-white rounded-xl">
+                <div className="kartu-title flex p-4 justify-between">
                   <h6 className="font-medium font-mono">Program 2</h6>
                   <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
                 </div>
-                <div className="card-body px-4 py-2 text-slate-500">
+                <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
                   <p>Lorem ipsum dolor sit amet.</p>
                 </div>
               </div>
             </div>
-            <div className="card mt-4">
-              <div className="card-row bg-white rounded-xl">
-                <div className="card-title flex p-4 justify-between">
+            <div className="kartu mt-4 mx-3">
+              <div className="kartu-row bg-white rounded-xl">
+                <div className="kartu-title flex p-4 justify-between">
                   <h6 className="font-medium font-mono">Program 3</h6>
                   <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
                 </div>
-                <div className="card-body px-4 py-2 text-slate-500">
+                <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
                   <p>Lorem ipsum dolor sit amet.</p>
                 </div>
               </div>
             </div>
           </div>
           <div className="button-position mt-4 flex justify-end">
-            <button className="rounded-[0.938rem] bg-white p-2 border-none text-biruprimary font-semibold w-40 mr-8">Selanjutnya 👉</button>
+            <button className="rounded-[0.938rem] bg-white p-2 border-none text-biruprimary font-semibold w-40 mr-8">
+              Selanjutnya 👉
+            </button>
           </div>
         </div>
       </div>
-      <Footer/>
-      <CustomerServiceButton/>
+      <Footer />
+      <CustomerServiceButton />
     </div>
   );
 };
