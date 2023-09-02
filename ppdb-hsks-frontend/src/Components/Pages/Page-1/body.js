@@ -8,6 +8,7 @@ import Footer from "../../Organisms/Footer";
 import CustomerServiceButton from "../../Atoms/CustomServiesButton";
 import Header from "../../Organisms/Header";
 import { MdNavigateNext } from "react-icons/md";
+import Page3 from "../Page-3/Page3";
 
 const body = () => {
   const handleButtonClick = () => {
@@ -16,7 +17,7 @@ const body = () => {
   };
 
   return (
-    <div>
+    <div className="font-poppins">
       <Header />
       <div className="ml-[3rem]">
         <h4 className="font-bold text-2xl mt-10 mb-1">Registrasi PPDB</h4>
