@@ -5,6 +5,7 @@ import "../../Styles/index.css"; // Ganti dengan path CSS yang sesuai
 import IconCS from "../../Assets/Images/page-1/support.svg";
 import PPCS from "../../Assets/Images/page-1/ppCs.svg";
 import { AiFillCloseCircle } from "react-icons/ai";
+import Kaksetopusat from "../../Assets/Images/page-1/kaksetopusat.svg";
 
 function CustomerServiceButton() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -30,12 +31,12 @@ function CustomerServiceButton() {
           <div className="card-container text-poppins">
             <div className="cardcs  bg-biruprimary rounded-lg text-center ">
               <div className="center-image p-5 ">
-                <img className="round-image " src={PPCS} alt="" />
+                <img className="round-image " src={Kaksetopusat} alt="" />
               </div>
               <p className="text-white text-bold ">Customer Servis Homeschooling </p>
-              <p className="text-white text-bold mb-5"> Kak Seto Depok</p>
+              <p className="text-white text-bold mb-5"> Kak Seto Pusat</p>
               <button className="bg-white text-biruprimary px-4 py-2 mb-4" onClick={closeModal}>
-                Hubungi
+                <a href="https://api.whatsapp.com/send/?phone=%2B628119511845&text&type=phone_number&app_absent=0">Hubungi </a>
               </button>
             </div>
             <div className="cardcs bg-biruprimary rounded-lg text-center">
@@ -45,7 +46,7 @@ function CustomerServiceButton() {
               <p className="text-white text-bold ">Customer Servis Homeschooling </p>
               <p className="text-white text-bold mb-5"> Kak Seto Depok</p>
               <button className="bg-white text-biruprimary  px-4 py-2  mb-4" onClick={closeModal}>
-                Hubungi
+                <a href="https://api.whatsapp.com/send/?phone=%2B6281234514662&text&type=phone_number&app_absent=0">Hubungi </a>
               </button>
             </div>
           </div>
@@ -55,9 +56,9 @@ function CustomerServiceButton() {
                 <img className="round-image " src={PPCS} alt="" />
               </div>
               <p className="text-white text-bold ">Customer Servis Homeschooling </p>
-              <p className="text-white text-bold mb-5"> Kak Seto Depok</p>
+              <p className="text-white text-bold mb-5"> Kak Seto Pekanbaru</p>
               <button className="bg-white text-biruprimary px-4 py-2 mb-4" onClick={closeModal}>
-                Hubungi
+                <a href="https://api.whatsapp.com/send/?phone=%2B6282382386827&text&type=phone_number&app_absent=0">Hubungi </a>
               </button>
             </div>
             <div className="cardcs bg-biruprimary rounded-lg text-center">
@@ -65,9 +66,9 @@ function CustomerServiceButton() {
                 <img className="round-image" src={PPCS} alt="" />
               </div>
               <p className="text-white text-bold ">Customer Servis Homeschooling </p>
-              <p className="text-white text-bold mb-5"> Kak Seto Depok</p>
+              <p className="text-white text-bold mb-5"> Kak Seto Bekasi</p>
               <button className="bg-white text-biruprimary  px-4 py-2  mb-4" onClick={closeModal}>
-                Hubungi
+                <a href="https://api.whatsapp.com/send/?phone=%2B6281371122010&text&type=phone_number&app_absent=0">Hubungi </a>
               </button>
             </div>
           </div>

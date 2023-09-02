@@ -1,16 +1,12 @@
 // src/App.js
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Header from "./Components/Organisms/Header";
-import Body1 from "./Components/Pages/Page-1/body";
+import Page1 from "./Components/Pages/Page-1/Body";
 
 function App() {
   return (
     <Router>
-      <div className="overflow-scroll">
-        <Header />
-        <Body1 />
-      </div>
+      <Page1 />
     </Router>
   );
 }
