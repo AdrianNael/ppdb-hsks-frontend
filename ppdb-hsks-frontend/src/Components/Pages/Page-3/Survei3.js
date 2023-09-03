@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { MdNavigateNext } from "react-icons/md";
 
 function Survei3() {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -15,6 +16,28 @@ function Survei3() {
   const [checkbox11Checked, setCheckbox11Checked] = useState(false);
   const [checkbox12Checked, setCheckbox12Checked] = useState(false);
   const [checkbox13Checked, setCheckbox13Checked] = useState(false);
+  const [checkbox14Checked, setCheckbox14Checked] = useState(false);
+  const [checkbox15Checked, setCheckbox15Checked] = useState(false);
+  const [checkbox16Checked, setCheckbox16Checked] = useState(false);
+  const [checkbox17Checked, setCheckbox17Checked] = useState(false);
+  const [checkbox18Checked, setCheckbox18Checked] = useState(false);
+  const [checkbox19Checked, setCheckbox19Checked] = useState(false);
+  const [checkbox20Checked, setCheckbox20Checked] = useState(false);
+  const [checkbox21Checked, setCheckbox21Checked] = useState(false);
+  const [checkbox22Checked, setCheckbox22Checked] = useState(false);
+  const [checkbox23Checked, setCheckbox23Checked] = useState(false);
+  const [checkbox24Checked, setCheckbox24Checked] = useState(false);
+  const [checkbox25Checked, setCheckbox25Checked] = useState(false);
+  const [checkbox26Checked, setCheckbox26Checked] = useState(false);
+  const [checkbox27Checked, setCheckbox27Checked] = useState(false);
+  const [checkbox28Checked, setCheckbox28Checked] = useState(false);
+  const [checkbox29Checked, setCheckbox29Checked] = useState(false);
+  const [checkbox30Checked, setCheckbox30Checked] = useState(false);
+  const [checkbox31Checked, setCheckbox31Checked] = useState(false);
+  const [checkbox32Checked, setCheckbox32Checked] = useState(false);
+  const [checkbox33Checked, setCheckbox33Checked] = useState(false);
+  const [checkbox34Checked, setCheckbox34Checked] = useState(false);
+  const [checkbox35Checked, setCheckbox35Checked] = useState(false);
 
   const handleRadioButtonChange = (event) => {
     const selectedValue = event.target.value;
@@ -76,7 +99,73 @@ function Survei3() {
     setCheckbox12Checked(!checkbox12Checked);
   };
   const handleCheckbox13Change = () => {
-    setCheckbox12Checked(!checkbox12Checked);
+    setCheckbox13Checked(!checkbox13Checked);
+  };
+  const handleCheckbox14Change = () => {
+    setCheckbox14Checked(!checkbox14Checked);
+  };
+  const handleCheckbox15Change = () => {
+    setCheckbox15Checked(!checkbox15Checked);
+  };
+  const handleCheckbox16Change = () => {
+    setCheckbox16Checked(!checkbox16Checked);
+  };
+  const handleCheckbox17Change = () => {
+    setCheckbox17Checked(!checkbox17Checked);
+  };
+  const handleCheckbox18Change = () => {
+    setCheckbox18Checked(!checkbox18Checked);
+  };
+  const handleCheckbox19Change = () => {
+    setCheckbox19Checked(!checkbox19Checked);
+  };
+  const handleCheckbox20Change = () => {
+    setCheckbox20Checked(!checkbox20Checked);
+  };
+  const handleCheckbox21Change = () => {
+    setCheckbox21Checked(!checkbox21Checked);
+  };
+  const handleCheckbox22Change = () => {
+    setCheckbox22Checked(!checkbox22Checked);
+  };
+  const handleCheckbox23Change = () => {
+    setCheckbox23Checked(!checkbox23Checked);
+  };
+  const handleCheckbox24Change = () => {
+    setCheckbox24Checked(!checkbox24Checked);
+  };
+  const handleCheckbox25Change = () => {
+    setCheckbox25Checked(!checkbox25Checked);
+  };
+  const handleCheckbox26Change = () => {
+    setCheckbox26Checked(!checkbox26Checked);
+  };
+  const handleCheckbox27Change = () => {
+    setCheckbox27Checked(!checkbox27Checked);
+  };
+  const handleCheckbox28Change = () => {
+    setCheckbox28Checked(!checkbox28Checked);
+  };
+  const handleCheckbox29Change = () => {
+    setCheckbox29Checked(!checkbox29Checked);
+  };
+  const handleCheckbox30Change = () => {
+    setCheckbox30Checked(!checkbox30Checked);
+  };
+  const handleCheckbox31Change = () => {
+    setCheckbox31Checked(!checkbox31Checked);
+  };
+  const handleCheckbox32Change = () => {
+    setCheckbox32Checked(!checkbox32Checked);
+  };
+  const handleCheckbox33Change = () => {
+    setCheckbox33Checked(!checkbox33Checked);
+  };
+  const handleCheckbox34Change = () => {
+    setCheckbox34Checked(!checkbox34Checked);
+  };
+  const handleCheckbox35Change = () => {
+    setCheckbox35Checked(!checkbox35Checked);
   };
 
   return (
@@ -141,7 +230,7 @@ function Survei3() {
             </div>
           )}
           <label className="flex items-center">
-            <input type="radio" value="option3" checked={selectedOption === "option3"} onChange={handleRadioButtonChange} />
+            <input type="radio" value="option3" checked={selectedOption === "option3"} onChange={handleRadioButtonChange} className="mr-2" />
             MEDIA ELEKTRONIK
           </label>
           {selectedOption === "option3" && (
@@ -161,19 +250,131 @@ function Survei3() {
             </div>
           )}
           <label className="flex items-center">
-            <input type="radio" value="option4" checked={selectedOption === "option4"} onChange={handleRadioButtonChange} />
-            Option 4
+            <input type="radio" value="option4" checked={selectedOption === "option4"} onChange={handleRadioButtonChange} className="mr-2" />
+            MEDIA OFFLINE
           </label>
+          {selectedOption === "option4" && (
+            <div className="space-y-5 text-lg ml-5">
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox14Checked} onChange={handleCheckbox14Change} className="mr-2" />
+                Brosur
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox15Checked} onChange={handleCheckbox15Change} className="mr-2" />
+                Flyer
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox16Checked} onChange={handleCheckbox16Change} className="mr-2" />
+                Kantor
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox17Checked} onChange={handleCheckbox17Change} className="mr-2" />
+                Kerabat yang bersekolah di kami
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox18Checked} onChange={handleCheckbox18Change} className="mr-2" />
+                Kerabat yang tidak bersekolah di kami
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox19Checked} onChange={handleCheckbox19Change} className="mr-2" />
+                Poster
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox20Checked} onChange={handleCheckbox20Change} className="mr-2" />
+                Psikolog Kami
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox21Checked} onChange={handleCheckbox21Change} className="mr-2" />
+                Sekolah bakat
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox22Checked} onChange={handleCheckbox22Change} className="mr-2" />
+                Sekolah sebelumnya
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox23Checked} onChange={handleCheckbox23Change} className="mr-2" />
+                Spanduk
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox23Checked} onChange={handleCheckbox23Change} className="mr-2" />
+                Staff kami
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox24Checked} onChange={handleCheckbox24Change} className="mr-2" />
+                TK atau Pre-School
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox25Checked} onChange={handleCheckbox25Change} className="mr-2" />
+                Tutor Kami
+              </label>
+            </div>
+          )}
           <label className="flex items-center">
-            <input type="radio" value="option5" checked={selectedOption === "option5"} onChange={handleRadioButtonChange} />
-            Option 5
+            <input type="radio" value="option5" checked={selectedOption === "option5"} onChange={handleRadioButtonChange} className="mr-2" />
+            MEDIA ONLINE
           </label>
+          {selectedOption === "option5" && (
+            <div className="space-y-5 text-lg ml-5">
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox26Checked} onChange={handleCheckbox26Change} className="mr-2" />
+                Email Marketing
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox27Checked} onChange={handleCheckbox27Change} className="mr-2" />
+                Pencarian Google
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox28Checked} onChange={handleCheckbox28Change} className="mr-2" />
+                Website Berita
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox29Checked} onChange={handleCheckbox29Change} className="mr-2" />
+                Iklan
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox30Checked} onChange={handleCheckbox30Change} className="mr-2" />
+                Website Parenting
+              </label>
+            </div>
+          )}
           <label className="flex items-center">
-            <input type="radio" value="option6" checked={selectedOption === "option6"} onChange={handleRadioButtonChange} />
-            Option 6
+            <input type="radio" value="option6" checked={selectedOption === "option6"} onChange={handleRadioButtonChange} className="mr-2" />
+            MEDIA SOSIAL
           </label>
+          {selectedOption === "option6" && (
+            <div className="space-y-5 text-lg ml-5">
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox31Checked} onChange={handleCheckbox31Change} className="mr-2" />
+                Facebook
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox32Checked} onChange={handleCheckbox32Change} className="mr-2" />
+                Whatsapp
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox33Checked} onChange={handleCheckbox33Change} className="mr-2" />
+                Youtube
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox34Checked} onChange={handleCheckbox34Change} className="mr-2" />
+                Instagram
+              </label>
+              <label className="flex items-center">
+                <input type="checkbox" checked={checkbox35Checked} onChange={handleCheckbox35Change} className="mr-2" />
+                Twitter
+              </label>
+            </div>
+          )}
         </div>
       </div>
+      <div className="border-t-2 border-biruprimary mt-10"></div>
+      <div className="border-t-2 border-white max-w-md mx-auto"></div>
+      <div className="flex items-center justify-center mt-4">
+        <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center">
+          SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
+        </button>
+      </div>
+      <div className="border-t-2 border-biruprimary mt-10"></div>
     </div>
   );
 }
