@@ -6,9 +6,12 @@ import Logo4 from "../../Assets/Images/page-1/Backpack.svg";
 
 const Navbar = () => {
   return (
-    <nav className="bg-biruprimary h-32 flex flex-col items-center justify-center relative ">
-      <img src={Logo1} alt="logo" className="h-30 mb-2 mt-8" />
-    </nav>
+    <div>
+      <nav className="bg-biruprimary h-32 flex flex-col items-center justify-center relative ">
+        <img src={Logo1} alt="logo" className="h-30 mb-2 mt-8" />
+      </nav>
+    </div>
+    
   );
 };
 

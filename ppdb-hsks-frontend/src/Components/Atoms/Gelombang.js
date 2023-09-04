@@ -3,7 +3,7 @@ import Logo2 from "../../Assets/Images/page-1/gelombang-biru.svg";
 import Logo3 from "../../Assets/Images/page-1/Book.svg";
 import Logo4 from "../../Assets/Images/page-1/Backpack.svg";
 
-const gelombang = () => {
+const gelombang = () => { 
   return (
     <div className="relative">
       <img
