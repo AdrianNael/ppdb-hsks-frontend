@@ -8,7 +8,7 @@ function Survei1() {
   };
   return (
     <div className="bg-biruprimary  font-poppins text-white ">
-      <div className="border-t-2 border-biruprimary mt-10"></div>
+      <div className="border-t-2 border-biruprimary"></div>
       <div className=" max-w-md mx-auto">
         <h4 className="font-bold text-3xl	 mt-10 mb-1">Registrasi PPDB</h4>
         <h4 className="font-bold text-3xl"> Sekolah Kak Seto</h4>

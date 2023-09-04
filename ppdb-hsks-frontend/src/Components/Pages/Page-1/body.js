@@ -8,7 +8,8 @@ import Footer from "../../Organisms/Footer";
 import CustomerServiceButton from "../../Atoms/CustomServiesButton";
 import Header from "../../Organisms/Header";
 import { MdNavigateNext } from "react-icons/md";
-import Page3 from "../Page-3/Page3";
+import { Link } from 'react-router-dom';
+ 
 
 const body = () => {
   const handleButtonClick = () => {
@@ -40,7 +41,7 @@ const body = () => {
       <div className="h-[9.375rem] z-50 lsm:mb-12 sm:mb-16 md:mb-24 lg:mb-48">
         <GelombangBawah />
       </div>
-      <div className="bg-biruprimary mt-5 pb-6 mx-auto -mb-1">
+      <div className="bg-biruprimary  pb-6 mx-auto -mb-1">
         <h4 className="text-white font-semibold mb-5 mx-8">Tahun Pelajaran</h4>
         <div className="flex justify-center w-full">
           <select className="mx-auto border-2 bg-biruprimary text-white">
@@ -85,9 +86,9 @@ const body = () => {
             </div>
           </div>
           <div className="flex items-center justify-center mt-4">
-            <button className="bg-white rounded-lg px-4 py-2 text-sm text-biruprimary font-bold mb-5 flex items-center">
-              SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
-            </button>
+          <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center">
+          SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
+        </button>
           </div>
           <div className="border-t-4 border-white my-4 mx-8 mb-5"></div>
           <div className="text-white font-bold text-ml">
@@ -141,9 +142,11 @@ const body = () => {
             </div>
           </div>
           <div className="flex items-center justify-center mt-4">
-            <button className="bg-white rounded-lg px-4 py-2 text-sm text-biruprimary font-bold mb-5 mt-5 flex items-center">
-              SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
-            </button>
+          <Link to="/form">
+          <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center">
+          SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
+        </button>
+            </Link>
           </div>
         </div>
       </div>

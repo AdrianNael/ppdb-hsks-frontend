@@ -1,6 +1,12 @@
 import React from "react";
 import Header2 from "../../Organisms/Header2";
 import Captcha from "../../../Assets/Images/page-2/Captcha.svg";
+import { Link } from 'react-router-dom';
+import Footer from "../../Organisms/Footer";
+import { MdNavigateNext } from "react-icons/md";
+
+
+
 
 function Body() {
   const fontStyles = {
@@ -205,11 +211,14 @@ function Body() {
         <br />
         
         <div className="flex justify-center pb-7">
-          <button className="bg-white font-bold font-xl py-3 px-8 rounded-2xl">
-            Selanjutnya
-          </button>
+        <Link to="/survei">
+        <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center">
+          SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
+        </button>
+          </Link>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
