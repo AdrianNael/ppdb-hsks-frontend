@@ -8,8 +8,7 @@ import Footer from "../../Organisms/Footer";
 import CustomerServiceButton from "../../Atoms/CustomServiesButton";
 import Header from "../../Organisms/Header";
 import { MdNavigateNext } from "react-icons/md";
-import { Link } from 'react-router-dom';
- 
+import { Link } from "react-router-dom";
 
 const body = () => {
   const handleButtonClick = () => {
@@ -18,27 +17,31 @@ const body = () => {
   };
 
   return (
-    <div className="font-poppins">
+    <div>
       <Header />
       <div className="ml-[3rem]">
         <h4 className="font-bold text-2xl mt-10 mb-1">Registrasi PPDB</h4>
         <h4 className="font-bold text-2xl"> Sekolah Kak Seto</h4>
-        <h6 className="text-Emas text-sm">Sudah Registrasi? Klik Masuk Proses PPDB</h6>
+        <h6 className="text-Emas text-sm">
+          Sudah Registrasi? Klik Masuk Proses PPDB
+        </h6>
       </div>
       <ButtonFormal />
       <div>
-        <h4 class="ml-12 font-bold text-lg">Lokasi Sekolah :</h4>
+        <h4 className="ml-12 font-bold text-lg">Lokasi Sekolah :</h4>
         <h6 className="ml-12 font-normal text-sm text-Emas">
-          <a href="https://www.youtube.com/channel/UCYbs_Oi0pDQVVGdBShiC2jA">(Klik untuk penjelasan)</a>
+          <a href="https://www.youtube.com/channel/UCYbs_Oi0pDQVVGdBShiC2jA">
+            (Klik untuk penjelasan)
+          </a>
         </h6>
       </div>
-      <div class="lokasi-card grid grid-cols-2 auto-cols-max mx-8 gap-6 max-w-full mt-4">
+      <div className="lokasi-card grid grid-cols-2 auto-cols-max mx-8 gap-6 max-w-full mt-4">
         <CardPutih />
         <CardBiru />
         <CardBiru />
         <CardPutih />
       </div>
-      <div className="h-[9.375rem] z-50 lsm:mb-12 sm:mb-16 md:mb-24 lg:mb-48">
+      <div className="h-[9.375rem] z-50 -mb-2 lsm:mb-10 sm:mb-16 md:mb-24 lg:mb-48">
         <GelombangBawah />
       </div>
       <div className="bg-biruprimary  pb-6 mx-auto -mb-1">
@@ -53,42 +56,92 @@ const body = () => {
         </div>
       </div>
       <div className="bg-biruprimary pb-5 pt-3 ">
-        <h4 className="text-white font-semibold mb-5 mx-8">Jenjang Sekolah :</h4>
+        <h4 className="text-white font-semibold mb-5 mx-8">
+          Jenjang Sekolah :
+        </h4>
         <div className="flex justify-center">
           <div className="grid grid-cols-2 gap-8  text-white">
-            <Button label="TK" onClick={handleButtonClick} color="TK" className=" bg-TK" />
-            <Button label="SD" onClick={handleButtonClick} color="SD" className="bg-SD" />
-            <Button label="SMP" onClick={handleButtonClick} color="SMP" className=" bg-SMP" />
-            <Button label="SMA" onClick={handleButtonClick} color="SMA" className="bg-SMA" />
+            <Button
+              label="TK"
+              onClick={handleButtonClick}
+              color="TK"
+              className=" bg-TK"
+            />
+            <Button
+              label="SD"
+              onClick={handleButtonClick}
+              color="SD"
+              className="bg-SD"
+            />
+            <Button
+              label="SMP"
+              onClick={handleButtonClick}
+              color="SMP"
+              className=" bg-SMP"
+            />
+            <Button
+              label="SMA"
+              onClick={handleButtonClick}
+              color="SMA"
+              className="bg-SMA"
+            />
           </div>
         </div>
         <div className="mt-5">
-          <h4 className="mx-8 font-semibold text-white mb-5 mt-5">Pilih tingkatan :</h4>
+          <h4 className="mx-8 font-semibold text-white mb-5 mt-5">
+            Pilih tingkatan :
+          </h4>
           <div className="flex flex-col justify-center items-center text-biruprimary font-semibold">
             <div className="grid grid-cold-5 grid-flow-col mx-3 mb-3">
-              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">0</button>
-              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">1</button>
-              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">2</button>
-              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">3</button>
-              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">4</button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                0
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                1
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                2
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                3
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                4
+              </button>
             </div>
             <div className="grid grid-cold-5 grid-flow-col mx-3 mb-3">
-              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">5</button>
-              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">6</button>
-              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">7</button>
-              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">8</button>
-              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">9</button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                5
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                6
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                7
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                8
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                9
+              </button>
             </div>
             <div className="grid grid-cold-3 grid-flow-col mx-3 mb-3">
-              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">10</button>
-              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">11</button>
-              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">12</button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                10
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                11
+              </button>
+              <button className="bg-white w-9 h-9 rounded-[0.3rem] mx-2 mb-2">
+                12
+              </button>
             </div>
           </div>
           <div className="flex items-center justify-center mt-4">
-          <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center">
-          SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
-        </button>
+            <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center">
+              SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
+            </button>
           </div>
           <div className="border-t-4 border-white my-4 mx-8 mb-5"></div>
           <div className="text-white font-bold text-ml">
@@ -105,7 +158,9 @@ const body = () => {
           <div className="mx-8 mt-5">
             <h4 className="font-bold text-white">Program yang dipilih :</h4>
             <p className="text-Emas">
-              <a href="https://www.youtube.com/channel/UCYbs_Oi0pDQVVGdBShiC2jA">(Klik untuk vidio penjelasan)</a>
+              <a href="https://www.youtube.com/channel/UCYbs_Oi0pDQVVGdBShiC2jA">
+                (Klik untuk vidio penjelasan)
+              </a>
             </p>
             <div className="kartu mt-5 mx-3">
               <div className="kartu-row bg-white rounded-xl">
@@ -142,10 +197,10 @@ const body = () => {
             </div>
           </div>
           <div className="flex items-center justify-center mt-4">
-          <Link to="/form">
-          <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center">
-          SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
-        </button>
+            <Link to="/form">
+              <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold my-5 flex items-center">
+                SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
+              </button>
             </Link>
           </div>
         </div>

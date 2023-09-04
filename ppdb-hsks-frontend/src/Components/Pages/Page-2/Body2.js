@@ -3,14 +3,11 @@ import Header2 from "../../Organisms/Header2";
 import Captcha from "../../../Assets/Images/page-2/Captcha.svg";
 
 function Body() {
-  const fontStyles = {
-    fontFamily: "Poppins, sans-serif", // Apply Poppins font
-  };
 
   return (
     <div>
       <Header2 />
-      <div className="bg-biruprimary px-[2rem] items-center" style={fontStyles}>
+      <div className="bg-biruprimary px-[2rem] items-center">
         <div className="text-white font-bold text-2xl mb-1">MASUK PROSES PPBD SEKOLAH KAK SETO</div>
         <div className="text-Emas text-sm pt-1">Belum Registrasi ? Klik Disini</div>
         <div style={{ position: "relative" }}>

@@ -9,14 +9,11 @@ import { MdNavigateNext } from "react-icons/md";
 
 
 function Body() {
-  const fontStyles = {
-    fontFamily: "Poppins, sans-serif",
-  };
 
   return (
     <div>
       <Header2 />
-      <div className="bg-biruprimary px-[2rem] items-center" style={fontStyles}>
+      <div className="bg-biruprimary px-[2rem] items-center">
         <div className="text-white font-bold text-2xl mb-1">Registrasi PPDB Sekolah Kak Seto</div>
         <div className="text-Emas text-sm underline pt-1">Belum Registrasi ? Klik Masuk Proses PPDB</div>
         

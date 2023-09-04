@@ -9,7 +9,7 @@ const gelombang = () => {
       <img
         src={Logo2}
         alt="gelombang biru"
-        className="mx-fit w-full h-[100px] object-cover"
+        className="-mt-1 w-full h-[100px] object-cover"
       />
       <div className="svg flex justify-between absolute top-3 left-0 right-0">
         <img src={Logo3} alt="Book" className="inline bottom-24" />

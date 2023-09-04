@@ -10,10 +10,6 @@ module.exports = {
       'xl': '1280px',
       '2xl': '1536px',
   },
-
-    fontFamily: {
-      poppins: ["Poppins"],
-  },
   extend: {
       colors: {
           biruprimary: "#204397",
