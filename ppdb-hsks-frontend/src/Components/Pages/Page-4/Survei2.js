@@ -8,7 +8,7 @@ function Survei2() {
   };
   return (
     <div className="bg-biruprimary text-white  ">
-      <div className="max-w-md mx-auto  text-sm	">
+      <div className="mx-10  text-sm	">
         <h2 className=" text-xl font-semibold mb-5 ">Apa yang membuat anda tertarik dengan Sekolah Kak Seto?</h2>
         <div className="space-y-5  text-lg ">
           <div className="flex items-center">
