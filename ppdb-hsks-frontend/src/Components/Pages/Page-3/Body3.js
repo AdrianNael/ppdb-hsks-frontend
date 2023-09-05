@@ -4,6 +4,8 @@ import Captcha from "../../../Assets/Images/page-2/Captcha.svg";
 import { Link } from 'react-router-dom';
 import Footer from "../../Organisms/Footer";
 import { MdNavigateNext } from "react-icons/md";
+import CustomerServiceButton from "../../Atoms/CustomServiesButton";
+
 
 
 
@@ -215,6 +217,7 @@ function Body() {
           </Link>
         </div>
       </div>
+      <CustomerServiceButton />
       <Footer/>
     </div>
   );

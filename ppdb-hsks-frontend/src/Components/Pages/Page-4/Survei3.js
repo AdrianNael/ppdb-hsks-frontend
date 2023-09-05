@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { MdNavigateNext } from "react-icons/md";
+import { Link } from 'react-router-dom';
+
 
 function Survei3() {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -170,7 +172,7 @@ function Survei3() {
 
   return (
     <div className="bg-biruprimary text-white">
-      <div className="max-w-md mx-auto text-sm">
+      <div className="mx-10  text-sm">
         <h2 className="text-xl font-semibold mb-5">Informasi Sekolah Kak Seto diperoleh dari?</h2>
         <div className="space-y-5 text-lg">
           <label className="flex items-center">
@@ -370,9 +372,12 @@ function Survei3() {
       <div className="border-t-2 border-biruprimary mt-10"></div>
       <div className="border-t-2 border-white max-w-md mx-auto"></div>
       <div className="flex items-center justify-center mt-4">
+      <Link to="/datacalonsiswa">
         <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center">
           SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
         </button>
+        </Link>
+
       </div>
       <div className="border-t-2 border-biruprimary mt-10"></div>
     </div>

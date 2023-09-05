@@ -5,6 +5,8 @@ import Survei2 from "./Survei2";
 import Survei3 from "./Survei3";
 import Header2 from "../../Organisms/Header2";
 import Footer from "../../Organisms/Footer";
+import CustomerServiceButton from "../../Atoms/CustomServiesButton";
+
 
 
 
@@ -15,6 +17,7 @@ function App() {
       <Survei1 />
       <Survei2 />
       <Survei3 />
+      <CustomerServiceButton />
       <Footer/>
     </div>
   );

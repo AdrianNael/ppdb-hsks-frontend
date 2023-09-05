@@ -9,12 +9,12 @@ function Survei1() {
   return (
     <div className="bg-biruprimary text-white ">
       <div className="border-t-2 border-biruprimary"></div>
-      <div className=" max-w-md mx-auto">
+      <div className=" mx-10">
         <h4 className="font-bold text-3xl	 mt-10 mb-1">Registrasi PPDB</h4>
         <h4 className="font-bold text-3xl"> Sekolah Kak Seto</h4>
         <h6 className="font-bold text-lg mt-5 ">Kami mohon kesediaan Bapak/ Ibu untuk mengisi survei berikut,</h6>
       </div>
-      <div className="max-w-md mx-auto mt-20 text-sm">
+      <div className=" mx-10 mt-20 text-sm">
         <h2 className="text-xl font-semibold mb-5">Bagaimana Pengalaman Bapak/Ibu dalam pengisian registrasi Online Sekolah Kak Seto?</h2>
         <div className="space-y-5  text-lg">
           <div className="flex items-center">

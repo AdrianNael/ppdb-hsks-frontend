@@ -6,7 +6,7 @@ import LoginPage from "./Components/Pages/Page-2/Body2";
 import Form from "./Components/Pages/Page-3/Body3"
 import Survei from "./Components/Pages/Page-4/Page4"
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
-
+import Cpd from "./Components/Pages/Page-5/Page5"
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
         <Route path="/login" component={LoginPage} />
         <Route path="/form" component={Form} />
         <Route path="/survei" component={Survei} />
+        <Route path="/datacalonsiswa" component={Cpd}/>
       </Switch>
     </BrowserRouter>
   );
