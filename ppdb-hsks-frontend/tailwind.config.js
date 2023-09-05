@@ -25,7 +25,7 @@ module.exports = {
           SMA: "#A5A4A4",
       },
       screens: {
-        'mysm': '300px',
+        'hp': '413px',
         'lsm': '550px',
     }
   },
