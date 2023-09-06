@@ -25,10 +25,12 @@ module.exports = {
           SMA: "#A5A4A4",
       },
       screens: {
-        'hp': '413px',
+        'hp': '400px',
         'lsm': '550px',
     }
   },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }

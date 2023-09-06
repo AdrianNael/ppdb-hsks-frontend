@@ -8,6 +8,7 @@ import ProsesSelanjutnya from "./ProsesSelanjutnya.js";
 import ProductKnowlodge from "./ProductKnowlodge.js";
 import ButtonLoginPage5 from "./ButtonLoginPage5"
 import CustomerServiceButton from "../../Atoms/CustomServiesButton";
+import Test from "../Page-6/Navbar3"
 
 
 
@@ -24,8 +25,8 @@ function App() {
       <ProsesSelanjutnya/>
       <ProductKnowlodge/>
       <ButtonLoginPage5/>
-      <CustomerServiceButton />
-      <Footer/>
+      <CustomerServiceButton/>
+      <Footer/>      
     </div>
   );
 }
