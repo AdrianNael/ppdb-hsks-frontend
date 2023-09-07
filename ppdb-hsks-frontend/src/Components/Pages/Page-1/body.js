@@ -51,19 +51,7 @@ const body = () => {
       <div className="h-[9.375rem] z-50 -mb-2 lsm:mb-10 sm:mb-16 md:mb-24 lg:mb-48">
         <GelombangBawah />
       </div>
-      <div className="bg-biruprimary  pb-6 mx-auto -mb-1">
-        <h4 className="text-white font-semibold mb-5 mx-8 xl:text-[2rem] xl:leading-[3.5rem]">
-          Tahun Pelajaran
-        </h4>
-        <div className="flex justify-center w-full">
-          <select className="mx-auto border-2 bg-biruprimary text-white xl:text-2xl">
-            <option>Pilih</option>
-            <option>Tahun Pelajaran 2023/2024</option>
-            <option>Tahun Pelajaran 2022/2023</option>
-            <option>Tahun Pelajaran 2021/2022</option>
-          </select>
-        </div>
-      </div>
+      
       <div className="bg-biruprimary pb-5 pt-3 ">
         <h4 className="text-white font-semibold mb-5 mx-8 xl:text-[2rem] xl:leading-[3.5rem]">
           Jenjang Sekolah :
@@ -96,6 +84,19 @@ const body = () => {
             />
           </div>
         </div>
+        <div className="bg-biruprimary  pb-6 mx-auto -mb-1">
+        <h4 className="text-white font-semibold mb-5 mx-8 mt-5 xl:text-[2rem] xl:leading-[3.5rem]">
+          Tahun Pelajaran
+        </h4>
+        <div className="flex justify-center w-full">
+          <select className="mx-auto border-2 bg-biruprimary text-white xl:text-2xl">
+            <option>Pilih</option>
+            <option>Tahun Pelajaran 2023/2024</option>
+            <option>Tahun Pelajaran 2022/2023</option>
+            <option>Tahun Pelajaran 2021/2022</option>
+          </select>
+        </div>
+      </div>
         <div className="mt-5">
           <h4 className="mx-8 font-semibold text-white mb-5 mt-5 xl:text-[2rem] xl:leading-[3.5rem]">
             Pilih tingkatan :
