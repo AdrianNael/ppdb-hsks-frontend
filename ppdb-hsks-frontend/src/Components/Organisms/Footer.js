@@ -3,10 +3,10 @@ import facebook from "../../Assets/Images/page-1/facebook.svg";
 import instagram from "../../Assets/Images/page-1/instagram.svg";
 import youtube from "../../Assets/Images/page-1/youtube.svg";
 
-function Footer() {
+function Footer({className}) {
   return (
     <>
-      <footer className="bg-BiruSecondary2 pb-10 pt-8 xl:pb-20 xl:pt-16">
+      <footer className={`bg-BiruSecondary2 pb-10 pt-8 xl:pb-20 xl:pt-16 ${className}`}>
         <div className="xl:flex xl:flex-nowrap xl:text-center xl:text-lg">
           <div className="ml-8 pb-4 text-white font-bold w-full xl:w-1/2 xl:ml-20">
             <h4>Tentang Kami</h4>

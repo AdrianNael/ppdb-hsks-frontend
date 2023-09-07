@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import LogoHSKS from "../../../Assets/Images/page-1/LogoKaseto.svg"
-import { MdAdd } from 'react-icons/md';
-import { AiOutlineUnorderedList } from 'react-icons/ai';
-import { FiLogOut } from 'react-icons/fi';
-
-
+import React, { useState } from "react";
+import LogoHSKS from "../../../Assets/Images/page-1/LogoKaseto.svg";
+import { MdAdd, MdAppRegistration } from "react-icons/md";
+import { AiOutlineUnorderedList, AiOutlineForm } from "react-icons/ai";
+import { FiLogOut } from "react-icons/fi";
+import { BsCreditCard } from "react-icons/bs";
+import { FcAcceptDatabase } from "react-icons/fc";
 
 function Navbar3() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,14 +21,10 @@ function Navbar3() {
   return (
     <nav className="bg-biruprimary border-gray-200 dark:border-gray-600 dark:bg-gray-900">
       <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
-        <a  className="flex items-center">
-          <img
-            src={LogoHSKS}
-            className="h-8 mr-3"
-            alt="Flowbite Logo"
-          />
+        <a className="flex items-center">
+          <img src={LogoHSKS} className="h-8 mr-3" alt="Flowbite Logo" />
           <span className="self-center text-md font-semibold whitespace-nowrap text-white">
-          PPDB HSKS ONLINE
+            PPDB HSKS ONLINE
           </span>
         </a>
         <button
@@ -57,11 +53,10 @@ function Navbar3() {
         <div
           id="mega-menu-full"
           className={`items-center justify-between font-medium ${
-            isMenuOpen ? 'block' : 'hidden'
+            isMenuOpen ? "block" : "hidden"
           } w-full md:flex md:w-auto md:order-1`}
         >
           <ul className="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  hp:bg-BiruSecondary2 md:bg-biruprimary md:flex-row md:space-x-8 md:mt-0 md:border-0">
-
             <li>
               <button
                 onClick={toggleDropdown}
@@ -69,10 +64,10 @@ function Navbar3() {
                 data-collapse-toggle="mega-menu-full-dropdown"
                 className="flex items-center justify-between w-full py-2 pl-3 pr-4   text-white rounded md:w-auto md:hover:scale-125 md:hover:bg-transparent md:border-0  md:p-0  "
               >
-                Langkah PPDB HSKS Online{' '}
+                Langkah PPDB HSKS Online{" "}
                 <svg
                   className={`w-2.5 h-2.5 ml-2.5 ${
-                    isDropdownOpen ? 'transform rotate-180' : ''
+                    isDropdownOpen ? "transform rotate-180" : ""
                   }`}
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +89,9 @@ function Navbar3() {
                 href="#"
                 className="block py-2 pl-3 pr-4 text-white text-whiterounded      md:hover:bg-transparent  md:hover:scale-125 md:p-0    "
                 aria-current="page"
-              > <MdAdd className="inline-block mr-2" /> Tambah CPD
+              >
+                {" "}
+                <MdAdd className="inline-block mr-2" /> Tambah CPD
               </a>
             </li>
             <li>
@@ -102,7 +99,10 @@ function Navbar3() {
                 href="#"
                 className="block py-2 pl-3 pr-4  text-white text-whiterounded  md:hover:bg-transparent  md:hover:scale-125 md:p-0 "
                 aria-current="page"
-              > <AiOutlineUnorderedList className="inline-block mr-2" /> Daftar CPD
+              >
+                {" "}
+                <AiOutlineUnorderedList className="inline-block mr-2" /> Daftar
+                CPD
               </a>
             </li>
             <li>
@@ -121,74 +121,80 @@ function Navbar3() {
       <div
         id="mega-menu-full-dropdown"
         className={`mt-1 border-gray-200 shadow-sm bg-gray-50 md:bg-white border-y dark:bg-gray-800 dark:border-gray-600 ${
-          isDropdownOpen ? 'block' : 'hidden'
+          isDropdownOpen ? "block" : "hidden"
         }`}
       >
         <div className="grid max-w-screen-xl px-4 py-5 mx-auto text-white  bg-BiruSecondary2 sm:grid-cols-2 md:px-6 sm:grid">
           <ul>
             <li>
-              <a
-                href="#"
-                className="block p-3 rounded-lg "
-              >
-                <div className="font-bold text-xl">Langkah 1</div>
+              <a href="#" className="block p-3 rounded-lg ">
+                <div className="font-bold text-xl">
+                  Langkah 1{" "}
+                  <span className="ml-2 pb-2">
+                    <MdAppRegistration className="inline" size={23} />
+                  </span>
+                </div>
                 <span className="text-sm text-white ">
-                Registrasi PPDB Sekolah Kak Seto Selesai
+                  Registrasi PPDB Sekolah Kak Seto Selesai
                 </span>
               </a>
             </li>
             <li>
-              <a
-                href="#"
-                className="block p-3 rounded-lg "
-              >
-                <div className="font-bold text-xl">Langkah 2</div>
+              <a href="#" className="block p-3 rounded-lg ">
+                <div className="font-bold text-xl">
+                  Langkah 2
+                  <span className="ml-2 pb-2">
+                    <BsCreditCard className="inline" size={23} />
+                  </span>
+                  {""}
+                </div>
                 <span className="text-sm text-white ">
-                Pembayaran Formulir dan Uang Pangkal Lihat Data                </span>
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="block p-3 rounded-lg "
-              >
-                <div className="font-bold text-xl">Langkah 3</div>
-                <span className="text-sm text-white ">
-                Persyaratan                
+                  Pembayaran Formulir dan Uang Pangkal Lihat Data{" "}
                 </span>
               </a>
             </li>
             <li>
-              <a
-                href="#"
-                className="block p-3 rounded-lg "
-              >
-                <div className="font-bold text-xl">Langkah 4</div>
-                <span className="text-sm text-white ">
-                Formulir Reguler                
-                </span>
+              <a href="#" className="block p-3 rounded-lg ">
+                <div className="font-bold text-xl">
+                  Langkah 3{" "}
+                  <span className="ml-2 pb-2">
+                    <FcAcceptDatabase className="inline" size={23} />
+                  </span>
+                </div>
+                <span className="text-sm text-white ">Persyaratan</span>
               </a>
             </li>
             <li>
-              <a
-                href="#"
-                className="block p-3 rounded-lg "
-              >
-                <div className="font-bold text-xl">Langkah 5</div>
-                <span className="text-sm text-white ">
-                Formulir Orang tua                
-                </span>
+              <a href="#" className="block p-3 rounded-lg ">
+                <div className="font-bold text-xl">
+                  Langkah 4
+                  <span className="ml-2 pb-2">
+                    <AiOutlineForm className="inline" size={23} />
+                  </span>
+                </div>
+                <span className="text-sm text-white ">Formulir Reguler</span>
               </a>
             </li>
             <li>
-              <a
-                href="#"
-                className="block p-3 rounded-lg "
-              >
-                <div className="font-bold text-xl">Langkah 6</div>
-                <span className="text-sm text-white ">
-                Formulir Asesmen                
-                </span>
+              <a href="#" className="block p-3 rounded-lg ">
+                <div className="font-bold text-xl">
+                  Langkah 5{" "}
+                  <span className="ml-2 pb-2">
+                    <AiOutlineForm className="inline" size={23} />
+                  </span>
+                </div>
+                <span className="text-sm text-white ">Formulir Orang tua</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" className="block p-3 rounded-lg ">
+                <div className="font-bold text-xl">
+                  Langkah 6{" "}
+                  <span className="ml-2 pb-2">
+                    <AiOutlineForm className="inline" size={23} />
+                  </span>
+                </div>
+                <span className="text-sm text-white ">Formulir Asesmen</span>
               </a>
             </li>
             {/* Add more dropdown items here */}

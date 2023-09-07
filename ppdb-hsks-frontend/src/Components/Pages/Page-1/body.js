@@ -10,6 +10,7 @@ import Header from "../../Organisms/Header";
 import { MdNavigateNext } from "react-icons/md";
 import { Link } from "react-router-dom";
 
+
 const body = () => {
   const handleButtonClick = () => {
     // Logika yang ingin Anda lakukan saat tombol ditekan

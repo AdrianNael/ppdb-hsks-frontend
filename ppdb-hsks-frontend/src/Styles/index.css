@@ -36,6 +36,7 @@
 .cardcs {
   flex: 1;
   padding: 1rem;
+  min-height: 300px;
   border-radius: 15px;
 }
 

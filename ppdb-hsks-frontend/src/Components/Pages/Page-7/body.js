@@ -1,9 +1,12 @@
 import Footer from "../../Organisms/Footer";
+import Navbar from "../Page-6/Navbar3";
+import Button from "../../Atoms/Button";
 
 const body7 = () => {
   return (
     <>
-      <div className="text-biruprimary font-bold mx-8 mt-4 mb-24">
+      <Navbar />
+      <div className="text-biruprimary font-bold mx-8 mt-4 mb-10">
         <h2>Langkah 2</h2>
         <h2>Pembayaran Formulir dan Uang Pangkal Lihat Data</h2>
         <div className="grid grid-cols-2 mt-5 font-semibold">
@@ -17,10 +20,19 @@ const body7 = () => {
           <span className="font-light">Belum Bayar</span>
         </div>
         <div className="mt-5">
-            <p className="text-justify">Silahkan melakukan wawancara terlebih dahulu dengan bagian Panitia Penerimaan Peserta Didik Baru (PPDB), Sebelum meneruskan ke tahap Selanjutnya</p>
+          <p className="text-justify">
+            Silahkan melakukan wawancara terlebih dahulu dengan bagian Panitia
+            Penerimaan Peserta Didik Baru (PPDB), Sebelum meneruskan ke tahap
+            Selanjutnya
+          </p>
         </div>
+        <Button
+          label="Submit"
+          text="white"
+          className="bg-[#27b6c1] w-full mt-8"
+        />
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
