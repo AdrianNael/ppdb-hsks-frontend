@@ -1,4 +1,4 @@
-import Navbar from "../Page-6/Navbar3";
+import Navbar from "../../Pages/Page-6-Langkah1/Navbar3"
 import RegionSelector from "../../Atoms/RegionSelector";
 import Input from "../../Atoms/InputLangkah";
 import Footer from "../../Organisms/Footer";

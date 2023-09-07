@@ -1,5 +1,5 @@
 import Footer from "../../Organisms/Footer";
-import Navbar from "../Page-6/Navbar3";
+import Navbar from "../Page-6-Langkah1/Navbar3";
 import Button from "../../Atoms/Button";
 
 const body7 = () => {
