@@ -8,10 +8,11 @@ import Input from "../../Atoms/InputCaptcha";
 import Input2 from "../../Atoms/InputText";
 import CustomerServiceButton from "../../Atoms/CustomServiesButton";
 import "../../../Styles/index.css";
-import Modal from "../Page-3/Modal"
+import Modal from "../Page-3/Modal";
+import ReCAPTCHA from "react-google-recaptcha"
 
 function Body() {
-
+const onChange =()=>{};
 
   return (
     <div>
@@ -119,9 +120,10 @@ function Body() {
         
         <div style={{ color: "#27B6C1" }} className="pt-6 font-bold text-xl mb-1">Isi CAPTCHA Sebelum Ke Fase Selanjutnya</div>
         
-        <img src={Captcha} alt="logo" className="h-30 mb-2 mt-8" />
-        
-        <Input />
+        <ReCAPTCHA
+    sitekey="6LdAh2woAAAAAAmHY6SNwxUxv7u9rgnZ9ewJO_54"
+    onChange={onChange}
+  />        
         
         <br />
         <hr />
