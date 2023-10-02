@@ -1,32 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios"; // Import Axios untuk mengambil data dari API
 
 function DataJenjang() {
-  const [experience, setExperience] = useState(""); // Untuk menyimpan pilihan pengalaman
+  const [dataJenjang, setDataJenjang] = useState({}); // Menyimpan data jenjang dari API
 
-  const handleExperienceChange = (event) => {
-    setExperience(event.target.value);
-  };
+  useEffect(() => {
+    // Mengambil data jenjang dari API saat komponen dimuat
+    axios
+      .get("URL_API_ANDA")
+      .then((response) => {
+        setDataJenjang(response.data); // Menyimpan data dari API ke state
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []); // Menyatakan bahwa useEffect hanya perlu dijalankan sekali saat komponen dimuat
+
   return (
-    <div className="bg-biruprimary text-white ">
-      <div className="border-t-2 border-biruprimary"></div>
-      <div className="max-w-md mx-10">
-        <p className="text-2xl font-bold mb-5 text-BiruSecondary1">Jenjang yang di tuju</p>
-      </div>
-      <div className="border-t border-white my-4 mx-8"></div>
-      <div className="max-w-md mx-10 mt-5 text-sm my-5">
-        <h2 className="text-xl font-bold ">Lokasi Sekolah :</h2>
-        <h2 className="text-xl  mb-5">HSKS Pusat</h2>
-        <h2 className="text-xl font-bold ">Tahun Pelajaran :</h2>
-        <h2 className="text-xl  mb-5">2023/2024</h2>
-        <h2 className="text-xl font-bold ">Jenjang :</h2>
-        <h2 className="text-xl  mb-5">SMP</h2>
-        <h2 className="text-xl font-bold ">Tingkat :</h2>
-        <h2 className="text-xl  mb-5 ">8</h2>
-        <h2 className="text-xl font-bold ">Program yang dipilih :</h2>
-        <h2 className="text-xl  mb-5 ">Distance Learning</h2>
-      </div>
-      <div className="border-t border-white my-4 mx-8"></div>
-      <div className="border-t-2 border-biruprimary mt-5"></div>
+    <div className="bg-biruprimary text-white">
+      {/* ... kode lain yang tetap sama ... */}
+      <div className="text-xl font-bold">Lokasi Sekolah:</div>
+      <div className="text-xl mb-5">{dataJenjang.lokasi_sekolah}</div>
+      <div className="text-xl font-bold">Tahun Pelajaran:</div>
+      <div className="text-xl mb-5">{dataJenjang.tahun_pelajaran}</div>
+      <div className="text-xl font-bold">Jenjang:</div>
+      <div className="text-xl mb-5">{dataJenjang.jenjang}</div>
+      <div className="text-xl font-bold">Tingkat:</div>
+      <div className="text-xl mb-5">{dataJenjang.tingkat}</div>
+      <div className="text-xl font-bold">Program yang dipilih:</div>
+      <div className="text-xl mb-5">{dataJenjang.program}</div>
+      {/* ... kode lain yang tetap sama ... */}
     </div>
   );
 }

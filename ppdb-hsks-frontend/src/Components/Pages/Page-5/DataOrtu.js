@@ -1,37 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios"; // Import Axios untuk mengambil data dari API
 
 function DataOrtu() {
-  const [experience, setExperience] = useState(""); // Untuk menyimpan pilihan pengalaman
+  const [dataOrtu, setDataOrtu] = useState({}); // Menyimpan data orang tua dari API
 
-  const handleExperienceChange = (event) => {
-    setExperience(event.target.value);
-  };
+  useEffect(() => {
+    // Mengambil data orang tua dari API saat komponen dimuat
+    axios
+      .get("URL_API_ANDA")
+      .then((response) => {
+        setDataOrtu(response.data); // Menyimpan data dari API ke state
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []); // Menyatakan bahwa useEffect hanya perlu dijalankan sekali saat komponen dimuat
+
   return (
-    <div className="bg-biruprimary text-white ">
-      <div className="border-t-2 border-biruprimary"></div>
-      <div className=" max-w-md mx-10">
-        <h4 className="font-bold text-3xl	 mt-10 mb-1">Registrasi PPDB</h4>
-        <h4 className="font-bold text-3xl"> Sekolah Kak Seto</h4>
-        <h6 className="font-semibold text-lg mt-5 ">Terima kasih Bapak/ Ibu telah mengisi form registrasi PPDB kami, calon peserta didik dengan nama  X telah terdaftar dalam sistem kami.</h6>
-      </div>
-      <div className="max-w-md mx-10 mt-20 ">
-        <p className="text-2xl font-bold mb-5 text-BiruSecondary1">Data Orang tua / Wali </p>
-      </div>
-      <div className="border-t border-white my-4 mx-8"></div>
-      <div className="max-w-md mx-10 mt-5 text-sm my-5">
-        <h2 className="text-xl font-bold ">Hubungan Keluarga :</h2>
-        <h2 className="text-xl  mb-5">IBU</h2>
-        <h2 className="text-xl font-bold ">Nama :</h2>
-        <h2 className="text-xl  mb-5">x</h2>
-        <h2 className="text-xl font-bold ">Nomor Handphone :</h2>
-        <h2 className="text-xl  mb-5">085155207987</h2>
-        <h2 className="text-xl font-bold ">Nomor Whatsapp :</h2>
-        <h2 className="text-xl  mb-5">085155207987</h2>
-        <h2 className="text-xl font-bold ">Email :</h2>
-        <h2 className="text-xl  mb-5">pppdb@gmail.com</h2>
-      </div>
-      <div className="border-t border-white my-4 mx-8"></div>
-      <div className="border-t-2 border-biruprimary mt-5"></div>
+    <div className="bg-biruprimary text-white">
+      {/* ... kode lain yang tetap sama ... */}
+      <div className="text-xl font-bold">Hubungan Keluarga:</div>
+      <div className="text-xl mb-5">{dataOrtu.hubungan}</div>
+      <div className="text-xl font-bold">Nama:</div>
+      <div className="text-xl mb-5">{dataOrtu.nama}</div>
+      <div className="text-xl font-bold">Nomor Handphone:</div>
+      <div className="text-xl mb-5">{dataOrtu.nomor_handphone}</div>
+      <div className="text-xl font-bold">Nomor Whatsapp:</div>
+      <div className="text-xl mb-5">{dataOrtu.nomor_whatsapp}</div>
+      <div className="text-xl font-bold">Email:</div>
+      <div className="text-xl mb-5">{dataOrtu.email}</div>
+      {/* ... kode lain yang tetap sama ... */}
     </div>
   );
 }
