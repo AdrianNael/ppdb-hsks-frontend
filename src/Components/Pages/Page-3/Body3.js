@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState,useEffect,setOptions} from "react";
 import Header2 from "../../Organisms/Header2";
 import { Link } from "react-router-dom";
 import Footer from "../../Organisms/Footer";
@@ -9,10 +9,64 @@ import CustomerServiceButton from "../../Atoms/CustomServiesButton";
 import "../../../Styles/index.css";
 import Modal from "../Page-3/Modal";
 import ReCAPTCHA from "react-google-recaptcha";
+import axios from 'axios';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+
 
 function Body() {
   const onChange = () => {};
-
+  const [formData, setFormData] = useState({
+    email: "",
+    hubungan_keluarga: "",
+    nama_ktp: "",
+    no_handphone: "",
+    no_whatsapp: "",
+    nama_peserta_didik: "",
+    jenis_kelamin: "",
+    jurusan: "",
+    tanggal_lahir: "",
+    anak_berkebutuhan_khusus: false,
+    pemeriksaan_psikologis: false,
+    tanggalLahir: null,
+  });
+  const handleInputChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value, 
+    });
+  };
+  const handleDateChange = (date) => {
+    setFormData({
+      ...formData,
+      tanggalLahir: date, // Simpan tanggal yang dipilih dalam state
+    });
+  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      // Kirim data formData ke API menggunakan axios atau fetch
+      const response = await axios.post("URL_API_ANDA", formData);
+      console.log(response.data); // Respon dari server
+      // Tampilkan pesan sukses atau arahkan pengguna ke halaman lain jika perlu
+    } catch (error) {
+      console.error(error); // Tangani kesalahan jika terjadi
+    }
+  };
+  useEffect(() => {
+    // Lakukan permintaan ke API untuk mendapatkan daftar opsi
+    axios.get("URL_API_ANDA")
+      .then((response) => {
+        // Simpan data yang diterima dari API dalam state
+        setOptions(response.data);
+      })
+      .catch((error) => {
+        console.error("Gagal mengambil data dari API", error);
+      });
+  }, []);
+  
   return (
     <div>
       <Header2 />
@@ -24,7 +78,7 @@ function Body() {
           <label className="block text-xl text-white font-bold mb-2 pt-7" htmlFor="username">
             Email
           </label>
-          <Input2 />
+          <Input2 name="email" value={formData.email} onChange={handleInputChange}/>
           <Modal />
         </div>
 
@@ -38,11 +92,13 @@ function Body() {
               <label className="block text-xl text-white font-bold mb-2 pt-7" htmlFor="username">
                 Hubungan Keluarga
               </label>
-              <select id="countries" className=" bg-transparent border border-white w-full bg-transparent w-full p-2.5 rounded-lg text-gray-400">
-                <option selected>Pilih...</option>
-                <option value="">Ayah</option>
-                <option value="">Ibu</option>
-                <option value="">Wali</option>
+              <select id="hubunganKeluarga" name="hubunganKeluarga" value={formData.hubunganKeluarga} onChange={handleInputChange} className=" bg-transparent border border-white w-full bg-transparent w-full p-2.5 rounded-lg text-gray-400">
+              {options.map((option) => (
+               <option key={option.id} value={option.value}>
+               {option.label}
+                </option>
+                // array yang berisi objek-objek yang memiliki properti id, value, dan label. Anda dapat menyesuaikan properti yang sesuai dengan struktur data dari API Anda.//
+               ))}
               </select>
             </div>
 
@@ -50,21 +106,21 @@ function Body() {
               <label className="block text-xl text-white font-bold mb-2 pt-7" htmlFor="username">
                 Nama yang sesuai KTP
               </label>
-              <Input2 />
+              <Input2 name="nama_ktp"value={formData.nama_ktp} onChange={handleInputChange}/>
             </div>
 
             <div className="relative">
               <label className="block text-xl text-white font-bold mb-2 pt-7" htmlFor="username">
                 No. Handphone
               </label>
-              <Input2 />
+              <Input2 name="no_handphone"value={formData.no_handphone} onChange={handleInputChange}/>
             </div>
 
             <div className="relative">
               <label className="block text-xl text-white font-bold mb-2 pt-7" htmlFor="username">
                 No. Whatsapp
               </label>
-              <Input2 />
+              <Input2 name="no_whatsapp" value={formData.no_whatsapp} onChange={handleInputChange}/>
             </div>
           </div>
 
@@ -77,17 +133,23 @@ function Body() {
               <label className="block text-xl text-white font-bold mb-2 pt-7" htmlFor="username">
                 Nama Peserta Didik (sesuai yang tercantum di NIK)
               </label>
-              <Input2 />
+              <Input2 nmae="nama_peserta_didik" value={formData.nama_peserta_didik} onChange={handleInputChange} />
             </div>
 
             <div className="relative">
-              <label className="block text-xl text-white font-bold mb-2 pt-7" htmlFor="username">
-                Jenis Kelamin
-              </label>
-              <select id="countries" className=" bg-transparent border border-white w-full bg-transparent w-full p-2.5 rounded-lg text-gray-400">
-                <option selected>Pilih...</option>
-                <option value="US">Laki-Laki</option>
-                <option value="CA">Perempuan</option>
+             <label className="block text-xl text-white font-bold mb-2 pt-7" htmlFor="jenisKelamin">
+                  Jenis Kelamin
+            </label>
+              <select
+                id="jenisKelamin"
+                name="jenisKelamin"
+                value={formData.jenisKelamin}
+                onChange={handleInputChange}
+                className="bg-transparent border border-white w-full p-2.5 rounded-lg text-gray-400"
+              >
+                <option value="">Pilih...</option>
+                <option value="Laki-Laki">Laki-Laki</option>
+                <option value="Perempuan">Perempuan</option>
               </select>
             </div>
 
@@ -95,10 +157,16 @@ function Body() {
               <label className="block text-xl text-white font-bold mb-2 pt-7" htmlFor="username">
                 Jurusan
               </label>
-              <select id="countries" className=" bg-transparent border border-white w-full bg-transparent  p-2.5 rounded-lg text-gray-400">
-                <option selected>Pilih...</option>
-                <option value="US">IPA</option>
-                <option value="CA">IPS</option>
+              <select
+                id="jurusan"
+                name="jurusan"
+                value={formData.jurusan}
+                onChange={handleInputChange}
+                className="bg-transparent border border-white w-full p-2.5 rounded-lg text-gray-400"
+              >
+                <option value="">Pilih...</option>
+                <option value="Laki-Laki">Laki-Laki</option>
+                <option value="Perempuan">Perempuan</option>
               </select>
             </div>
 
@@ -114,10 +182,15 @@ function Body() {
             <label className="block text-xl text-white font-bold mb-2 pt-7" htmlFor="username">
               Apakah calon peserta didik terindikasi "Anak Berkebutuhan Khusus"?
             </label>
-
-            <Input2 />
-          </div>
-
+           <DatePicker
+            id="tanggalLahir"
+            name="tanggalLahir"
+            selected={formData.tanggalLahir} // Nilai yang dipilih
+            onChange={handleDateChange} // Event handler saat tanggal berubah
+            dateFormat="dd/MM/yyyy" // Format tampilan tanggal
+            className="bg-transparent border border-white w-full p-2.5 rounded-lg text-gray-400"
+          />
+           </div>
           <div className="relative">
             <label className="block text-xl text-white font-bold mb-2 pt-7" htmlFor="username">
               Apakah calon peserta didik pernah melakukan pemeriksaan psikologis dari psikolog atau psikiater?
