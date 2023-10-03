@@ -191,13 +191,25 @@ function Body() {
             className="bg-transparent border border-white w-full p-2.5 rounded-lg text-gray-400"
           />
            </div>
-          <div className="relative">
-            <label className="block text-xl text-white font-bold mb-2 pt-7" htmlFor="username">
-              Apakah calon peserta didik pernah melakukan pemeriksaan psikologis dari psikolog atau psikiater?
-            </label>
+           <div className="relative">
+              <label className="block text-xl text-white font-bold mb-2 pt-7">
+                Apakah calon peserta didik pernah melakukan pemeriksaan psikologis dari psikolog atau psikiater?
+              </label>
 
-            <Input2 />
-          </div>
+              <div className="flex items-center">
+                <input
+                  type="checkbox"
+                  id="pemeriksaanPsikologis"
+                  name="pemeriksaanPsikologis"
+                  checked={formData.pemeriksaanPsikologis}
+                  onChange={handleInputChange}
+                  className="mr-2"
+                />
+                <label htmlFor="pemeriksaanPsikologis" className="text-white">
+                  Ya
+                </label>
+              </div>
+            </div>
         </div>
 
         <div style={{ color: "#27B6C1" }} className="pt-6 font-bold text-xl mb-1">

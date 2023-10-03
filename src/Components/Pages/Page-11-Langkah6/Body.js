@@ -1,7 +1,16 @@
 import Footer from "../../Organisms/Footer";
 import Navbar from "../../Pages/Page-6-Langkah1/Navbar3";
+import React, { useState } from 'react';
+import { EditorState, convertToRaw, ContentState } from 'draft-js';
+import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
-const body11 = () => {
+const Body11 = () => {
+  const [editorState, setEditorState] = useState(EditorState.createEmpty());
+
+  const onEditorStateChange = (newEditorState) => {
+    setEditorState(newEditorState);
+  };
   return (
     <>
       <Navbar />
@@ -17,24 +26,35 @@ const body11 = () => {
         <div className="grid lsm:grid-cols-2 lsm:gap-2">
           <div className="text-2xl mt-5 ">
             <p className="font-semibold mb-5">1. Nama Dokter</p>
-            <textarea placeholder="Masukkan 2-500 Karakter" className="w-full h-16"></textarea>
-          </div>
+            <Editor
+              editorState={editorState}
+              onEditorStateChange={onEditorStateChange}
+            />         
+             </div>
           <div className="text-2xl mt-5 ">
             <p className="font-semibold mb-5">2. Nama Psikiater/Psikolog</p>
-            <textarea placeholder="Masukkan 2-500 Karakter" className="w-full h-16"></textarea>
-          </div>
+            <Editor
+              editorState={editorState}
+              onEditorStateChange={onEditorStateChange}
+            />          </div>
           <div className="text-2xl mt-5 ">
             <p className="font-semibold mb-5">3. Nama Terapis 1</p>
-            <textarea placeholder="Masukkan 2-500 Karakter" className="w-full h-16"></textarea>
-          </div>
+            <Editor
+              editorState={editorState}
+              onEditorStateChange={onEditorStateChange}
+            />          </div>
           <div className="text-2xl mt-5 ">
             <p className="font-semibold mb-5">4. Nama Terapis 2</p>
-            <textarea placeholder="Masukkan 2-500 Karakter" className="w-full h-16"></textarea>
-          </div>
+            <Editor
+              editorState={editorState}
+              onEditorStateChange={onEditorStateChange}
+            />          </div>
           <div className="text-2xl mt-5 ">
             <p className="font-semibold mb-5">5. Nama Terapis 3</p>
-            <textarea placeholder="Masukkan 2-500 Karakter" className="w-full h-16"></textarea>
-          </div>
+            <Editor
+              editorState={editorState}
+              onEditorStateChange={onEditorStateChange}
+            />          </div>
         </div>
         <div className="text-2xl mt-5 ">
           <p className="font-semibold mb-5">6. Diagnosis</p>
@@ -47,4 +67,4 @@ const body11 = () => {
   );
 };
 
-export default body11;
+export default Body11;
