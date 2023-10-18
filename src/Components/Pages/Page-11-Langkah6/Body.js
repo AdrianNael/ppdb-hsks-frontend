@@ -1,8 +1,24 @@
+import React, { Component } from 'react';
 import Footer from "../../Organisms/Footer";
 import Navbar from "../../Pages/Page-6-Langkah1/Navbar3"
+import { EditorState, ContentState } from 'draft-js';
+import { Editor } from 'react-draft-wysiwyg';
+import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css'
 
-const body11 = () => {
-  return (
+class Body11 extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      diagnosisEditorState: EditorState.createEmpty(),
+    };
+  }
+
+  onDiagnosisEditorStateChange = (diagnosisEditorState) => {
+    this.setState({ diagnosisEditorState });
+  };
+
+  render() {
+    return (
     <>
     <Navbar/>
       <div className="text-biruprimary  mx-8 mt-4 mb-24">
@@ -37,15 +53,29 @@ const body11 = () => {
         </div>
         
         </div>
-        <div className="text-2xl mt-5 ">
-        <p className="font-semibold mb-5">6. Diagnosis</p>
-        <textarea placeholder="Masukkan 2-500 Karakter" className="w-full h-36"></textarea>
-        </div>
-        <div className="border-t border-biruprimary m-w-auto my-10"></div>
-      </div>
+        <div className="text-2xl mt-5">
+  <p className="font-semibold mb-5">6. Diagnosis</p>
+  <div style={{ border: '2px solid grey', background: 'white', padding: '1rem' }}>
+  <Editor
+  editorState={this.state.diagnosisEditorState}
+  onEditorStateChange={this.onDiagnosisEditorStateChange}
+  placeholder="Masukkan diagnosis di sini"
+  customStyleMap={{
+    placeholder: {
+      color: 'gray',
+      fontStyle: 'italic',
+    },
+  }}
+/>
+  </div>
+</div>
+<div className="border-t border-biruprimary m-w-auto my-10"></div>
+</div>
       <Footer/>
-    </>
-  );
-};
+      </>
+    );
+  }
+}
 
-export default body11;
+
+export default Body11;
