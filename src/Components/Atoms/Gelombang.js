@@ -5,7 +5,7 @@ import Logo4 from "../../Assets/Images/page-1/Backpack.svg";
 
 const gelombang = () => {
   return (
-    <div className="relative">
+    <div className="relative -z-10">
       <img
         src={Logo2}
         alt="gelombang biru"

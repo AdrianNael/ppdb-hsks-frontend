@@ -9,14 +9,9 @@ import CustomerServiceButton from "../../Atoms/CustomServiesButton";
 import Header from "../../Organisms/Header";
 import { MdNavigateNext } from "react-icons/md";
 import { Link } from "react-router-dom";
-
+import ButtonJenjang from "../../Atoms/ButtonJenjang";
 
 const body = () => {
-  const handleButtonClick = () => {
-    // Logika yang ingin Anda lakukan saat tombol ditekan
-    console.log("Tombol ditekan");
-  };
-
   return (
     <div>
       <Header />
@@ -52,52 +47,54 @@ const body = () => {
       <div className="h-[9.375rem] z-50 -mb-2 lsm:mb-10 sm:mb-16 md:mb-24 lg:mb-48">
         <GelombangBawah />
       </div>
-      
+
       <div className="bg-biruprimary pb-5 pt-3 ">
         <h4 className="text-white font-semibold mb-5 mx-8 xl:text-[2rem] xl:leading-[3.5rem]">
           Jenjang Sekolah :
         </h4>
         <div className="flex justify-center">
           <div className="grid grid-cols-2 gap-8 xl:flex text-white">
-            <Button
+            <ButtonJenjang />
+            {/* <Button
+              id="ButtonTK"
               label="TK"
-              onClick={handleButtonClick}
+
               color="TK"
               className="bg-TK hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out xl:font-bold xl:text-xl xl:w-36 xl:h-16"
             />
             <Button
               label="SD"
-              onClick={handleButtonClick}
+
               color="SD"
               className="bg-SD hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out xl:font-bold xl:text-xl xl:w-36 xl:h-16"
             />
             <Button
               label="SMP"
-              onClick={handleButtonClick}
+
               color="SMP"
               className=" bg-SMP hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out xl:font-bold xl:text-xl xl:w-36 xl:h-16"
             />
             <Button
               label="SMA"
-              onClick={handleButtonClick}
+
               color="SMA"
               className="bg-SMA hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out xl:font-bold xl:text-xl xl:w-36 xl:h-16"
-            />
+            /> */}
           </div>
         </div>
         <div className="bg-biruprimary  pb-6 mx-auto -mb-1">
-        <h4 className="text-white font-semibold mb-5 mx-8 mt-5 xl:text-[2rem] xl:leading-[3.5rem]">
-          Tahun Pelajaran
-        </h4>
-        <div className="flex justify-center w-full">
-          <select className="mx-auto border-2 bg-biruprimary text-white xl:text-2xl">
-            <option>Pilih</option>
-            <option>Tahun Pelajaran 2023/2024</option>
-            <option>Tahun Pelajaran 2022/2023</option>
-            <option>Tahun Pelajaran 2021/2022</option>
-          </select>
+          <h4 className="text-white font-semibold mb-5 mx-8 mt-5 xl:text-[2rem] xl:leading-[3.5rem]">
+            Tahun Pelajaran
+          </h4>
+          <div className="flex justify-center w-full">
+            <select className="mx-auto border-2 bg-biruprimary text-white xl:text-2xl">
+              <option>Pilih</option>
+              <option>Tahun Pelajaran 2023/2024</option>
+              <option>Tahun Pelajaran 2022/2023</option>
+              <option>Tahun Pelajaran 2021/2022</option>
+            </select>
+          </div>
         </div>
-      </div>
         <div className="mt-5">
           <h4 className="mx-8 font-semibold text-white mb-5 mt-5 xl:text-[2rem] xl:leading-[3.5rem]">
             Pilih tingkatan :
@@ -175,8 +172,8 @@ const body = () => {
                 (Klik untuk vidio penjelasan)
               </a>
             </p>
-            <div className="kartu mt-5 mx-4 xl:flex xl:flex-nowrap xl:gap-2">
-              <div className="kartu-row bg-white rounded-xl mb-4 xl:w-1/3">
+            <div className="kartu mt-5 mx-4 md:flex md:flex-wrap md:gap-2 md:justify-center">
+              <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
                 <div className="kartu-title flex p-4 justify-between">
                   <h6 className="font-medium font-mono">Program 1</h6>
                   <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
@@ -185,7 +182,7 @@ const body = () => {
                   <p>Lorem ipsum dolor sit amet.</p>
                 </div>
               </div>
-              <div className="kartu-row bg-white rounded-xl mb-4 xl:w-1/3">
+              <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
                 <div className="kartu-title flex p-4 justify-between">
                   <h6 className="font-medium font-mono">Program 2</h6>
                   <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
@@ -194,7 +191,7 @@ const body = () => {
                   <p>Lorem ipsum dolor sit amet.</p>
                 </div>
               </div>
-              <div className="kartu-row bg-white rounded-xl mb-4 xl:w-1/3">
+              <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
                 <div className="kartu-title flex p-4 justify-between">
                   <h6 className="font-medium font-mono">Program 3</h6>
                   <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
@@ -203,9 +200,27 @@ const body = () => {
                   <p>Lorem ipsum dolor sit amet.</p>
                 </div>
               </div>
-              <div className="kartu-row bg-white rounded-xl mb-4 xl:w-1/3">
+              <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
                 <div className="kartu-title flex p-4 justify-between">
                   <h6 className="font-medium font-mono">Program 4</h6>
+                  <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
+                </div>
+                <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+              <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
+                <div className="kartu-title flex p-4 justify-between">
+                  <h6 className="font-medium font-mono">Program 5</h6>
+                  <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
+                </div>
+                <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </div>
+              </div>
+              <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
+                <div className="kartu-title flex p-4 justify-between">
+                  <h6 className="font-medium font-mono">Program 6</h6>
                   <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
                 </div>
                 <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">

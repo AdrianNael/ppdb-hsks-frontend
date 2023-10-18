@@ -7,11 +7,10 @@ import Logo4 from "../../Assets/Images/page-1/Backpack.svg";
 const Navbar = () => {
   return (
     <div>
-      <nav className="bg-biruprimary h-32 flex flex-col items-center justify-center relative z-50">
+      <nav className="bg-biruprimary h-32 flex flex-col items-center justify-center relative">
         <img src={Logo1} alt="logo" className="h-30 mb-2 mt-8 md:w-56" />
       </nav>
     </div>
-    
   );
 };
 

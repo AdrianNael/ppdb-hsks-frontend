@@ -7,7 +7,7 @@ import PPCS from "../../Assets/Images/page-1/ppCs.svg";
 import { AiFillCloseCircle } from "react-icons/ai";
 import Kaksetopusat from "../../Assets/Images/page-1/kaksetopusat.svg";
 import Kaksetodepok from "../../Assets/Images/page-1/Sekolahdepo.svg";
-import Kaksetopkb from "../../Assets/Images/page-1/Sekolah Pekanbaru.svg";
+import Kaksetopkb from "../../Assets/Images/page-1/SekolahPekanbaru.svg";
 
 function CustomerServiceButton() {
   const [modalIsOpen, setModalIsOpen] = useState(false);

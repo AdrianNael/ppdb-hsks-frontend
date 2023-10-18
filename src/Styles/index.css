@@ -14,8 +14,8 @@
 /* CustomerServiceButton.css */
 .cs-container {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
+  bottom: 1.5rem;
+  right: 1.5rem;
 }
 
 .cs-button {
@@ -54,4 +54,18 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+
+/* focus:bg-green-400 focus:border-2 focus:border-biruprimary; */
+.mark-green {
+  --tw-bg-opacity: 1;
+  background-color:rgb(49 196 141 / var(--tw-bg-opacity));
+  border-width: 2px;
+  border-color: #204397;
+}
+.mark-green-jenjang {
+  --tw-bg-opacity: 1;
+  background-color:rgb(49 196 141 / var(--tw-bg-opacity));
+  border-width: 2px;
+  border-color: #fff;
 }
