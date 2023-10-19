@@ -1,11 +1,12 @@
 import Footer from "../../Organisms/Footer";
 import Navbar from "../../Pages/Page-6-Langkah1/Navbar3"
 import Surat from "./Surat"
-
+import BreadCrumbs from "./BreadCrumbs"
 const body7 = () => {
   return (
     <>
     <Navbar/>
+    <BreadCrumbs/>
       <div className="text-biruprimary  mx-8 mt-4 mb-24">
         <div className="text-2xl font-bold">
         <p>Langkah 1</p>

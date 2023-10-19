@@ -11,8 +11,7 @@ import Langkah1 from "./Components/Pages/Page-6-Langkah1/body";
 import Langkah2 from "./Components/Pages/Page-7/body";
 import Langkah4 from "./Components/Pages/Page-9/body";
 import Langkah6 from "./Components/Pages/Page-11-Langkah6/Body";
-import { Editor } from "react-draft-wysiwyg";
-import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+
 
 
 function App() {
