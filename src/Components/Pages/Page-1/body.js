@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import ButtonFormal from "../../Atoms/ButtonFormal";
 import CardPutih from "../../Atoms/CardPutih";
 import CardBiru from "../../Atoms/CardBiru";
@@ -12,6 +12,11 @@ import { Link } from "react-router-dom";
 import ButtonJenjang from "../../Atoms/ButtonJenjang";
 
 const body = () => {
+  // const [jenjang, setJenjang] = useState(""); // Untuk menyimpan pilihan pengalaman
+
+  // const handleJenjangChange = (event) => {
+  //   setJenjang(event.target.value);
+  // };
   return (
     <div>
       <Header />
@@ -87,7 +92,7 @@ const body = () => {
             Tahun Pelajaran
           </h4>
           <div className="flex justify-center w-full">
-            <select className="mx-auto border-2 bg-biruprimary text-white xl:text-2xl">
+            <select className="mx-auto border-2 bg-biruprimary text-white lg:text-2xl">
               <option>Pilih</option>
               <option>Tahun Pelajaran 2023/2024</option>
               <option>Tahun Pelajaran 2022/2023</option>

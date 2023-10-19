@@ -18,6 +18,13 @@
   right: 1.5rem;
 }
 
+@media screen and (min-width:768px){
+  .cs-container{
+    bottom: 2rem;
+    right: 2rem;;
+  }
+}
+
 .cs-button {
   color: white;
   padding: 10px 10px;
@@ -68,4 +75,9 @@
   background-color:rgb(49 196 141 / var(--tw-bg-opacity));
   border-width: 2px;
   border-color: #fff;
+}
+
+.pattern {
+  background-image: url('../Assets/Images/page-9/Pattern.svg');
+  background-repeat: repeat; /* Gambar akan diulang di kedua sumbu (horizontal dan vertikal) */
 }
