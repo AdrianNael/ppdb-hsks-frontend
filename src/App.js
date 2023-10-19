@@ -1,4 +1,4 @@
-// src/App.js
+
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Page1 from "./Components/Pages/Page-1/body";
@@ -9,6 +9,7 @@ import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 import Cpd from "./Components/Pages/Page-5/Page5";
 import Langkah1 from "./Components/Pages/Page-6-Langkah1/body";
 import Langkah2 from "./Components/Pages/Page-7/body";
+import Langkah3 from "./Components/Pages/Page-8-Langkah3/body"
 import Langkah4 from "./Components/Pages/Page-9/body";
 import Langkah6 from "./Components/Pages/Page-11-Langkah6/Body";
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/datacalonsiswa" component={Cpd} />
         <Route path="/Langkah1" component={Langkah1} />
         <Route path="/langkah2" component={Langkah2} />
+        <Route path="/langkah3" component={Langkah3} />
         <Route path="/langkah4" component={Langkah4} />
         <Route path="/langkah6" component={Langkah6} />
 
