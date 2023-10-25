@@ -11,12 +11,12 @@ import { MdNavigateNext } from "react-icons/md";
 import { Link } from "react-router-dom";
 import ButtonJenjang from "../../Atoms/ButtonJenjang";
 
-const body = () => {
-  // const [jenjang, setJenjang] = useState(""); // Untuk menyimpan pilihan pengalaman
+const Body = () => {
+  const [hiddenElementVisible, setHiddenElementVisible] = useState(false);
 
-  // const handleJenjangChange = (event) => {
-  //   setJenjang(event.target.value);
-  // };
+  const toggleHiddenElement = () => {
+    setHiddenElementVisible(!hiddenElementVisible);
+  };
   return (
     <div>
       <Header />
@@ -60,31 +60,6 @@ const body = () => {
         <div className="flex justify-center">
           <div className="grid grid-cols-2 gap-8 xl:flex text-white">
             <ButtonJenjang />
-            {/* <Button
-              id="ButtonTK"
-              label="TK"
-
-              color="TK"
-              className="bg-TK hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out xl:font-bold xl:text-xl xl:w-36 xl:h-16"
-            />
-            <Button
-              label="SD"
-
-              color="SD"
-              className="bg-SD hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out xl:font-bold xl:text-xl xl:w-36 xl:h-16"
-            />
-            <Button
-              label="SMP"
-
-              color="SMP"
-              className=" bg-SMP hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out xl:font-bold xl:text-xl xl:w-36 xl:h-16"
-            />
-            <Button
-              label="SMA"
-
-              color="SMA"
-              className="bg-SMA hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out xl:font-bold xl:text-xl xl:w-36 xl:h-16"
-            /> */}
           </div>
         </div>
         <div className="bg-biruprimary  pb-6 mx-auto -mb-1">
@@ -152,12 +127,17 @@ const body = () => {
             </div>
           </div>
           <div className="flex items-center justify-center mt-4">
-            <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center">
-              SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
-            </button>
-          </div>
-          <div className="border-t-4 border-white my-4 mx-8 mb-5"></div>
-          <div className="text-white font-bold text-ml xl:text-[2rem] xl:leading-[3.5rem]">
+        <button
+          className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center"
+          onClick={toggleHiddenElement}
+        >
+          Oke <MdNavigateNext className="ml-2" size={20} />
+        </button>
+      </div>
+      {hiddenElementVisible && (
+        <div>   
+        <div className="border-t-4 border-white my-4 mx-8 mb-5">
+        <div className="text-white font-bold text-ml xl:text-[2rem] xl:leading-[3.5rem]">
             <h4 className="ml-16 ">Lokasi yang dipilih :</h4>
             <p className="ml-16 mt-3 ">Homeshooling Kak Seto Pusat</p>
             <div className="flex items-center justify-center mt-3">
@@ -242,11 +222,14 @@ const body = () => {
             </Link>
           </div>
         </div>
+      </div>)}
       </div>
+      </div>
+
       <Footer />
       <CustomerServiceButton />
     </div>
   );
 };
 
-export default body;
+export default Body;
