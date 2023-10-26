@@ -6,7 +6,7 @@ function Header() {
   return (
     <header>
         <Navbar2 />
-        <Gelombang2 />
+        {/* <Gelombang2 /> */}
     </header>
   );
 };

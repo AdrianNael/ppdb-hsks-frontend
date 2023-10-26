@@ -1,4 +1,3 @@
-
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Page1 from "./Components/Pages/Page-1/body";
@@ -9,11 +8,10 @@ import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 import Cpd from "./Components/Pages/Page-5/Page5";
 import Langkah1 from "./Components/Pages/Page-6-Langkah1/body";
 import Langkah2 from "./Components/Pages/Page-7/body";
-import Langkah3 from "./Components/Pages/Page-8-Langkah3/body"
-import Langkah4 from "./Components/Pages/Page-9/body";
+import Langkah3 from "./Components/Pages/Page-8-Langkah3/body";
+import Langkah4 from "./Components/Pages/Page-9/bodybackup";
+import Langkah5 from "./Components/Pages/Page-10-Langkah5/Body";
 import Langkah6 from "./Components/Pages/Page-11-Langkah6/Body";
-
-
 
 function App() {
   return (
@@ -28,8 +26,8 @@ function App() {
         <Route path="/langkah2" component={Langkah2} />
         <Route path="/langkah3" component={Langkah3} />
         <Route path="/langkah4" component={Langkah4} />
+        <Route path="/langkah5" component={Langkah5} />
         <Route path="/langkah6" component={Langkah6} />
-
       </Switch>
     </BrowserRouter>
   );

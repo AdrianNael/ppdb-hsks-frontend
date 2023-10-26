@@ -34,11 +34,11 @@ const body9 = () => {
                   />
                 </svg>
                 <input
-                  class="pl-2 outline-none border-none w-full"
+                  class="pl-2 outline-none border-none"
                   type="text"
                   name=""
                   id=""
-                  placeholder="Tuliskan Disini"
+                  placeholder="Full name"
                 />
               </div>
               <input

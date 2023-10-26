@@ -76,7 +76,7 @@ const ButtonJenjang = ({ label, ClassName }) => {
       <button
         id="buttonJenjangTK"
         onClick={handleButtonClickTK} // 'O' should be capitalized
-        className={`rounded px-4 py-2 text-xs font-medium bg-TK border-2 hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out xl:font-bold xl:text-xl xl:w-36 xl:h-16`}
+        className={`rounded px-4 py-2 text-lg font-medium bg-TK border-2 hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out md:font-bold md:text-2xl md:w-40 md:h-20`}
         data-te-triple-inti // 'd' should be lowercase
         data-te-triple-color="light"
       >
@@ -85,7 +85,7 @@ const ButtonJenjang = ({ label, ClassName }) => {
       <button
         id="buttonJenjangSD"
         onClick={handleButtonClickSD}
-        className={`rounded border-2 px-4 py-2 text-xs font-medium bg-SD hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out xl:font-bold xl:text-xl xl:w-36 xl:h-16`}
+        className={`rounded border-2 px-4 py-2 text-lg font-medium bg-SD hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out md:font-bold md:text-xl md:w-40 md:h-20`}
         data-te-triple-inti
         data-te-triple-color="light"
       >
@@ -94,7 +94,7 @@ const ButtonJenjang = ({ label, ClassName }) => {
       <button
         id="buttonJenjangSMP"
         onClick={handleButtonClickSMP}
-        className={`rounded border-2 px-4 py-2 text-xs font-medium bg-SMP hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out xl:font-bold xl:text-xl xl:w-36 xl:h-16`}
+        className={`rounded border-2 px-4 py-2 text-lg font-medium bg-SMP hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out md:font-bold md:text-xl md:w-40 md:h-20`}
         data-te-triple-inti
         data-te-triple-color="light"
       >
@@ -103,7 +103,7 @@ const ButtonJenjang = ({ label, ClassName }) => {
       <button
         id="buttonJenjangSMA"
         onClick={handleButtonClickSMA}
-        className={`rounded border-2 px-4 py-2 text-xs font-medium bg-SMA hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out xl:font-bold xl:text-xl xl:w-36 xl:h-16`}
+        className={`rounded border-2 px-4 py-2 text-lg font-medium bg-SMA hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out md:font-bold md:text-xl md:w-40 md:h-20`}
         data-te-triple-inti
         data-te-triple-color="light"
       >

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { MdNavigateNext } from "react-icons/md";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 function Survei3() {
   const [selectedOption, setSelectedOption] = useState(null);
@@ -173,196 +172,414 @@ function Survei3() {
   return (
     <div className="bg-biruprimary text-white">
       <div className="mx-10  text-sm">
-        <h2 className="text-xl font-semibold mb-5">Informasi Sekolah Kak Seto diperoleh dari?</h2>
+        <h2 className="text-xl font-semibold mb-5">
+          Informasi Sekolah Kak Seto diperoleh dari?
+        </h2>
         <div className="space-y-5 text-lg">
           <label className="flex items-center">
-            <input className="mr-2" type="radio" value="option1" checked={selectedOption === "option1"} onChange={handleRadioButtonChange} />
+            <input
+              className="mr-2"
+              type="radio"
+              value="option1"
+              checked={selectedOption === "option1"}
+              onChange={handleRadioButtonChange}
+            />
             EVENT
           </label>
           {selectedOption === "option1" && (
             <div className="space-y-5 text-lg ml-5">
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox1Checked} onChange={handleCheckbox1Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox1Checked}
+                  onChange={handleCheckbox1Change}
+                  className="mr-2"
+                />
                 Booth Kami
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox2Checked} onChange={handleCheckbox2Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox2Checked}
+                  onChange={handleCheckbox2Change}
+                  className="mr-2"
+                />
                 Edu Fair
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox3Checked} onChange={handleCheckbox3Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox3Checked}
+                  onChange={handleCheckbox3Change}
+                  className="mr-2"
+                />
                 In House
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox4Checked} onChange={handleCheckbox4Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox4Checked}
+                  onChange={handleCheckbox4Change}
+                  className="mr-2"
+                />
                 Parenting Kak Seto
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox5Checked} onChange={handleCheckbox5Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox5Checked}
+                  onChange={handleCheckbox5Change}
+                  className="mr-2"
+                />
                 Seminar
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox6Checked} onChange={handleCheckbox6Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox6Checked}
+                  onChange={handleCheckbox6Change}
+                  className="mr-2"
+                />
                 Sharing Session
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox7Checked} onChange={handleCheckbox7Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox7Checked}
+                  onChange={handleCheckbox7Change}
+                  className="mr-2"
+                />
                 Sparkling
               </label>
             </div>
           )}
           <label className="flex items-center">
-            <input className="mr-2" type="radio" value="option2" checked={selectedOption === "option2"} onChange={handleRadioButtonChange} />
+            <input
+              className="mr-2"
+              type="radio"
+              value="option2"
+              checked={selectedOption === "option2"}
+              onChange={handleRadioButtonChange}
+            />
             MEDIA CETAK
           </label>
           {selectedOption === "option2" && (
             <div className="space-y-5 text-lg ml-5">
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox8Checked} onChange={handleCheckbox8Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox8Checked}
+                  onChange={handleCheckbox8Change}
+                  className="mr-2"
+                />
                 Koran
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox9Checked} onChange={handleCheckbox9Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox9Checked}
+                  onChange={handleCheckbox9Change}
+                  className="mr-2"
+                />
                 Majalah
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox10Checked} onChange={handleCheckbox10Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox10Checked}
+                  onChange={handleCheckbox10Change}
+                  className="mr-2"
+                />
                 Tabloid
               </label>
             </div>
           )}
           <label className="flex items-center">
-            <input type="radio" value="option3" checked={selectedOption === "option3"} onChange={handleRadioButtonChange} className="mr-2" />
+            <input
+              type="radio"
+              value="option3"
+              checked={selectedOption === "option3"}
+              onChange={handleRadioButtonChange}
+              className="mr-2"
+            />
             MEDIA ELEKTRONIK
           </label>
           {selectedOption === "option3" && (
             <div className="space-y-5 text-lg ml-5">
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox11Checked} onChange={handleCheckbox11Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox11Checked}
+                  onChange={handleCheckbox11Change}
+                  className="mr-2"
+                />
                 Handphone
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox12Checked} onChange={handleCheckbox12Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox12Checked}
+                  onChange={handleCheckbox12Change}
+                  className="mr-2"
+                />
                 Radio
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox13Checked} onChange={handleCheckbox13Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox13Checked}
+                  onChange={handleCheckbox13Change}
+                  className="mr-2"
+                />
                 Television
               </label>
             </div>
           )}
           <label className="flex items-center">
-            <input type="radio" value="option4" checked={selectedOption === "option4"} onChange={handleRadioButtonChange} className="mr-2" />
+            <input
+              type="radio"
+              value="option4"
+              checked={selectedOption === "option4"}
+              onChange={handleRadioButtonChange}
+              className="mr-2"
+            />
             MEDIA OFFLINE
           </label>
           {selectedOption === "option4" && (
             <div className="space-y-5 text-lg ml-5">
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox14Checked} onChange={handleCheckbox14Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox14Checked}
+                  onChange={handleCheckbox14Change}
+                  className="mr-2"
+                />
                 Brosur
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox15Checked} onChange={handleCheckbox15Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox15Checked}
+                  onChange={handleCheckbox15Change}
+                  className="mr-2"
+                />
                 Flyer
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox16Checked} onChange={handleCheckbox16Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox16Checked}
+                  onChange={handleCheckbox16Change}
+                  className="mr-2"
+                />
                 Kantor
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox17Checked} onChange={handleCheckbox17Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox17Checked}
+                  onChange={handleCheckbox17Change}
+                  className="mr-2"
+                />
                 Kerabat yang bersekolah di kami
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox18Checked} onChange={handleCheckbox18Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox18Checked}
+                  onChange={handleCheckbox18Change}
+                  className="mr-2"
+                />
                 Kerabat yang tidak bersekolah di kami
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox19Checked} onChange={handleCheckbox19Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox19Checked}
+                  onChange={handleCheckbox19Change}
+                  className="mr-2"
+                />
                 Poster
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox20Checked} onChange={handleCheckbox20Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox20Checked}
+                  onChange={handleCheckbox20Change}
+                  className="mr-2"
+                />
                 Psikolog Kami
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox21Checked} onChange={handleCheckbox21Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox21Checked}
+                  onChange={handleCheckbox21Change}
+                  className="mr-2"
+                />
                 Sekolah bakat
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox22Checked} onChange={handleCheckbox22Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox22Checked}
+                  onChange={handleCheckbox22Change}
+                  className="mr-2"
+                />
                 Sekolah sebelumnya
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox23Checked} onChange={handleCheckbox23Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox23Checked}
+                  onChange={handleCheckbox23Change}
+                  className="mr-2"
+                />
                 Spanduk
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox23Checked} onChange={handleCheckbox23Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox23Checked}
+                  onChange={handleCheckbox23Change}
+                  className="mr-2"
+                />
                 Staff kami
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox24Checked} onChange={handleCheckbox24Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox24Checked}
+                  onChange={handleCheckbox24Change}
+                  className="mr-2"
+                />
                 TK atau Pre-School
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox25Checked} onChange={handleCheckbox25Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox25Checked}
+                  onChange={handleCheckbox25Change}
+                  className="mr-2"
+                />
                 Tutor Kami
               </label>
             </div>
           )}
           <label className="flex items-center">
-            <input type="radio" value="option5" checked={selectedOption === "option5"} onChange={handleRadioButtonChange} className="mr-2" />
+            <input
+              type="radio"
+              value="option5"
+              checked={selectedOption === "option5"}
+              onChange={handleRadioButtonChange}
+              className="mr-2"
+            />
             MEDIA ONLINE
           </label>
           {selectedOption === "option5" && (
             <div className="space-y-5 text-lg ml-5">
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox26Checked} onChange={handleCheckbox26Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox26Checked}
+                  onChange={handleCheckbox26Change}
+                  className="mr-2"
+                />
                 Email Marketing
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox27Checked} onChange={handleCheckbox27Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox27Checked}
+                  onChange={handleCheckbox27Change}
+                  className="mr-2"
+                />
                 Pencarian Google
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox28Checked} onChange={handleCheckbox28Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox28Checked}
+                  onChange={handleCheckbox28Change}
+                  className="mr-2"
+                />
                 Website Berita
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox29Checked} onChange={handleCheckbox29Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox29Checked}
+                  onChange={handleCheckbox29Change}
+                  className="mr-2"
+                />
                 Iklan
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox30Checked} onChange={handleCheckbox30Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox30Checked}
+                  onChange={handleCheckbox30Change}
+                  className="mr-2"
+                />
                 Website Parenting
               </label>
             </div>
           )}
           <label className="flex items-center">
-            <input type="radio" value="option6" checked={selectedOption === "option6"} onChange={handleRadioButtonChange} className="mr-2" />
+            <input
+              type="radio"
+              value="option6"
+              checked={selectedOption === "option6"}
+              onChange={handleRadioButtonChange}
+              className="mr-2"
+            />
             MEDIA SOSIAL
           </label>
           {selectedOption === "option6" && (
             <div className="space-y-5 text-lg ml-5">
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox31Checked} onChange={handleCheckbox31Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox31Checked}
+                  onChange={handleCheckbox31Change}
+                  className="mr-2"
+                />
                 Facebook
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox32Checked} onChange={handleCheckbox32Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox32Checked}
+                  onChange={handleCheckbox32Change}
+                  className="mr-2"
+                />
                 Whatsapp
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox33Checked} onChange={handleCheckbox33Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox33Checked}
+                  onChange={handleCheckbox33Change}
+                  className="mr-2"
+                />
                 Youtube
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox34Checked} onChange={handleCheckbox34Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox34Checked}
+                  onChange={handleCheckbox34Change}
+                  className="mr-2"
+                />
                 Instagram
               </label>
               <label className="flex items-center">
-                <input type="checkbox" checked={checkbox35Checked} onChange={handleCheckbox35Change} className="mr-2" />
+                <input
+                  type="checkbox"
+                  checked={checkbox35Checked}
+                  onChange={handleCheckbox35Change}
+                  className="mr-2"
+                />
                 Twitter
               </label>
             </div>
@@ -372,12 +589,11 @@ function Survei3() {
       <div className="border-t-2 border-biruprimary mt-10"></div>
       <div className="border-t-2 border-white max-w-md mx-auto"></div>
       <div className="flex items-center justify-center mt-4">
-      <Link to="/datacalonsiswa">
-        <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center">
-          SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
-        </button>
+        <Link to="/datacalonsiswa">
+          <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center">
+            SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
+          </button>
         </Link>
-
       </div>
       <div className="border-t-2 border-biruprimary mt-10"></div>
     </div>

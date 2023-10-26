@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 function Navbar3() {
   return (
     <nav
-      class="flex flex-wrap px-5 py-3 text-gray-700 border border-gray-200 rounded-lg bg-gray-50"
+      className="flex flex-wrap py-3 text-white "
       aria-label="Breadcrumb"
     >
-      <ol class="flex flex-wrap w-full">
+      <ol className="flex flex-wrap w-full">
         <li>
           <Link
             to="/Langkah1"
-            className="inline-flex flex-nowrap items-center text-sm font-medium text-gray-700 hover:text-blue-600"
+            className="inline-flex flex-nowrap items-center text-sm font-medium text-white hover:text-blue-600"
           >
             <svg
               className="w-3 h-3 mr-2.5"
@@ -28,7 +28,7 @@ function Navbar3() {
         <li>
           <Link
             to="/Langkah2"
-            className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 md:text-xs"
+            className="inline-flex items-center text-sm font-medium text-white hover:text-blue-600 md:text-xs"
           >
             <svg
               className="w-3 h-3 mx-1 text-gray-400"
@@ -51,7 +51,7 @@ function Navbar3() {
         <li>
           <Link
             to="/Langkah3"
-            className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 md:text-xs"
+            className="inline-flex items-center text-sm font-medium text-white hover:text-blue-600 md:text-xs"
           >
             <svg
               className="w-3 h-3 mx-1 text-gray-400"
@@ -74,7 +74,7 @@ function Navbar3() {
         <li>
           <Link
             to="/Langkah4"
-            className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 md:text-xs"
+            className="inline-flex items-center text-sm font-medium text-white hover:text-blue-600 md:text-xs"
           >
             <svg
               className="w-3 h-3 mx-1 text-gray-400"
@@ -97,7 +97,7 @@ function Navbar3() {
         <li>
           <Link
             to="/Langkah5"
-            className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 md:text-xs"
+            className="inline-flex items-center text-sm font-medium text-white hover:text-blue-600 md:text-xs"
           >
             <svg
               className="w-3 h-3 mx-1 text-gray-400"
@@ -120,7 +120,7 @@ function Navbar3() {
         <li>
           <Link
             to="/Langkah6"
-            className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 md:text-xs"
+            className="inline-flex items-center text-sm font-medium text-white hover:text-blue-600 md:text-xs"
           >
             <svg
               className="w-3 h-3 mx-1 text-gray-400"
