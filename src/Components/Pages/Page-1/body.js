@@ -17,6 +17,12 @@ const Body = () => {
 
   const [tahunpelajaran, settahunpelajaran] = useState("");
 
+  const [tingkatan,setTingkatan]=useState("");
+
+  const handleTingkatan = (event)=> {
+    setTingkatan(event.target.id);
+  }
+
   const handletahunpelajaran = (year) => {
     settahunpelajaran(year);
   };
@@ -123,47 +129,86 @@ const Body = () => {
           </h4>
           <div className="flex flex-col justify-center items-center text-biruprimary font-semibold md:text-2xl">
             <div className="grid grid-cold-5 grid-flow-col mx-3 mb-3">
-              <button className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
+              <button 
+              id="0"
+              onClick={handleTingkatan}
+              className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
                 0
               </button>
-              <button className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
+              <button 
+              id="1"
+              onClick={handleTingkatan}
+              className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
                 1
               </button>
-              <button className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
+              <button 
+              id="2"
+              onClick={handleTingkatan}
+              className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
                 2
               </button>
-              <button className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
+              <button 
+              id="3"
+              onClick={handleTingkatan}
+              className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
                 3
               </button>
-              <button className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
+              <button 
+              id="4"
+              onClick={handleTingkatan}
+              className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
                 4
               </button>
             </div>
             <div className="grid grid-cold-5 grid-flow-col mx-3 mb-3">
-              <button className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
+              <button 
+              id="5"
+              onClick={handleTingkatan}
+              className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
                 5
               </button>
-              <button className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
+              <button 
+              id="6"
+              onClick={handleTingkatan}
+              className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
                 6
               </button>
-              <button className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
+              <button 
+              id="7"
+              onClick={handleTingkatan}
+              className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
                 7
               </button>
-              <button className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
+              <button 
+              id="8"
+              onClick={handleTingkatan}
+              className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
                 8
               </button>
-              <button className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
+              <button 
+              id="9"
+              onClick={handleTingkatan}
+              className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
                 9
               </button>
             </div>
             <div className="grid grid-cold-3 grid-flow-col mx-3 mb-3">
-              <button className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
+              <button 
+              id="10"
+              onClick={handleTingkatan}
+              className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
                 10
               </button>
-              <button className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
+              <button 
+              id="11"
+              onClick={handleTingkatan}
+              className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
                 11
               </button>
-              <button className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
+              <button 
+              id="12"
+              onClick={handleTingkatan}
+              className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in">
                 12
               </button>
             </div>
@@ -193,7 +238,7 @@ const Body = () => {
                     </div>
                     <div>
                         <p className="ml-4 text-white text-stroke">Tingkatan :</p>
-                        <input className="bg-SMP" type="text" value={jenjang} />
+                        <input className="bg-SMP" type="text" value={tingkatan} />
                     </div>
                   </div>
                 </div>
