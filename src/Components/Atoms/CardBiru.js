@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios"; // Import Axios
+
 import hsksdepok from "../../Assets/Images/page-1/Sekolahdepo.svg";
 import akreditasA from "../../Assets/Images/page-1/akreditasi.svg";
 
 const CardBiru = () => {
+  const [selected, setSelected] = useState(false);
+
+  const handleTerpilih = async () => {
+    // Lakukan aksi yang ingin Anda lakukan saat tombol "Pilih" diklik.
+    // Misalnya, mengirim data ke API.
+    try {
+      // Lakukan permintaan POST ke API di sini.
+      // Contoh menggunakan Axios:
+      const response = await axios.post("https://example.com/api/choose", { data: "data yang ingin dikirim" });
+
+      // Tambahkan logika lain sesuai dengan respons dari API jika diperlukan.
+      console.log(response.data);
+
+      // Set state atau lakukan aksi lain sesuai kebutuhan.
+      setSelected(true);
+    } catch (error) {
+      // Tangani kesalahan jika permintaan gagal.
+      console.error(error);
+    }
+  };
   return (
     <>
     <div className="block rounded-lg bg-biruprimary text-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20p x_-2px_rgba(0,0,0,0.04)] hover:-translate-y-10 hover:scale-105 hover:transition hover:duration-300 hover:ease-linear">
@@ -37,10 +59,18 @@ const CardBiru = () => {
         </div>
       </div>
       <div className="fix-button flex items-end justify-center">
-        <button type="button" className="rounded px-7 py-2 text-xs font-medium border-2 border-white text-white mb-4 hover:bg-green-400" data-te-ripple-init data-te-ripple-color="light">
-          Pilih
-        </button>
-      </div>
+          <button
+            type="button"
+            className={`rounded px-7 py-2 text-xs font-medium border-2 border-white text-white mb-4 ${
+              selected ? "bg-green-400" : "hover:bg-green-400"
+            }`}
+            data-te-ripple-init
+            data-te-ripple-color="light"
+            onClick={handleTerpilih}
+          >
+            {selected ? "Terpilih" : "Pilih"}
+          </button>
+        </div>
     </div>
     </>
   );

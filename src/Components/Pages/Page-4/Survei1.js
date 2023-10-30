@@ -27,7 +27,7 @@ function Survei1() {
               type="radio"
               id="baik"
               value="Baik"
-              checked={experience === "Baik"}
+                checked={experience === "Baik"}
               onChange={handleExperienceChange}
               className="mr-2"
             />

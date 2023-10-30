@@ -12,7 +12,14 @@ import { Link } from "react-router-dom";
 import ButtonJenjang from "../../Atoms/ButtonJenjang";
 
 const Body = () => {
+  const [jenjang, setJenjang] = useState("");
   const [hiddenElementVisible, setHiddenElementVisible] = useState(false);
+
+  const [tahunpelajaran, settahunpelajaran] = useState("");
+
+  const handletahunpelajaran = (year) => {
+    settahunpelajaran(year);
+  };
 
   const toggleHiddenElement = () => {
     setHiddenElementVisible(!hiddenElementVisible);
@@ -59,7 +66,7 @@ const Body = () => {
         </h4>
         <div className="flex justify-center">
           <div className="grid grid-cols-2 gap-8 xl:flex text-white">
-            <ButtonJenjang />
+          <ButtonJenjang setJenjang={setJenjang} />
           </div>
         </div>
         <div className="bg-biruprimary  pb-6 mx-auto -mb-1">
@@ -69,49 +76,45 @@ const Body = () => {
           <div className="flex justify-center items-center w-full text-lg md:text-2xl">
             <div className="mx-8 space-y-5">
               <div className="flex items-center justify-center">
-                <input
-                  type="radio"
-                  id="tahunpelajaran"
-                  value="TahunPelajaran2024-2025"
-                ></input>
-                <label className="text-white mx-4">
+                <label className="text-white mx-4 cursor-pointer px-4 py-6 border-2 bg-teal-500">
+                  <input
+                    type="radio"
+                    name="check button"
+                    id="radiobtn1"
+                    checked={tahunpelajaran === "TahunPelajaran2024-2025"}
+                    onChange={() =>
+                      handletahunpelajaran("Tahun Pelajaran 2024/2025")
+                    }
+                    className="hidden"
+                  />{" "}
                   Tahun Pelajaran 2024/2025
                 </label>
               </div>
               <div className="flex items-center justify-center">
-                <input
-                  type="radio"
-                  id="tahunpelajaran"
-                  value="TahunPelajaran2023-2024"
-                ></input>
-                <label htmlFor="tahunpelajaran" className="text-white mx-4">
+                <label
+                  className={`text-white mx-4 cursor-pointer border px-4 py-6 bg-teal-500 ${
+                    tahunpelajaran === "TahunPelajaran2023-2024"
+                      ? "bg-lime-500"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    handletahunpelajaran("TahunPelajaran 2023/2024")
+                  }
+                >
+                  <input
+                    type="radio"
+                    id="tahunpelajaran2023"
+                    value="TahunPelajaran2023-2024"
+                    checked={tahunpelajaran === "TahunPelajaran2023-2024"}
+                    onChange={() =>
+                      handletahunpelajaran("Tahun Pelajaran 2023/2024")
+                    }
+                    style={{ display: "none" }}
+                  />
                   Tahun Pelajaran 2023/2024
                 </label>
               </div>
-              {/* <input
-                type="radio"
-                id="tahunpelajaran"
-                value="TahunPelajaran2024-2025"
-              ></input>
-              <label className="text-white mx-4">
-                Tahun Pelajaran 2024/2025
-              </label>
-              <input
-                type="radio"
-                id="tahunpelajaran"
-                value="TahunPelajaran2023-2024"
-                className="ml-3"
-              ></input>
-              <label htmlFor="tahunpelajaran" className="text-white mx-4">
-                Tahun Pelajaran 2023/2024
-              </label> */}
             </div>
-            {/* <select className="mx-auto border-2 bg-biruprimary text-white lg:text-2xl">
-              <option>Pilih</option>
-              <option>Tahun Pelajaran 2024/2025</option>
-              <option>Tahun Pelajaran 2023/2024</option>
-              <option>Tahun Pelajaran 2022/2023</option>
-            </select> */}
           </div>
         </div>
         <div className="mt-5">
@@ -179,12 +182,19 @@ const Body = () => {
                 <div className="text-white font-bold text-ml xl:text-[2rem] xl:leading-[3.5rem]">
                   <h4 className="ml-16 ">Lokasi yang dipilih :</h4>
                   <p className="ml-16 mt-3 ">Homeshooling Kak Seto Pusat</p>
-                  <div className="flex items-center justify-center mt-3">
-                    <span className="">Jenjang : </span>
-                    <span className="ml-4 text-SD text-stroke">SD</span>
-                    <span className="ml-10">|</span>
-                    <span className="ml-10">Tingkatan : </span>
-                    <span className="ml-4">3</span>
+                  <div className="flex-wrap  items-center justify-center mt-5">
+                  <div>
+                        <p className="ml-4 text-white text-stroke">Tahun Pelajaran :</p>
+                        <input className="bg-SMP" type="text" value={tahunpelajaran} />
+                    </div>
+                    <div>
+                        <p className="ml-4 text-white text-stroke">Jenjang :</p>
+                        <input className="bg-SMP" type="text" value={jenjang} />
+                    </div>
+                    <div>
+                        <p className="ml-4 text-white text-stroke">Tingkatan :</p>
+                        <input className="bg-SMP" type="text" value={jenjang} />
+                    </div>
                   </div>
                 </div>
                 <div className="mx-8 mt-5">
