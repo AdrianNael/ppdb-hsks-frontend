@@ -13,7 +13,7 @@ function App() {
       <Header2 />
       <div className="flex">
         <div className="flex-1 pattern shadow-md"></div>
-        <div className="">
+        <div className="flex-auto">
           <form>
             <Survei1 />
             <Survei2 />
