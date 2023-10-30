@@ -18,7 +18,6 @@ function Input({id, name}) {
           name={name}
         >
         </input>
-
     </div>
   );
 }
