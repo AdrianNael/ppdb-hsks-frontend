@@ -71,7 +71,7 @@ const Body = () => {
           Jenjang Sekolah :
         </h4>
         <div className="flex justify-center">
-          <div className="grid grid-cols-2 gap-8 xl:flex text-white">
+          <div>
             <ButtonJenjang setJenjang={setJenjang} />
           </div>
         </div>
