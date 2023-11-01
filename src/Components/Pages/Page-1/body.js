@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ButtonFormal from "../../Atoms/ButtonFormal";
 import CardPutih from "../../Atoms/CardPutih";
 import CardBiru from "../../Atoms/CardBiru";
@@ -19,8 +19,16 @@ const Body = () => {
 
   const [tingkatan, setTingkatan] = useState("");
 
-  const handleTingkatan = (event) => {
-    setTingkatan(event.target.id);
+  const [Tingkatandiklik, setTingkatandiklik] = useState(false);
+
+  const [TingakatanAktif, setTingkatanAktif] = useState(null);
+
+  const [AngkaMulai, setAngkaMulai] = useState(0);
+
+  const [jumlahButton, setJumlahButton] = useState(1);
+
+  const handleTingkatan = (grade) => {
+    setTingkatan(grade);
   };
 
   const handletahunpelajaran = (year) => {
@@ -30,8 +38,97 @@ const Body = () => {
   const toggleHiddenElement = () => {
     setHiddenElementVisible(!hiddenElementVisible);
   };
+
+  const handleButtonTahunPelajaran = () => {
+    // Lakukan sesuatu ketika tombol di klik, misalnya, ubah filter
+    const radioButtonTahunPelajaran1 = document.getElementById("radiobtn1");
+    const radioButtonTahunPelajaran2 = document.getElementById("radiobtn2");
+    const buttonTahunPelajaran1 = document.getElementById("tahunpelajaran1");
+    const buttonTahunPelajaran2 = document.getElementById("tahunpelajaran2");
+    if (radioButtonTahunPelajaran1.checked) {
+      if (buttonTahunPelajaran2.classList.contains("bg-emerald-500")) {
+        buttonTahunPelajaran2.classList.remove("bg-emerald-500");
+      }
+      const hasGreenBackground1 =
+        buttonTahunPelajaran1.classList.contains("bg-emerald-500");
+      if (hasGreenBackground1) {
+        buttonTahunPelajaran1.classList.remove("bg-emerald-500");
+      } else {
+        buttonTahunPelajaran1.classList.add("bg-emerald-500");
+      }
+    } else if (radioButtonTahunPelajaran2.checked) {
+      if (buttonTahunPelajaran1.classList.contains("bg-emerald-500")) {
+        buttonTahunPelajaran1.classList.remove("bg-emerald-500");
+      }
+      const hasGreenBackground2 =
+        buttonTahunPelajaran2.classList.contains("bg-emerald-500");
+      if (hasGreenBackground2) {
+        buttonTahunPelajaran2.classList.remove("bg-emerald-500");
+      } else {
+        buttonTahunPelajaran2.classList.add("bg-emerald-500");
+      }
+    }
+  };
+  // const handleButtonTingkatan = () => {
+  //   if (setTingkatandiklik(true)) {
+  //     const button0 = document.getElementById("0");
+  //     button0.classList.remove("bg-white");
+  //   }
+  // };
+
+  const handleButtonTingkatan = (buttonId) => {
+    setTingkatanAktif(buttonId);
+  };
+
+  useEffect(() => {
+    if (jenjang === "TK") {
+      setJumlahButton(1);
+      setAngkaMulai(0);
+    } else if (jenjang === "SD") {
+      setJumlahButton(6);
+      setAngkaMulai(1);
+    } else if (jenjang === "SMP") {
+      setJumlahButton(3);
+      setAngkaMulai(7);
+    } else if (jenjang === "SMA") {
+      setJumlahButton(3);
+      setAngkaMulai(10);
+    } else {
+      setJumlahButton(0);
+      setAngkaMulai(0);
+    }
+  }, [jenjang]);
+
+  // const handleButtonTahunPelajaran = (e) => {
+  //   const divElement = e.currentTarget.querySelector("div");
+  //   const targetRadioId = e.currentTarget.getAttribute("data-radio");
+
+  //   if (e.target.checked) {
+  //     // Hapus latar belakang "emerald" dari semua elemen radio dengan ID yang sama
+  //     const allRadios = document.querySelectorAll(
+  //       `input[type="radio"][id="${targetRadioId}"]`
+  //     );
+  //     allRadios.forEach((radio) => {
+  //       radio.previousElementSibling.classList.remove("bg-emerald-500");
+  //     });
+
+  //     // Tambahkan latar belakang "emerald" pada elemen radio yang di-check
+  //     e.currentTarget.classList.add("bg-emerald-500");
+  //     divElement.classList.add("bg-emerald-500");
+  //   } else {
+  //     // Hapus latar belakang "emerald" saat elemen radio di-uncheck
+  //     divElement.classList.remove("bg-emerald-500");
+  //   }
+  //   const radios = document.querySelectorAll('input[type="radio"]');
+  //   const checkedRadio = Array.from(radios).find((radio) => radio.checked);
+  //   if (!checkedRadio) {
+  //     const firstRadio = radios[0];
+  //     firstRadio.checked = true;
+  //     handleButtonTahunPelajaran({ target: firstRadio }); // Jalankan fungsi handleButtonTahunPelajaran untuk elemen radio pertama
+  //   }
+  // };
   return (
-    <div>
+    <div className="font-sans">
       <Header />
       <div className="ml-[3rem]">
         <h4 className="font-bold text-2xl mt-10 mb-1 xl:text-[2.75rem] xl:leading-[3.5rem]">
@@ -80,9 +177,16 @@ const Body = () => {
             Tahun Pelajaran :
           </h4>
           <div className="flex justify-center items-center w-full text-lg md:text-2xl">
-            <div className="mx-8 space-y-5">
+            <div className="flex flex-wrap items-center justify-center mx-8 gap-4">
               <div className="flex items-center justify-center">
-                <label className="text-SD mx-4 cursor-pointer px-4 py-6 border-2 border-emerald-600 rounded-2xl bg-white active:bg-emerald-600 active:border-white active:scale-105 active:text-white focus:bg-amber-600">
+                <label
+                  className="text-lg mx-4 cursor-pointer px-4 py-6 border-2 border-[#14372E] rounded-2xl bg-white font-semibold transition duration-200"
+                  data-radio="radiobtn1"
+                >
+                  <div
+                    className="border-2 border-[#14372E] w-6 h-6 rounded-full ml-auto"
+                    id="tahunpelajaran1"
+                  ></div>
                   <input
                     type="radio"
                     name="check button"
@@ -91,6 +195,7 @@ const Body = () => {
                     onChange={() =>
                       handletahunpelajaran("Tahun Pelajaran 2024/2025")
                     }
+                    onClick={handleButtonTahunPelajaran}
                     className="hidden"
                   />{" "}
                   Tahun Pelajaran 2024/2025
@@ -98,24 +203,23 @@ const Body = () => {
               </div>
               <div className="flex items-center justify-center">
                 <label
-                  className={`text-white mx-4 cursor-pointer border px-4 py-6 bg-teal-500 ${
-                    tahunpelajaran === "TahunPelajaran2023-2024"
-                      ? "bg-lime-500"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    handletahunpelajaran("TahunPelajaran 2023/2024")
-                  }
+                  className="text-lg mx-4 cursor-pointer px-4 py-6 border-2 border-[#14372E] rounded-2xl bg-white font-semibold transition duration-200"
+                  data-radio="radiobtn2"
                 >
+                  <div
+                    className="border-2 border-[#14372E] w-6 h-6 rounded-full ml-auto z-50"
+                    id="tahunpelajaran2"
+                  ></div>
                   <input
                     type="radio"
-                    id="tahunpelajaran2023"
+                    id="radiobtn2"
                     value="TahunPelajaran2023-2024"
                     checked={tahunpelajaran === "TahunPelajaran2023-2024"}
                     onChange={() =>
                       handletahunpelajaran("Tahun Pelajaran 2023/2024")
                     }
-                    style={{ display: "none" }}
+                    onClick={handleButtonTahunPelajaran}
+                    className="hidden"
                   />
                   Tahun Pelajaran 2023/2024
                 </label>
@@ -128,38 +232,72 @@ const Body = () => {
             Pilih tingkatan :
           </h4>
           <div className="flex flex-col justify-center items-center text-biruprimary font-semibold md:text-2xl">
-            <div className="grid grid-cold-5 grid-flow-col mx-3 mb-3">
+            <div className="grid mx-3 mb-3 grid-cols-5">
+              {Array.from({ length: jumlahButton }, (_, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    handleTingkatan();
+                    handleButtonTingkatan((index + AngkaMulai).toString());
+                  }}
+                  className={`w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in
+                          ${
+                            TingakatanAktif === (index + AngkaMulai).toString()
+                              ? "bg-green-400 text-white"
+                              : "bg-white"
+                          }
+                        `}
+                >
+                  {index + AngkaMulai}
+                </button>
+              ))}
+            </div>
+            <div className="grid grid-cols-5 grid-flow-col mx-3 mb-3">
               <button
                 id="0"
-                onClick={handleTingkatan}
-                className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
+                onClick={() => {
+                  handleTingkatan("0");
+                  handleButtonTingkatan("0");
+                }}
+                className={`w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in ${
+                  TingakatanAktif === "0"
+                    ? "bg-green-400 text-white"
+                    : "bg-white"
+                }`}
               >
                 0
               </button>
               <button
                 id="1"
-                onClick={handleTingkatan}
-                className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
+                onClick={() => {
+                  handleTingkatan("1");
+                  handleButtonTingkatan("1");
+                }}
+                className={`w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in ${
+                  TingakatanAktif === "1"
+                    ? "bg-green-400 text-white"
+                    : "bg-white"
+                }`}
               >
                 1
               </button>
               <button
                 id="2"
-                onClick={handleTingkatan}
+                onClick={() => handleTingkatan("2")}
                 className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
               >
                 2
               </button>
               <button
                 id="3"
-                onClick={handleTingkatan}
+                onClick={() => handleTingkatan("3")}
                 className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
               >
                 3
               </button>
               <button
                 id="4"
-                onClick={handleTingkatan}
+                onClick={() => handleTingkatan("4")}
                 className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
               >
                 4
@@ -168,35 +306,35 @@ const Body = () => {
             <div className="grid grid-cold-5 grid-flow-col mx-3 mb-3">
               <button
                 id="5"
-                onClick={handleTingkatan}
+                onClick={() => handleTingkatan("5")}
                 className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
               >
                 5
               </button>
               <button
                 id="6"
-                onClick={handleTingkatan}
+                onClick={() => handleTingkatan("6")}
                 className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
               >
                 6
               </button>
               <button
                 id="7"
-                onClick={handleTingkatan}
+                onClick={() => handleTingkatan("7")}
                 className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
               >
                 7
               </button>
               <button
                 id="8"
-                onClick={handleTingkatan}
+                onClick={() => handleTingkatan("8")}
                 className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
               >
                 8
               </button>
               <button
                 id="9"
-                onClick={handleTingkatan}
+                onClick={() => handleTingkatan("9")}
                 className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
               >
                 9
@@ -205,21 +343,21 @@ const Body = () => {
             <div className="grid grid-cold-3 grid-flow-col mx-3 mb-3">
               <button
                 id="10"
-                onClick={handleTingkatan}
+                onClick={() => handleTingkatan("10")}
                 className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
               >
                 10
               </button>
               <button
                 id="11"
-                onClick={handleTingkatan}
+                onClick={() => handleTingkatan("11")}
                 className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
               >
                 11
               </button>
               <button
                 id="12"
-                onClick={handleTingkatan}
+                onClick={() => handleTingkatan("12")}
                 className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
               >
                 12
