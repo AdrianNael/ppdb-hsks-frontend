@@ -17,11 +17,13 @@ const Body = () => {
 
   const [tahunpelajaran, settahunpelajaran] = useState("");
 
+  const [program, setprogram] = useState("");
+
   const [tingkatan, setTingkatan] = useState("");
 
-  const [Tingkatandiklik, setTingkatandiklik] = useState(false);
+  const [TingakatanAktif, setTingkatanAktif] = useState("");
 
-  const [TingakatanAktif, setTingkatanAktif] = useState(null);
+  const [buttonProgramAktif, setProgramAktif] = useState("");
 
   const [AngkaMulai, setAngkaMulai] = useState(0);
 
@@ -33,6 +35,10 @@ const Body = () => {
 
   const handletahunpelajaran = (year) => {
     settahunpelajaran(year);
+  };
+
+  const handleProgram = (program) => {
+    setprogram(program);
   };
 
   const toggleHiddenElement = () => {
@@ -67,6 +73,43 @@ const Body = () => {
       } else {
         buttonTahunPelajaran2.classList.add("bg-emerald-500");
       }
+    }
+  };
+
+  const handleButtonProgram = () => {
+    const buttonProgram1 = document.getElementById("program1");
+    const buttonProgram2 = document.getElementById("program2");
+    const greenSign1 = document.getElementById("mark-red1");
+    const greenSign2 = document.getElementById("mark-red2");
+    if (buttonProgram1.checked) {
+      if (greenSign1.classList.contains("bg-red-600")) {
+        greenSign1.classList.remove("bg-red-600");
+        greenSign1.classList.add("bg-emerald-500");
+        greenSign2.classList.remove("bg-emerald-500");
+        // if(!greenSign2.classList.contains("bg-red-600"))
+        // greenSign2.classList.add("bg-red-600")
+      }
+      const hasMarkGreen = greenSign1.classList.contains("bg-emerald-500");
+      if (hasMarkGreen) {
+        greenSign1.classList.remove("bg-emerald-500");
+        greenSign1.classList.add("bg-red-600");
+      } else {
+        greenSign1.classList.remove("bg-red-600");
+        greenSign1.classList.add("bg-emerald-500");
+      }
+    } else if (buttonProgram2.checked) {
+      if (greenSign2.classList.contains("bg-emerald-500")) {
+        greenSign1.classList.remove("bg-emerald-500");
+      }
+      const hasMarkGreen2 = greenSign2.classList.contains("bg-emerald-500");
+      if (hasMarkGreen2) {
+        greenSign2.classList.remove("bg-emerald-500");
+      } else {
+        greenSign2.classList.add("bg-emerald-500");
+      }
+    } else {
+      greenSign1.classList.add("bg-red-600");
+      greenSign2.classList.add("bg-red-600");
     }
   };
   // const handleButtonTingkatan = () => {
@@ -405,6 +448,14 @@ const Body = () => {
                         value={tingkatan}
                       />
                     </div>
+                    <div className="md:mx-6">
+                      <p className="ml-4 text-white text-stroke">Tingkatan :</p>
+                      <input
+                        className="border-2 my-2 border-cyan-500 rounded-md text-biruprimary cursor-default"
+                        type="text"
+                        value={TingakatanAktif}
+                      />
+                    </div>
                   </div>
                 </div>
                 <div className="mx-8 mt-5">
@@ -418,15 +469,118 @@ const Body = () => {
                   </p>
                   <div className="kartu mt-5 mx-4 md:flex md:flex-wrap md:gap-2 md:justify-center">
                     <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
-                      <div className="kartu-title flex p-4 justify-between">
-                        <h6 className="font-medium font-mono">Program 1</h6>
-                        <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
-                      </div>
-                      <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                      </div>
+                      <label className="cursor-pointer transition duration-200">
+                        <div className="kartu-title flex p-4 justify-between">
+                          <h6 className="font-medium text-2xl">Program 1</h6>
+                          <div
+                            className={`w-6 h-6 rounded-full ${
+                              program === "Program1"
+                                ? "bg-emerald-500"
+                                : "bg-red-600"
+                            }`}
+                            id="mark-red1"
+                          ></div>
+                          <input
+                            type="radio"
+                            id="program2"
+                            value="program2"
+                            checked={program === "Program1"}
+                            onChange={() => {
+                              handleProgram("Program1");
+                            }}
+                            className="hidden"
+                          />
+                        </div>
+                        <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
+                          <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                      </label>
                     </div>
                     <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
+                      <label className="cursor-pointer transition duration-200">
+                        <div className="kartu-title flex p-4 justify-between">
+                          <h6 className="font-medium text-2xl">Program 2</h6>
+                          <div
+                            className={`w-6 h-6 rounded-full ${
+                              program === "Program2"
+                                ? "bg-emerald-500"
+                                : "bg-red-600"
+                            }`}
+                            id="mark-red1"
+                          ></div>
+                          <input
+                            type="radio"
+                            id="program2"
+                            value="program2"
+                            checked={program === "Program2"}
+                            onChange={() => {
+                              handleProgram("Program2");
+                            }}
+                            className="hidden"
+                          />
+                        </div>
+                        <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
+                          <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                      </label>
+                    </div>
+                    <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
+                      <label className="cursor-pointer transition duration-200">
+                        <div className="kartu-title flex p-4 justify-between">
+                          <h6 className="font-medium text-2xl">Program 3</h6>
+                          <div
+                            className={`w-6 h-6 rounded-full ${
+                              program === "Program3"
+                                ? "bg-emerald-500"
+                                : "bg-red-600"
+                            }`}
+                            id="mark-red1"
+                          ></div>
+                          <input
+                            type="radio"
+                            id="program3"
+                            value="program3"
+                            checked={program === "Program3"}
+                            onChange={() => {
+                              handleProgram("Program3");
+                            }}
+                            className="hidden"
+                          />
+                        </div>
+                        <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
+                          <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                      </label>
+                    </div>
+                    <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
+                      <label className="cursor-pointer transition duration-200">
+                        <div className="kartu-title flex p-4 justify-between">
+                          <h6 className="font-medium text-2xl">Program 4</h6>
+                          <div
+                            className={`w-6 h-6 rounded-full ${
+                              program === "Program4"
+                                ? "bg-emerald-500"
+                                : "bg-red-600"
+                            }`}
+                            id="mark-red1"
+                          ></div>
+                          <input
+                            type="radio"
+                            id="program4"
+                            value="program4"
+                            checked={program === "Program4"}
+                            onChange={() => {
+                              handleProgram("Program4");
+                            }}
+                            className="hidden"
+                          />
+                        </div>
+                        <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
+                          <p>Lorem ipsum dolor sit amet.</p>
+                        </div>
+                      </label>
+                    </div>
+                    {/* <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
                       <div className="kartu-title flex p-4 justify-between">
                         <h6 className="font-medium font-mono">Program 2</h6>
                         <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
@@ -434,8 +588,8 @@ const Body = () => {
                       <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
                         <p>Lorem ipsum dolor sit amet.</p>
                       </div>
-                    </div>
-                    <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
+                    </div> */}
+                    {/* <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
                       <div className="kartu-title flex p-4 justify-between">
                         <h6 className="font-medium font-mono">Program 3</h6>
                         <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
@@ -470,7 +624,7 @@ const Body = () => {
                       <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
                         <p>Lorem ipsum dolor sit amet.</p>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <div className="flex items-center justify-center mt-4">
