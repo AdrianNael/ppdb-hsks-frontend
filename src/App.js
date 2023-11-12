@@ -12,9 +12,14 @@ import Langkah3 from "./Components/Pages/Page-8-Langkah3/body";
 import Langkah4 from "./Components/Pages/Page-9/bodybackup";
 import Langkah5 from "./Components/Pages/Page-10-Langkah5/Body";
 import Langkah6 from "./Components/Pages/Page-11-Langkah6/Body";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+
+const queryClient = new   QueryClient();
 
 function App() {
   return (
+    <QueryClientProvider client={queryClient}>
+
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={Page1} />
@@ -30,6 +35,7 @@ function App() {
         <Route path="/langkah6" component={Langkah6} />
       </Switch>
     </BrowserRouter>
+    </QueryClientProvider>
   );
 }
 

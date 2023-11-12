@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ButtonFormal from "../../Atoms/ButtonFormal";
-import CardPutih from "../../Atoms/CardPutih";
 import CardBiru from "../../Atoms/CardBiru";
 import Button from "../../Atoms/Button";
 import GelombangBawah from "../../Atoms/GelombangBawah";
@@ -10,6 +9,7 @@ import Header from "../../Organisms/Header";
 import { MdNavigateNext } from "react-icons/md";
 import { Link } from "react-router-dom";
 import ButtonJenjang from "../../Atoms/ButtonJenjang";
+import CardProgram from "../../Atoms/CardProgram";
 
 const Body = () => {
   const [jenjang, setJenjang] = useState("");
@@ -112,12 +112,6 @@ const Body = () => {
       greenSign2.classList.add("bg-red-600");
     }
   };
-  // const handleButtonTingkatan = () => {
-  //   if (setTingkatandiklik(true)) {
-  //     const button0 = document.getElementById("0");
-  //     button0.classList.remove("bg-white");
-  //   }
-  // };
 
   const handleButtonTingkatan = (buttonId) => {
     setTingkatanAktif(buttonId);
@@ -142,34 +136,6 @@ const Body = () => {
     }
   }, [jenjang]);
 
-  // const handleButtonTahunPelajaran = (e) => {
-  //   const divElement = e.currentTarget.querySelector("div");
-  //   const targetRadioId = e.currentTarget.getAttribute("data-radio");
-
-  //   if (e.target.checked) {
-  //     // Hapus latar belakang "emerald" dari semua elemen radio dengan ID yang sama
-  //     const allRadios = document.querySelectorAll(
-  //       `input[type="radio"][id="${targetRadioId}"]`
-  //     );
-  //     allRadios.forEach((radio) => {
-  //       radio.previousElementSibling.classList.remove("bg-emerald-500");
-  //     });
-
-  //     // Tambahkan latar belakang "emerald" pada elemen radio yang di-check
-  //     e.currentTarget.classList.add("bg-emerald-500");
-  //     divElement.classList.add("bg-emerald-500");
-  //   } else {
-  //     // Hapus latar belakang "emerald" saat elemen radio di-uncheck
-  //     divElement.classList.remove("bg-emerald-500");
-  //   }
-  //   const radios = document.querySelectorAll('input[type="radio"]');
-  //   const checkedRadio = Array.from(radios).find((radio) => radio.checked);
-  //   if (!checkedRadio) {
-  //     const firstRadio = radios[0];
-  //     firstRadio.checked = true;
-  //     handleButtonTahunPelajaran({ target: firstRadio }); // Jalankan fungsi handleButtonTahunPelajaran untuk elemen radio pertama
-  //   }
-  // };
   return (
     <div className="font-sans">
       <Header />
@@ -197,10 +163,7 @@ const Body = () => {
         </h6>
       </div>
       <div className="lokasi-card grid grid-cols-2 xl:grid-cols-4 auto-cols-max mx-8 gap-6 max-w-full mt-4">
-        <CardPutih />
         <CardBiru />
-        <CardBiru />
-        <CardPutih />
       </div>
       <div className="h-[9.375rem] z-50 -mb-2 lsm:mb-10 sm:mb-16 md:mb-24 lg:mb-48">
         <GelombangBawah />
@@ -294,118 +257,7 @@ const Body = () => {
                   {index + AngkaMulai}
                 </button>
               ))}
-            </div>
-            <div className="grid grid-cols-5 grid-flow-col mx-3 mb-3">
-              <button
-                id="0"
-                onClick={() => {
-                  handleTingkatan("0");
-                  handleButtonTingkatan("0");
-                }}
-                className={`w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in ${
-                  TingakatanAktif === "0"
-                    ? "bg-green-400 text-white"
-                    : "bg-white"
-                }`}
-              >
-                0
-              </button>
-              <button
-                id="1"
-                onClick={() => {
-                  handleTingkatan("1");
-                  handleButtonTingkatan("1");
-                }}
-                className={`w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in ${
-                  TingakatanAktif === "1"
-                    ? "bg-green-400 text-white"
-                    : "bg-white"
-                }`}
-              >
-                1
-              </button>
-              <button
-                id="2"
-                onClick={() => handleTingkatan("2")}
-                className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
-              >
-                2
-              </button>
-              <button
-                id="3"
-                onClick={() => handleTingkatan("3")}
-                className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
-              >
-                3
-              </button>
-              <button
-                id="4"
-                onClick={() => handleTingkatan("4")}
-                className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
-              >
-                4
-              </button>
-            </div>
-            <div className="grid grid-cold-5 grid-flow-col mx-3 mb-3">
-              <button
-                id="5"
-                onClick={() => handleTingkatan("5")}
-                className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
-              >
-                5
-              </button>
-              <button
-                id="6"
-                onClick={() => handleTingkatan("6")}
-                className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
-              >
-                6
-              </button>
-              <button
-                id="7"
-                onClick={() => handleTingkatan("7")}
-                className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
-              >
-                7
-              </button>
-              <button
-                id="8"
-                onClick={() => handleTingkatan("8")}
-                className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
-              >
-                8
-              </button>
-              <button
-                id="9"
-                onClick={() => handleTingkatan("9")}
-                className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
-              >
-                9
-              </button>
-            </div>
-            <div className="grid grid-cold-3 grid-flow-col mx-3 mb-3">
-              <button
-                id="10"
-                onClick={() => handleTingkatan("10")}
-                className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
-              >
-                10
-              </button>
-              <button
-                id="11"
-                onClick={() => handleTingkatan("11")}
-                className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
-              >
-                11
-              </button>
-              <button
-                id="12"
-                onClick={() => handleTingkatan("12")}
-                className="bg-white w-12 h-12 rounded-[0.3rem] mx-2 mb-2 md:w-16 md:h-16 hover:bg-green-400 hover:text-white hover:-translate-y-2 hover:duration-300 hover:ease-in"
-              >
-                12
-              </button>
-            </div>
+            </div>          
           </div>
           <div className="flex items-center justify-center mt-4">
             <button
@@ -445,14 +297,6 @@ const Body = () => {
                       <input
                         className="border-2 my-2 border-cyan-500 rounded-md text-biruprimary cursor-default"
                         type="text"
-                        value={tingkatan}
-                      />
-                    </div>
-                    <div className="md:mx-6">
-                      <p className="ml-4 text-white text-stroke">Tingkatan :</p>
-                      <input
-                        className="border-2 my-2 border-cyan-500 rounded-md text-biruprimary cursor-default"
-                        type="text"
                         value={TingakatanAktif}
                       />
                     </div>
@@ -467,165 +311,7 @@ const Body = () => {
                       (Klik untuk vidio penjelasan)
                     </a>
                   </p>
-                  <div className="kartu mt-5 mx-4 md:flex md:flex-wrap md:gap-2 md:justify-center">
-                    <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
-                      <label className="cursor-pointer transition duration-200">
-                        <div className="kartu-title flex p-4 justify-between">
-                          <h6 className="font-medium text-2xl">Program 1</h6>
-                          <div
-                            className={`w-6 h-6 rounded-full ${
-                              program === "Program1"
-                                ? "bg-emerald-500"
-                                : "bg-red-600"
-                            }`}
-                            id="mark-red1"
-                          ></div>
-                          <input
-                            type="radio"
-                            id="program2"
-                            value="program2"
-                            checked={program === "Program1"}
-                            onChange={() => {
-                              handleProgram("Program1");
-                            }}
-                            className="hidden"
-                          />
-                        </div>
-                        <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
-                          <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                      </label>
-                    </div>
-                    <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
-                      <label className="cursor-pointer transition duration-200">
-                        <div className="kartu-title flex p-4 justify-between">
-                          <h6 className="font-medium text-2xl">Program 2</h6>
-                          <div
-                            className={`w-6 h-6 rounded-full ${
-                              program === "Program2"
-                                ? "bg-emerald-500"
-                                : "bg-red-600"
-                            }`}
-                            id="mark-red1"
-                          ></div>
-                          <input
-                            type="radio"
-                            id="program2"
-                            value="program2"
-                            checked={program === "Program2"}
-                            onChange={() => {
-                              handleProgram("Program2");
-                            }}
-                            className="hidden"
-                          />
-                        </div>
-                        <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
-                          <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                      </label>
-                    </div>
-                    <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
-                      <label className="cursor-pointer transition duration-200">
-                        <div className="kartu-title flex p-4 justify-between">
-                          <h6 className="font-medium text-2xl">Program 3</h6>
-                          <div
-                            className={`w-6 h-6 rounded-full ${
-                              program === "Program3"
-                                ? "bg-emerald-500"
-                                : "bg-red-600"
-                            }`}
-                            id="mark-red1"
-                          ></div>
-                          <input
-                            type="radio"
-                            id="program3"
-                            value="program3"
-                            checked={program === "Program3"}
-                            onChange={() => {
-                              handleProgram("Program3");
-                            }}
-                            className="hidden"
-                          />
-                        </div>
-                        <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
-                          <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                      </label>
-                    </div>
-                    <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
-                      <label className="cursor-pointer transition duration-200">
-                        <div className="kartu-title flex p-4 justify-between">
-                          <h6 className="font-medium text-2xl">Program 4</h6>
-                          <div
-                            className={`w-6 h-6 rounded-full ${
-                              program === "Program4"
-                                ? "bg-emerald-500"
-                                : "bg-red-600"
-                            }`}
-                            id="mark-red1"
-                          ></div>
-                          <input
-                            type="radio"
-                            id="program4"
-                            value="program4"
-                            checked={program === "Program4"}
-                            onChange={() => {
-                              handleProgram("Program4");
-                            }}
-                            className="hidden"
-                          />
-                        </div>
-                        <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
-                          <p>Lorem ipsum dolor sit amet.</p>
-                        </div>
-                      </label>
-                    </div>
-                    {/* <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
-                      <div className="kartu-title flex p-4 justify-between">
-                        <h6 className="font-medium font-mono">Program 2</h6>
-                        <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
-                      </div>
-                      <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                      </div>
-                    </div> */}
-                    {/* <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
-                      <div className="kartu-title flex p-4 justify-between">
-                        <h6 className="font-medium font-mono">Program 3</h6>
-                        <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
-                      </div>
-                      <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                      </div>
-                    </div>
-                    <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
-                      <div className="kartu-title flex p-4 justify-between">
-                        <h6 className="font-medium font-mono">Program 4</h6>
-                        <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
-                      </div>
-                      <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                      </div>
-                    </div>
-                    <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
-                      <div className="kartu-title flex p-4 justify-between">
-                        <h6 className="font-medium font-mono">Program 5</h6>
-                        <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
-                      </div>
-                      <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                      </div>
-                    </div>
-                    <div className="kartu-row bg-white rounded-xl mb-4 md:w-1/4">
-                      <div className="kartu-title flex p-4 justify-between">
-                        <h6 className="font-medium font-mono">Program 6</h6>
-                        <div className=" bg-red-600 w-6 h-6 rounded-full"></div>
-                      </div>
-                      <div className="kartu-body px-4 pt-2 pb-4 text-slate-500">
-                        <p>Lorem ipsum dolor sit amet.</p>
-                      </div>
-                    </div> */}
-                  </div>
+                  <CardProgram/>
                 </div>
                 <div className="flex items-center justify-center mt-4">
                   <Link to="/form">
