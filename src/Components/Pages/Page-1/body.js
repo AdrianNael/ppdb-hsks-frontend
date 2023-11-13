@@ -85,7 +85,6 @@ const Body = () => {
         greenSign1.classList.remove("bg-red-600");
         greenSign1.classList.add("bg-emerald-500");
         greenSign2.classList.remove("bg-emerald-500");
-
       }
       const hasMarkGreen = greenSign1.classList.contains("bg-emerald-500");
       if (hasMarkGreen) {
@@ -149,7 +148,9 @@ const Body = () => {
           <a href="">Sudah Registrasi? Klik Masuk Proses PPDB</a>
         </h6>
       </div>
-      <ButtonFormal />
+      <div className="flex justify-center gap-2">
+        <ButtonFormal />
+      </div>
       <div>
         <h4 className="ml-12 font-bold text-lg xl:text-[2.75rem] xl:leading-[3.5rem]">
           Lokasi Sekolah :
@@ -255,7 +256,7 @@ const Body = () => {
                   {index + AngkaMulai}
                 </button>
               ))}
-            </div>          
+            </div>
           </div>
           <div className="flex items-center justify-center mt-4">
             <button
@@ -309,7 +310,7 @@ const Body = () => {
                       (Klik untuk vidio penjelasan)
                     </a>
                   </p>
-                  <CardProgram/>
+                  <CardProgram />
                 </div>
                 <div className="flex items-center justify-center mt-4">
                   <Link to="/form">
