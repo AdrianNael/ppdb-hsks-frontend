@@ -1,32 +1,28 @@
-import  { useEffect, useState } from "react";
-import {axiosBaseUrl} from "../Components/lib/axios"
+import { useEffect, useState } from "react";
+import { axiosBaseUrl } from "../Components/lib/axios";
 
+export const useDataSekolah = (jenisPendidikan) => {
+  const [dataSekolah, setDataSekolah] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-export const useDataSekolah = () => {
-    const [dataSekolah, setDataSekolah] = useState([]);
-    const [isLoading, setIsLoading]= useState(false);
+  const fetchDataSekolah = async (jenisPendidikan) => {
+    setIsLoading(true);
+    try {
+      const sekolahResponse = await axiosBaseUrl.get(`/education-types/${jenisPendidikan}/schools`);
+      setDataSekolah(sekolahResponse.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
-        const fetchDataSekolah = async () => {
-          setIsLoading(true);
-          try {
-            setTimeout(async ()=> {
-              const sekolahResponse = await axiosBaseUrl.get('/education-types/FORMAL/schools');
+  useEffect(() => {
+    fetchDataSekolah(jenisPendidikan);
+  }, [jenisPendidikan]);
 
-              setDataSekolah(sekolahResponse.data);
-              setIsLoading(false);
-            },200)
-          } catch (error) {
-            console.error('Error fetching data:', error);
-          }
-        };
-
-    useEffect (()=> {
-      fetchDataSekolah();
-    },[]);
-
-      return {
-        data : dataSekolah,
-        isLoading
-    };
+  return {
+    data: dataSekolah,
+    isLoading,
+  };
 };
-

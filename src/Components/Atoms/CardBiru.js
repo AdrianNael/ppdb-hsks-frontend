@@ -20,6 +20,7 @@ const CardBiru = () => {
       console.log(response.data);
 
       // Set state atau lakukan aksi lain sesuai kebutuhan.
+      
       setSelected(true);
     } catch (error) {
       // Tangani kesalahan jika permintaan gagal.

@@ -46,7 +46,6 @@ const Body = () => {
   };
 
   const handleButtonTahunPelajaran = () => {
-    // Lakukan sesuatu ketika tombol di klik, misalnya, ubah filter
     const radioButtonTahunPelajaran1 = document.getElementById("radiobtn1");
     const radioButtonTahunPelajaran2 = document.getElementById("radiobtn2");
     const buttonTahunPelajaran1 = document.getElementById("tahunpelajaran1");
@@ -86,8 +85,7 @@ const Body = () => {
         greenSign1.classList.remove("bg-red-600");
         greenSign1.classList.add("bg-emerald-500");
         greenSign2.classList.remove("bg-emerald-500");
-        // if(!greenSign2.classList.contains("bg-red-600"))
-        // greenSign2.classList.add("bg-red-600")
+
       }
       const hasMarkGreen = greenSign1.classList.contains("bg-emerald-500");
       if (hasMarkGreen) {
