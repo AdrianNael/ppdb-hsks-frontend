@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ButtonFormal from "../../Atoms/ButtonFormal";
+import ButtonFormal from "../../Atoms/ButtonFormalTes";
 import CardBiru from "../../Atoms/CardBiru";
 import Button from "../../Atoms/Button";
 import GelombangBawah from "../../Atoms/GelombangBawah";

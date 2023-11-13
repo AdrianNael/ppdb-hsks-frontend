@@ -41,7 +41,7 @@ const ButtonFormalTes = ({ label, setDataJenisSekolah }) => {
             key={jenisSekolah.id}
             id={jenisSekolah.jenis_pendidikan}
             onClick={handleJenisSekolah}
-            className={`rounded border-2 mx-1 p-2 text-md font-medium bg-biruprimary text-white border-white hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out md:font-bold md:text-xl md:w-40 md:h-20`}
+            className={`rounded-lg border-2 mx-1 p-2 text-sm font-medium bg-biruprimary text-white border-white hover:-skew-y-6 hover:scale-125 hover:transition hover:duration-300 hover:ease-in-out md:font-bold md:text-xl md:w-40 md:h-20`}
             data-te-triple-inti
             data-te-triple-color="light"
           >
