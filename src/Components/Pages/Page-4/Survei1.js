@@ -9,6 +9,15 @@ function Survei1() {
     setExperience(event.target.value);
   };
 
+  const handleSubmitVote = () => {
+    if (experience) {
+      console.log('Vote Anda:', experience);
+      // Lakukan sesuatu dengan nilai radio button yang dipilih
+    } else {
+      console.log('Silakan pilih opsi voting terlebih dahulu.');
+    }
+  };
+
   return (
     <div className="bg-biruprimary text-white ">
       <div className="border-t-2 border-biruprimary"></div>
@@ -26,29 +35,31 @@ function Survei1() {
         </h2>
 
         <div className="space-y-5 text-lg">
-          {data.voting && data.voting.length > 0 ? (
+          {data.voting && data.voting.length > 1 ? 
             // Menghasilkan dinamis tombol radio berdasarkan data voting
-            data.voting.map((voting) => (
-              <div key={voting.id} className="flex items-center">
-                <input
-                  type="radio"
-                  id={voting.reff_kronologies_sub.toLowerCase()}
-                  value={voting.reff_kronologies_sub}
-                  checked={experience === voting.reff_kronologies_sub}
-                  onChange={handleExperienceChange}
-                  className="mr-2"
-                />
-                <label htmlFor={voting.reff_kronologies_sub.toLowerCase()}>
-                  {voting.reff_kronologies_sub}
-                </label>
-              </div>
-            ))
-          ) : (
+            data.voting.map((voting) => {
+              console.log('Label:', voting.reff_kronologies_sub);
+              return (
+                <div key={voting.id} className="">
+                  <input
+                    type="radio"
+                    id={voting.id}
+                    value={voting.reff_kronologies_sub}
+                    checked={experience === voting.reff_kronologies_sub}
+                    onChange={handleExperienceChange}
+                    className="mr-2"
+                  />
+                  <label htmlFor={voting.id}>
+                    {voting.reff_kronologies_sub}
+                  </label>
+                </div>
+              );
+            })
+           : (
             <p>Data voting tidak tersedia.</p>
           )}
         </div>
-
-        <p className="mt-4">Anda memilih: {experience}</p>
+        <button onClick={handleSubmitVote}>Submit Vote</button>
       </div>
       <div className="border-t-2 border-biruprimary mt-10"></div>
     </div>

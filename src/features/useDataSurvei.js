@@ -9,7 +9,8 @@ const [dataSurvei, setdataSurvei] = useState([]);
         try {
           setTimeout(async ()=> {
             const surveiResponse = await axiosBaseUrl.get('/surveys');
-            setdataSurvei(surveiResponse.data);
+
+            setdataSurvei(surveiResponse.data.data.voting);
           },200)
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -19,6 +20,9 @@ const [dataSurvei, setdataSurvei] = useState([]);
   useEffect (()=> {
     fetchDataSurvei();
   },[]);
+
+  console.log('Data Survei:', dataSurvei);
+
 
       return {
         data : dataSurvei,
