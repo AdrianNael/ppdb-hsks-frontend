@@ -12,10 +12,10 @@ import CustomerServiceButton from "../../Atoms/CustomServiesButton";
 function App() {
   return (
     <div>
-      <Header2 />
       <div className="flex">
         <div className="flex-1 pattern shadow-md"></div>
-        <div>
+        <div className="flex-auto">
+        <Header2 />
           <DataOrtu />
           <DataPeserta />
           <DataJenjang />

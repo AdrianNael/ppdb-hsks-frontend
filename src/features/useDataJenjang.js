@@ -12,7 +12,6 @@ const [dataJenjang, setDataJenjang] = useState([]);
           setTimeout(async ()=> {
             const jenjangResponse = await axiosBaseUrl.get('/company/1/department');
 
-            console.log(jenjangResponse.data);
             setDataJenjang(jenjangResponse.data);
             setIsLoading(false);
           },200)

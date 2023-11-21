@@ -12,7 +12,6 @@ const [dataFormal, setDataFormal] = useState([]);
           setTimeout(async ()=> {
             const formalResponse = await axiosBaseUrl.get('/education-types');
 
-            console.log(formalResponse.data);
             setDataFormal(formalResponse.data);
             setIsLoading(false);
           },200)

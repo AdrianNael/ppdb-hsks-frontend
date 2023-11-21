@@ -5,11 +5,8 @@ import { useDataJenisSekolah } from "../../features/useDataJenisSekolah";
 const ButtonFormalTes = ({ label, setDataJenisSekolah }) => {
   const { isLoading, data: dataJenisSekolah } = useDataJenisSekolah();
   const handleJenisSekolah = (event) => {
-    setDataJenisSekolah(event.target.id); // Mengatur nilai jenis sekolah sesuai dengan ID tombol yang diklik
+    setDataJenisSekolah(event.target.id);
   };
-
-  console.log(dataJenisSekolah);
-
   return (
     <>
       {isLoading && (

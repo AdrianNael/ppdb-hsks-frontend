@@ -5,10 +5,10 @@ export const useDataSekolah = (jenisPendidikan) => {
   const [dataSekolah, setDataSekolah] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchDataSekolah = async (jenisPendidikan) => {
+  const fetchDataSekolah = async () => {
     setIsLoading(true);
     try {
-      const sekolahResponse = await axiosBaseUrl.get(`/education-types/${jenisPendidikan}/schools`);
+      const sekolahResponse = await axiosBaseUrl.get(`/education-types/FORMAL/schools`);
       setDataSekolah(sekolahResponse.data);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -18,8 +18,8 @@ export const useDataSekolah = (jenisPendidikan) => {
   };
 
   useEffect(() => {
-    fetchDataSekolah(jenisPendidikan);
-  }, [jenisPendidikan]);
+    fetchDataSekolah();
+  }, []);
 
   return {
     data: dataSekolah,

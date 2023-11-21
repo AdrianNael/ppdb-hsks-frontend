@@ -13,7 +13,6 @@ export const useDataJenisSekolah = () => {
           "/education-types"
         );
 
-        console.log(DataJenisSekolahResponse.data);
         setDataJenisSekolah(DataJenisSekolahResponse.data);
         setIsLoading(false);
       }, 200);
