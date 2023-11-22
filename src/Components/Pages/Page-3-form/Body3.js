@@ -10,7 +10,7 @@ import Input3 from "../../Atoms/InputNum";
 import Input4 from "../../Atoms/InputDate";
 import CustomerServiceButton from "../../Atoms/CustomServiesButton";
 import "../../../Styles/index.css";
-import Modal from "../Page-3/Modal";
+import Modal from "../Page-3-form/Modal";
 import ReCAPTCHA from "react-google-recaptcha";
 
 function Body() {

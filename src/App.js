@@ -1,18 +1,20 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 import Page1 from "./Components/Pages/Page-1-beranda/body";
-import LoginPage from "./Components/Pages/Page-2/Body2";
-import Form from "./Components/Pages/Page-3/Body3";
+import LoginPage from "./Components/Pages/Page-2-login/Body2";
+import Form from "./Components/Pages/Page-3-form/Body3";
 import Survei from "./Components/Pages/Page-4-survei/Page4";
-import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
-import Cpd from "./Components/Pages/Page-5/Page5";
+import Cpd from "./Components/Pages/Page-5-datacalonsiswa/Page5";
 import Langkah1 from "./Components/Pages/Page-6-Langkah1/body";
-import Langkah2 from "./Components/Pages/Page-7/body";
+import Langkah2 from "./Components/Pages/Page-7-Langkah2/body";
 import Langkah3 from "./Components/Pages/Page-8-Langkah3/body";
-import Langkah4 from "./Components/Pages/Page-9/bodybackup";
+import Langkah4 from "./Components/Pages/Page-9-Langkah4/bodybackup";
 import Langkah5 from "./Components/Pages/Page-10-Langkah5/Body";
 import Langkah6 from "./Components/Pages/Page-11-Langkah6/Body";
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const queryClient = new   QueryClient();
 

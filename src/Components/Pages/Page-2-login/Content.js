@@ -2,7 +2,7 @@ import React from "react";
 import Input from "../../Atoms/InputCaptcha";
 import Input3 from "../../Atoms/InputToken.js";
 import Captcha from "../../../Assets/Images/page-2/Captcha.svg";
-import Email from "../Page-2/InputEmail";
+import Email from "../Page-2-login/InputEmail.js";
 
 export default function Content() {
   return (
