@@ -15,11 +15,9 @@ function App() {
         <div className="flex-1 pattern shadow-md"></div>
         <div className="flex-auto">
         <Header2 />
-          <form>
             <Survei1 />
             <Survei2 />
             <Survei3 />
-          </form>
         </div>
         <div className="flex-1 pattern shadow-md"></div>
       </div>
