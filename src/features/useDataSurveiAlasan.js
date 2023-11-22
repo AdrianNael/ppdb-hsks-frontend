@@ -8,8 +8,9 @@ export const useDataSurveiAlasan = () => {
         try {
           setTimeout(async() => {
             const surveiAlasanResponse = await axiosBaseUrl.get('/surveys');
-  
-            setdataSurveiAlasan(surveiAlasanResponse.data.data.alasan);
+            const options = surveiAlasanResponse.data.data.alasan.map((option) => option.reff_kronologies_sub);
+
+            setdataSurveiAlasan(options);
           },200)
         }catch (error) {
           console.error('Error fetching data:', error);

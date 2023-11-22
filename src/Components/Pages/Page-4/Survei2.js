@@ -1,32 +1,37 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import { useDataSurveiAlasan } from "../../../features/useDataSurveiAlasan";
+
 
 function Survei2() {
-  const [experience, setExperience] = useState(""); // Untuk menyimpan pilihan pengalaman
+  const [experience, setExperience] = useState("");
+  const {data: dataSurveiAlasan} = useDataSurveiAlasan();
 
   const handleExperienceChange = (event) => {
     setExperience(event.target.value);
   };
+
+   useEffect(() => {
+    console.log("Data Survei Voting:", dataSurveiAlasan);
+  }, [dataSurveiAlasan]);
+
   return (
     <div className="bg-biruprimary text-white  ">
       <div className="mx-10  text-sm	">
         <h2 className=" text-xl font-semibold mb-5 ">Apa yang membuat anda tertarik dengan Sekolah Kak Seto?</h2>
         <div className="space-y-5  text-lg ">
-          <div className="flex items-center">
-            <input type="radio" id="baik" value="Baik" checked={experience === "Baik"} onChange={handleExperienceChange} className="mr-2" />
-            <label htmlFor="baik">Brand Name Kak Seto</label>
-          </div>
-          <div className="flex items-center">
-            <input type="radio" id="cukup" value="Cukup" checked={experience === "Cukup"} onChange={handleExperienceChange} className="mr-2" />
-            <label htmlFor="cukup">Jarak dekat dengan rumah</label>
-          </div>
-          <div className="flex items-center">
-            <input type="radio" id="buruk" value="Buruk" checked={experience === "Buruk"} onChange={handleExperienceChange} className="mr-2" />
-            <label htmlFor="buruk">Pendekatan individual terhada anak</label>
-          </div>
-          <div className="flex items-center">
-            <input type="radio" id="Profesional" value="Profesional" checked={experience === "Profesional"} onChange={handleExperienceChange} className="mr-2" />
-            <label htmlFor="buruk">Pengajarannya yang Profesional</label>
-          </div>
+        {dataSurveiAlasan.map((option, index) => (
+            <div className="flex items-center" key={index}>
+              <input
+                type="radio"
+                id={option.toLowerCase()}
+                value={option}
+                checked={experience === option}
+                onChange={handleExperienceChange}
+                className="mr-2"
+              />
+              <label htmlFor={option.toLowerCase()}>{option}</label>
+            </div>
+          ))}
         </div>
         <p className="mt-4 ">Anda memilih: {experience}</p>
       </div>{" "}
