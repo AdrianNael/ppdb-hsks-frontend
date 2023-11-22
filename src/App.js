@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Page1 from "./Components/Pages/Page-1/body";
+import Page1 from "./Components/Pages/Page-1-beranda/body";
 import LoginPage from "./Components/Pages/Page-2/Body2";
 import Form from "./Components/Pages/Page-3/Body3";
-import Survei from "./Components/Pages/Page-4/Page4";
+import Survei from "./Components/Pages/Page-4-survei/Page4";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 import Cpd from "./Components/Pages/Page-5/Page5";
 import Langkah1 from "./Components/Pages/Page-6-Langkah1/body";
