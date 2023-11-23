@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import { useDataSurveiVoting } from "../../../features/useDataSurveiVoting";
-import axiosBaseUrl from 'axios';
+import axios from 'axios';
 
 function Survei1() {
   const { data: dataSurveiVoting } = useDataSurveiVoting();
@@ -13,9 +13,9 @@ function Survei1() {
     onSubmit: async (values) => {
       try {
         // Kirim data ke API menggunakan Axios
-        const response = await axiosBaseUrl.post('http://206.189.82.46:80/api/v1/hsks/surveys', values);
+        const votingResponse = await axios.post('http://206.189.82.46:80/api/v1/hsks/surveys', values);
 
-        console.log('Respon API:', response.data);
+        console.log('Respon API:', votingResponse.data);
       } catch (error) {
         console.error('Gagal mengirim formulir ke API:', error);
       }
