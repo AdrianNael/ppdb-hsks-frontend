@@ -99,6 +99,14 @@ function Survei3() {
         </div>
       </div>
       <div className="border-t-2 border-biruprimary mt-10"></div>
+      <div className="flex items-center justify-center mt-4">
+        <Link to="/datacalonsiswa">
+          <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center">
+            SELANJUTNYA <MdNavigateNext className="ml-2" size={20} />
+          </button>
+        </Link>
+      </div>
+      <div className="border-t-2 border-biruprimary mt-10"></div>
     </div>
   );
 }
