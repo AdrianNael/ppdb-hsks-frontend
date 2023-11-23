@@ -7,10 +7,10 @@ import Content from "../Page-2-login/Content";
 function Body() {
   return (
     <>
-      <Header2 />
       <div className="flex">
         <div className="flex-1 pattern shadow-md"></div>
-        <div className="">
+        <div className="flex-auto">
+          <Header2 />
           <MasukPPDB />
           <Content />
         </div>

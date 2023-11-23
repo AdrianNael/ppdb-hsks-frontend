@@ -3,6 +3,8 @@ import Input from "../../Atoms/InputCaptcha";
 import Input3 from "../../Atoms/InputToken.js";
 import Captcha from "../../../Assets/Images/page-2/Captcha.svg";
 import Email from "../Page-2-login/InputEmail.js";
+import { MdNavigateNext } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export default function Content() {
   return (
@@ -22,20 +24,15 @@ export default function Content() {
           <Input />
         </div>
         <br />
-        <hr />
+        <hr /> 
         <br />
-        <div className="flex justify-center pb-7">
-          <input
-            type="submit"
-            value="Masuk"
-            className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center"
-          />
-        </div>
-        {/* <div className="flex justify-center pb-7">
-          <button className="bg-white text-bg-biruprimary font-xl py-3 px-8 rounded-2xl w-full">
-            Masuk
+        <div className="flex items-center justify-center mt-4">
+        <Link to="/langkah1">
+          <button className="bg-white rounded-lg px-12 py-4 text-lg text-biruprimary font-bold mb-5 mt-5 flex items-center">
+            Masuk <MdNavigateNext className="ml-2" size={20} />
           </button>
-        </div> */}
+        </Link>
+      </div>
       </form>
     </div>
   );
