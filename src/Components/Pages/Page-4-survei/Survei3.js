@@ -1,56 +1,57 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { MdNavigateNext } from "react-icons/md";
 import { Link } from "react-router-dom";
-import {axiosBaseUrl} from "../../lib/axios"
 
 function Survei3() {
   const [options, setOptions] = useState([]);
-  const [checkboxes, setCheckboxes] = useState([]);
   const [selectedOption, setSelectedOption] = useState(null);
   const [checkboxStates, setCheckboxStates] = useState({});
+  const [selectedData, setSelectedData] = useState([]);
+  const [apiData, setApiData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axiosBaseUrl.get("/surveys");
-        const apiData = response.data.data;
+        const response = await axios.get("http://206.189.82.46:80/api/v1/hsks/surveys");
+        const data = response.data.data;
 
         // Extracting unique 'reff_kronologies' values
-        const uniqueReffKronologies = Array.from(
-          new Set(apiData.media.map((item) => item.reff_kronologies))
-        );
+        const uniqueReffKronologies = Array.from(new Set(data.media.map((item) => item.reff_kronologies)));
 
         setOptions(uniqueReffKronologies);
-
-        // Extracting checkboxes based on selected 'reff_kronologies'
-        const mediaCheckboxes = apiData.media
-          .filter((item) => item.reff_kronologies === uniqueReffKronologies[0]) // You can change the index to select a different 'reff_kronologies'
-          .map((item) => item.reff_kronologies_sub);
-
-        setCheckboxes(mediaCheckboxes);
+        setApiData(data);
 
         // Initialize checkbox states
-        const initialState = mediaCheckboxes.reduce((state, checkbox) => {
-          state[checkbox] = false;
+        const initialState = data.media.reduce((state, item) => {
+          state[item.reff_kronologies_sub] = false;
           return state;
         }, {});
         setCheckboxStates(initialState);
+
+        // Set selected data based on the initial 'reff_kronologies'
+        const initialSelectedData = data.media.filter((item) => item.reff_kronologies === uniqueReffKronologies[0]);
+        setSelectedData(initialSelectedData);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
 
     fetchData();
-  }, []); // The empty dependency array ensures this effect runs only once when the component mounts.
+  }, []);
 
   const handleRadioButtonChange = (event) => {
     const selectedValue = event.target.value;
     setSelectedOption(selectedValue);
 
+    // Set selected data based on the selected 'reff_kronologies'
+    const selectedData = apiData.media.filter((item) => item.reff_kronologies === selectedValue);
+    setSelectedData(selectedData);
+
     // Reset checkbox states when a different radio option is selected
     setCheckboxStates((prevState) => {
       const newState = { ...prevState };
-      checkboxes.forEach((checkbox) => (newState[checkbox] = false));
+      Object.keys(newState).forEach((checkbox) => (newState[checkbox] = false));
       return newState;
     });
   };
@@ -74,22 +75,22 @@ function Survei3() {
               <input
                 className="mr-2"
                 type="radio"
-                value={`option${index + 1}`}
-                checked={selectedOption === `option${index + 1}`}
+                value={option}
+                checked={selectedOption === option}
                 onChange={handleRadioButtonChange}
               />
               {option}
-              {selectedOption === `option${index + 1}` && (
+              {selectedOption === option && (
                 <div className="space-y-5 text-lg ml-5">
-                  {checkboxes.map((checkbox, checkboxIndex) => (
-                    <label key={checkboxIndex} className="flex items-center">
+                  {selectedData.map((data, dataIndex) => (
+                    <label key={dataIndex} className="flex items-center">
                       <input
                         type="checkbox"
-                        checked={checkboxStates[checkbox]}
-                        onChange={() => handleCheckboxChange(checkbox)}
+                        checked={checkboxStates[data.reff_kronologies_sub]}
+                        onChange={() => handleCheckboxChange(data.reff_kronologies_sub)}
                         className="mr-2"
                       />
-                      {checkbox}
+                      {data.reff_kronologies_sub}
                     </label>
                   ))}
                 </div>
@@ -106,8 +107,7 @@ function Survei3() {
           </button>
         </Link>
       </div>
-      <div className="border-t-2 border-biruprimary mt-10"></div>
-    </div>
+      <div className="border-t-2 border-biruprimary mt-10"></div>    </div>
   );
 }
 

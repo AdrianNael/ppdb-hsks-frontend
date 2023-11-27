@@ -10,10 +10,6 @@ function Survei2() {
     setExperience(event.target.value);
   };
 
-   useEffect(() => {
-    console.log("Data Survei Voting:", dataSurveiAlasan);
-  }, [dataSurveiAlasan]);
-
   return (
     <div className="bg-biruprimary text-white  ">
       <div className="mx-10  text-sm	">

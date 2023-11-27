@@ -1,15 +1,20 @@
-// src/components/atoms/Button.js
-import React from "react";
+import React, { useState } from "react";
 import { useDataJenisSekolah } from "../../features/useDataJenisSekolah";
 
-const ButtonFormalTes = ({ label, setDataJenisSekolah }) => {
+const ButtonFormalTes = ({ label }) => {
   const { isLoading, data: dataJenisSekolah } = useDataJenisSekolah();
+  const [selectedJenisSekolah, setSelectedJenisSekolah] = useState(null);
+
   const handleJenisSekolah = (event) => {
-    setDataJenisSekolah(event.target.id);
+    const selectedId = event.target.id;
+    setSelectedJenisSekolah(
+      dataJenisSekolah.data.find((jenisSekolah) => jenisSekolah.jenis_pendidikan === selectedId)
+    );
   };
+
   return (
-    <>
-      {isLoading && (
+    <div>
+       {isLoading && (
         <div role="status">
           <svg
             aria-hidden="true"
@@ -45,7 +50,15 @@ const ButtonFormalTes = ({ label, setDataJenisSekolah }) => {
             {jenisSekolah.jenis_pendidikan}
           </button>
         ))}
-    </>
+
+      {selectedJenisSekolah && (
+        <div>
+          {/* Render content related to the selected jenis sekolah here */}
+          <p>Informasi untuk {selectedJenisSekolah.jenis_pendidikan}</p>
+          {/* Add more information or components as needed */}
+        </div>
+      )}
+    </div>
   );
 };
 
