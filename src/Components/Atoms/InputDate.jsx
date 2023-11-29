@@ -1,6 +1,6 @@
 import React from "react";
 
-function Input({id, name}) {
+function Input({id, name, value, onChange}) {
   return (
     <div>
 
@@ -16,6 +16,8 @@ function Input({id, name}) {
           placeholder="Tuliskan Disini"
           id={id}
           name={name}
+          value={value}
+          onChange={onChange}
         >
         </input>
     </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { BsPen } from "react-icons/bs";
 
-function Input({id, name}) {
+function InputNum({id, name, value, onChange}) {
   return (
     <div>
       <div className="flex items-center">
@@ -18,6 +18,8 @@ function Input({id, name}) {
           placeholder="Tuliskan Disini"
           id={id}
           name={name}
+          value={value}
+          onChange={onChange}
         >
         </input>
       </div>
@@ -25,4 +27,4 @@ function Input({id, name}) {
   );
 }
 
-export default Input;
+export default InputNum;

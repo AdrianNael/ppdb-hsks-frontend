@@ -12,7 +12,7 @@ import CustomerServiceButton from "../../Atoms/CustomServiesButton";
 import "../../../Styles/index.css";
 import Modal from "../Page-3-form/Modal";
 import ReCAPTCHA from "react-google-recaptcha";
-import { Formik, Field, Form, useFormik } from 'formik';
+import { Formik, Field, Form, useFormik } from "formik";
 import { useMutation } from "react-query";
 import { axiosBaseUrl } from "../../lib/axios";
 import { useDataRegister } from "../../../features/useDataRegister";
@@ -27,37 +27,36 @@ function Body() {
       email: "",
       hubungan: "",
       namaorangtua: "",
-      handphone: null,
-      whatsapp: null,
+      handphone: "",
+      whatsapp: "",
       namasiswa: "",
       tanggal_lahir: null,
-      abk: "",
-      pemeriksaan_psikolog: "",
+      abk: false,
+      pemeriksaan_psikolog: false,
       jenis_kelamin: "",
-      jenjang: "",
-      id_unit_bisnis: "",
-      id_tahun_ajaran: "",
-      id_tingkat: "",
-      id_kelompok_siswa: "",
+      jenjang: "SMA",
+      id_unit_bisnis: 1,
+      id_tahun_ajaran: 104,
+      id_tingkat: 3,
+      id_kelompok_siswa: 27,
     },
     onSubmit: async (values) => {
-        await new Promise((r) => setTimeout(r, 500));
-        alert(JSON.stringify(values, null, 2));
-        try{
-            const registerResponse = await axiosBaseUrl.post('/users/register', values)
-            console.log('Response API :', registerResponse)
-        } catch (e) {
-            console.log('Respons API Gagal')
-        }
+      await new Promise((r) => setTimeout(r, 500));
+      alert(JSON.stringify(values, null, 2));
+      try {
+        const registerResponse = await axiosBaseUrl.post(
+          "/users/register",
+          values
+        );
+        console.log("Response API :", registerResponse);
+      } catch (e) {
+        console.log("Respons API Gagal", e);
+      }
     },
   });
   const handleFormInput = (event) => {
     const { name, type, checked, value } = event.target;
-    // console.log(checked);
-    dataRegister.setFieldValue(name, value);
-    // if (type === "checkbox") {
-    //   console.log(`Checkbox ${name} is checked: ${checked}`);
-    // }
+    dataRegister.setFieldValue(name, type === "checkbox" ? checked : value);
   };
 
   return (
