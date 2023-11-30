@@ -2,7 +2,7 @@ import React from "react";
 
 import Page1 from "./Components/Pages/Page-1-beranda/body";
 import LoginPage from "./Components/Pages/Page-2-login/Body2";
-import Form from "./Components/Pages/Page-3/FormPage2";
+import Form from "./Components/Pages/Page-3-form/Body3";
 import Survei from "./Components/Pages/Page-4-survei/Page4";
 import Cpd from "./Components/Pages/Page-5-datacalonsiswa/Page5";
 import Langkah1 from "./Components/Pages/Page-6-Langkah1/body";
