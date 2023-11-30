@@ -64,7 +64,7 @@ function Survei3() {
   };
 
   return (
-    <div className="bg-biruprimary text-white">
+    <div className="bg-biruprimary text-white px-12">
       <div className="mx-10 text-sm">
         <h2 className="text-xl font-semibold mb-5">
           Informasi Sekolah Kak Seto diperoleh dari?

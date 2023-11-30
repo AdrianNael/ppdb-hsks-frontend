@@ -167,11 +167,11 @@ const Body = () => {
         <GelombangBawah />
       </div>
 
-      <div className="bg-biruprimary pb-5 pt-3 ">
-        <h4 className="text-white font-semibold mb-5 mx-8 xl:text-[2rem] xl:leading-[3.5rem]">
+      <div className="bg-biruprimary pb-5 pt-3">
+        <h4 className="text-white font-semibold mb-5 mx-10 xl:text-[2rem] xl:leading-[3.5rem]">
           Jenjang Sekolah :
         </h4>
-        <div className="flex justify-center">
+        <div className="flex justify-center ">
           <div className="grid grid-cols-2 gap-8 xl:flex text-white">
             <ButtonJenjang setJenjang={setJenjang} />
           </div>
@@ -268,7 +268,7 @@ const Body = () => {
           {hiddenElementVisible && (
             <div>
               <div className="border-t-4 border-white my-4 mx-8 mb-5">
-                <div className="text-white font-bold text-ml xl:text-[2rem] xl:leading-[3.5rem]">
+                <div className="text-white font-bold text-ml xl:text-[2rem] xl:leading-[3.5rem] pt-5">
                   <h4 className="ml-16 ">Lokasi yang dipilih :</h4>
                   <p className="ml-16 mt-3 ">Homeshooling Kak Seto Pusat</p>
                   <div className="flex flex-wrap items-center justify-center mt-5">
@@ -283,7 +283,7 @@ const Body = () => {
                       />
                     </div>
                     <div className="md:mx-6">
-                      <p className="ml-4 text-white text-stroke">Jenjang :</p>
+                      <p className=" text-white text-stroke">Jenjang :</p>
                       <input
                         className="border-2 my-2 border-cyan-500 rounded-md text-biruprimary cursor-default"
                         type="text"
@@ -291,7 +291,7 @@ const Body = () => {
                       />
                     </div>
                     <div className="md:mx-6">
-                      <p className="ml-4 text-white text-stroke">Tingkatan :</p>
+                      <p className=" text-white text-stroke">Tingkatan :</p>
                       <input
                         className="border-2 my-2 border-cyan-500 rounded-md text-biruprimary cursor-default"
                         type="text"

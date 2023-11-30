@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import Survei1 from "./Survei1";
 import Survei2 from "./Survei2";
@@ -13,7 +12,7 @@ function App() {
     <div>
       <div className="flex">
         <div className="flex-1 pattern shadow-md"></div>
-        <div className="flex-2">
+        <div className="flex-2 ">
         <Header2 />
             <Survei1 />
             <Survei2 />

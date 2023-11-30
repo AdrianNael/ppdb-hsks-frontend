@@ -11,7 +11,7 @@ function Survei2() {
   };
 
   return (
-    <div className="bg-biruprimary text-white  ">
+    <div className="bg-biruprimary text-white px-12 ">
       <div className="mx-10  text-sm	">
         <h2 className=" text-xl font-semibold mb-5 ">Apa yang membuat anda tertarik dengan Sekolah Kak Seto?</h2>
         <div className="space-y-5  text-lg ">

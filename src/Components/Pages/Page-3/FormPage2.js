@@ -58,22 +58,19 @@ function Body() {
     const { name, type, checked, value } = event.target;
     dataRegister.setFieldValue(name, type === "checkbox" ? checked : value);
   };
-
   return (
     <>
-      <Header2 />
       <div className="flex">
         <div className="flex-1 pattern shadow-md"></div>
-
         <div className="">
-          <div className="bg-biruprimary px-8 md:px-28 items-center">
-            <div className="text-white font-bold text-2xl mb-1 pt-4">
+        <Header2 />
+          <div className="bg-biruprimary px-5  items-center">
+            <div className="text-white font-bold text-3xl mb-1 pt-10">
               Registrasi PPDB Sekolah Kak Seto
             </div>
             <div className="text-Emas text-sm underline pt-1">
               Sudah Registrasi ? Klik Masuk Proses PPDB
             </div>
-
             <form onSubmit={dataRegister.handleSubmit}>
               <div className="relative lg:w-1/2">
                 <label
@@ -90,7 +87,7 @@ function Body() {
                 <Modal />
               </div>
 
-              <div className="-mx-8 gap-6 max-w-full">
+              <div className=" gap-6 max-w-full">
                 <div className="">
                   <div
                     style={{ color: "#27B6C1" }}
@@ -372,11 +369,12 @@ function Body() {
             </div> */}
             </form>
           </div>
+          <CustomerServiceButton />
+          <Footer />
         </div>
         <div className="flex-1 pattern shadow-md"></div>
       </div>
-      <CustomerServiceButton />
-      <Footer />
+ 
     </>
   );
 }

@@ -146,7 +146,6 @@ function Body() {
       <Header2 />
       <div className="flex">
         <div className="flex-1 pattern shadow-md"></div>
-
         <div className="">
           <div className="bg-biruprimary px-8 md:px-28 items-center">
             <div className="text-white font-bold text-2xl mb-1 pt-4">
