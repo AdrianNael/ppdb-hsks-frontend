@@ -23,7 +23,7 @@ function Survei1() {
   });
 
   return (
-    <div className="bg-biruprimary text-white px-12">
+    <div className="bg-biruprimary text-white ">
       <div className="border-t-2 border-biruprimary"></div>
       <div className="mx-10">
         <h4 className="font-bold text-3xl mt-10 mb-1">Registrasi PPDB</h4>

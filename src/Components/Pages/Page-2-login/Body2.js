@@ -13,10 +13,10 @@ function Body() {
           <Header2 />
           <MasukPPDB />
           <Content />
+          <Footer />
         </div>
         <div className="flex-1 pattern shadow-md"></div>
       </div>
-      <Footer />
     </>
   );
 }
