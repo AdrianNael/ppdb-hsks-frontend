@@ -14,19 +14,20 @@ function App() {
     <div>
       <div className="flex">
         <div className="flex-1 pattern shadow-md"></div>
-        <div className="flex-auto">
+        <div className="flex-auto ">
         <Header2 />
-          <DataOrtu />
+          <DataOrtu/>
           <DataPeserta />
           <DataJenjang />
           <ProsesSelanjutnya />
           <ProductKnowlodge />
           <ButtonLoginPage5 />
+          <CustomerServiceButton />
+      <Footer />
         </div>
         <div className="flex-1 pattern shadow-md"></div>
       </div>
-      <CustomerServiceButton />
-      <Footer />
+
     </div>
   );
 }

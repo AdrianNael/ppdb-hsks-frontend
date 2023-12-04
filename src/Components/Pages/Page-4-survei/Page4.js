@@ -17,11 +17,11 @@ function App() {
             <Survei1 />
             <Survei2 />
             <Survei3 />
+            <CustomerServiceButton />
+      <Footer />
         </div>
         <div className="flex-1 pattern shadow-md"></div>
       </div>
-      <CustomerServiceButton />
-      <Footer />
     </div>
   );
 }
