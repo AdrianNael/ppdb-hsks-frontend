@@ -80,6 +80,10 @@ function Body8() {
         <div className="flex-1 pattern shadow-md"></div>
         <div className="text-biruprimary font-bold px-4 pt-4 pb-10 mx-auto lg:w-1/2 lg:mx-0">
           <BreadCrumbs />
+          <div className="text-2xl font-bold mb-5">
+          <p>Langkah 3</p>
+          <p>DOKUMEN TAMBAH DATA</p>
+        </div>
           <div className="rounded-lg shadow-xl bg-gray-50 lg:flex-row">
             {/* ... (kode yang ada sebelumnya) */}
             <label className="inline-block mb-2 text-gray-500">Upload Images (jpg, png, svg, jpeg)</label>
@@ -126,12 +130,12 @@ function Body8() {
     </table>
   </div>
 )}
-              </div>
-              <div className="flex-1 pattern shadow-md"></div>
-      </div>
-    <Footer />
+</div>
+<div className="flex-1 pattern shadow-md"></div>
+</div>
+<Footer />
 
-    </>
+</>
    
   );
 }
