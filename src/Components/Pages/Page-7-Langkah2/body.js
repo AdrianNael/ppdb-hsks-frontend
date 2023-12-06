@@ -1,14 +1,16 @@
 import Footer from "../../Organisms/Footer";
 import Navbar from "../Page-6-Langkah1/Navbar3";
 import Button from "../../Atoms/Button";
-
+import BreadCrumbs from "../Page-6-Langkah1/BreadCrumbsCopy";
 const body7 = () => {
   return (
     <>
       <Navbar />
+      
       <div className="flex">
         <div className="flex-1 pattern shadow-md"></div>
         <div className="text-biruprimary font-bold px-8 pt-4 pb-10">
+        <BreadCrumbs />
           <h2>Langkah 2</h2>
           <h2>Pembayaran Formulir dan Uang Pangkal Lihat Data</h2>
           <div className="grid grid-cols-2 mt-5 font-semibold">
