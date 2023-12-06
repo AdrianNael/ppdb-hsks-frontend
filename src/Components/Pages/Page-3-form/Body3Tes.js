@@ -17,28 +17,48 @@ import { useMutation } from "react-query";
 import { axiosBaseUrl } from "../../lib/axios";
 import { useDataRegister } from "../../../features/useDataRegister";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import * as Yup from "yup";
+import { object, string, number, date, InferType } from "yup";
 
 function Body() {
   const { isLoading: isLoadingGuardian, data: dataGuardian } =
     useDataRegister();
   const onChange = () => {};
 
-//   const RegisterSchema = Yup.object().shape({
-//     email: Yup.string()
-//       .email("Invalid email")
-//       .required("Field tidak boleh kosong"),
-//     hubungan: Yup.string().required("Field tidak boleh kosong!"),
-//     namaorangtua: Yup.string().required("Field tidak boleh kosong!"),
-//     handphone: Yup.number().required("Field tidak boleh kosong!"),
-//     whatsapp: Yup.number().required("Field tidak boleh kosong!"),
-//     tanggal_lahir: Yup.date()
-//       .typeError("Input harus berupa tanggal")
-//       .required("Field tidak boleh kosong!"),
-//     abk: Yup.boolean().oneOf([true], 'Centang jika "Ya"'),
-//     pemeriksaan_psikolog: Yup.boolean().oneOf([true], 'Centang jika "Ya"'),
-//     jenis_kelamin: Yup.string().required("Field tidak boleh kosong!"),
-//   });
+  //   const RegisterSchema = Yup.object().shape({
+  //     email: Yup.string()
+  //       .email("Invalid email")
+  //       .required("Field tidak boleh kosong"),
+  //     hubungan: Yup.string().required("Field tidak boleh kosong!"),
+  //     namaorangtua: Yup.string().required("Field tidak boleh kosong!"),
+  //     handphone: Yup.number().required("Field tidak boleh kosong!"),
+  //     whatsapp: Yup.number().required("Field tidak boleh kosong!"),
+  //     tanggal_lahir: Yup.date()
+  //       .typeError("Input harus berupa tanggal")
+  //       .required("Field tidak boleh kosong!"),
+  //     abk: Yup.boolean().oneOf([true], 'Centang jika "Ya"'),
+  //     pemeriksaan_psikolog: Yup.boolean().oneOf([true], 'Centang jika "Ya"'),
+  //     jenis_kelamin: Yup.string().required("Field tidak boleh kosong!"),
+  //   });
+
+  // validationSchema: Yup.object({
+  //   email: Yup.string()
+  //     .email("Invalid email")
+  //     .required("Field tidak boleh kosong"),
+  //   hubungan: Yup.string().required("Field tidak boleh kosong!"),
+  //   namaorangtua: Yup.string().required("Field tidak boleh kosong!"),
+  //   handphone: Yup.number().required("Field tidak boleh kosong!"),
+  //   whatsapp: Yup.number().required("Field tidak boleh kosong!"),
+  //   tanggal_lahir: Yup.date()
+  //     .typeError("Input harus berupa tanggal")
+  //     .required("Field tidak boleh kosong!"),
+  //   abk: Yup.boolean().oneOf([true], 'Centang jika "Ya"'),
+  //   pemeriksaan_psikolog: Yup.boolean().oneOf([true], 'Centang jika "Ya"'),
+  //   jenis_kelamin: Yup.string().required("Field tidak boleh kosong!"),
+  // }),
+
+  const RegisterSchema = object({
+    email: string().email()
+  });
 
   const dataRegister = useFormik({
     initialValues: {
@@ -58,21 +78,7 @@ function Body() {
       id_tingkat: 3,
       id_kelompok_siswa: 27,
     },
-    validationSchema: Yup.object({
-      email: Yup.string()
-        .email("Invalid email")
-        .required("Field tidak boleh kosong"),
-      hubungan: Yup.string().required("Field tidak boleh kosong!"),
-      namaorangtua: Yup.string().required("Field tidak boleh kosong!"),
-      handphone: Yup.number().required("Field tidak boleh kosong!"),
-      whatsapp: Yup.number().required("Field tidak boleh kosong!"),
-      tanggal_lahir: Yup.date()
-        .typeError("Input harus berupa tanggal")
-        .required("Field tidak boleh kosong!"),
-      abk: Yup.boolean().oneOf([true], 'Centang jika "Ya"'),
-      pemeriksaan_psikolog: Yup.boolean().oneOf([true], 'Centang jika "Ya"'),
-      jenis_kelamin: Yup.string().required("Field tidak boleh kosong!"),
-    }),
+
     onSubmit: async (values) => {
       await new Promise((r) => setTimeout(r, 500));
       alert(JSON.stringify(values, null, 2));
