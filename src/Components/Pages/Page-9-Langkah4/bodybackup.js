@@ -25,7 +25,7 @@ const body9 = () => {
         <div className="text-biruprimary font-bold mx-10 mt-4 mb-10">
         <BreadCrumbs />
         <div className="text-2xl font-bold mb-5">
-          <p>Langkah 3</p>
+          <p>Langkah 4</p>
           <p>Formulir Peserta Didik Sekolah Kak Seto Tambah Data</p>
         </div>
           <h6 className="mt-4">Data Peserta Didik</h6>
@@ -105,15 +105,15 @@ const body9 = () => {
                 </select>
               </div>
               <div>
-                <label className="block mt-4 mb-1">Anak Ke :</label>
+                <label className=" mt-4 mb-1">Anak Ke :</label>
                 <input
                   placeholder="0"
-                  className="w-1/3 border-2 rounded-md border-black px-2 font-normal"
+                  className="w-1/3 border-2 rounded-md border-black px-2 "
                 ></input>
                 <span className="mx-4">Dari</span>
                 <input
                   placeholder="0"
-                  className="w-1/3 border-2 rounded-md border-black px-2 font-normal"
+                  className="w-1/3 border-2 rounded-md border-black px-2 "
                 ></input>
               </div>
               <div>
@@ -123,7 +123,7 @@ const body9 = () => {
                     Anak Kandung
                   </option>
                   <option className="bg-biruprimary text-white">
-                    Anak Asuh
+                    Anak Asuh 
                   </option>
                   <option className="bg-biruprimary text-white">
                     Anak Tiri
@@ -342,7 +342,7 @@ const body9 = () => {
           </div>
           <Link to="/langkah5">
             <Button
-              label="Selanjutnya"
+              label="Simpan"
               text="white"
               className="bg-[#27b6c1] w-full mt-8"
               onClick={handleButtonClick}
