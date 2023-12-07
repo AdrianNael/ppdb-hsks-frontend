@@ -15,32 +15,9 @@ const body9 = () => {
         <div className="text-biruprimary font-bold mx-10 mt-4 mb-10">
           <h2 className="mb-3">Langkah 4</h2>
           <h2>Formulir Peserta Didik Sekolah Kak Seto</h2>
-          <h2 className="mt-4">Tambah Data</h2>
           <h6 className="mt-4">Data Peserta Didik</h6>
           <div>
-            <form>
-              <label className="block mt-2 mb-1">NIK :</label>
-              <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-gray-400"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                <input
-                  class="pl-2 outline-none border-none w-full"
-                  type="text"
-                  name=""
-                  id=""
-                  placeholder="Tuliskan Disini"
-                />
-              </div>
+            <form>              
               <input
                 className="border-2 rounded-md border-black w-full p-2 font-normal"
                 placeholder="16 karakter"
@@ -346,13 +323,13 @@ const body9 = () => {
                 <h3>Apakah peserta didik memiliki wali ?</h3>
                 <input
                   type="checkbox"
-                  className="border-2 border-black"
+                  className="border-2 border-black mt-5"
                 ></input>
               </div>
             </form>
           </div>
           <Button
-            label="Submit"
+            label="Selanjutnya"
             text="white"
             className="bg-[#27b6c1] w-full mt-8"
           />

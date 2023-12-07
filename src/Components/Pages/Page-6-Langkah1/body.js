@@ -1,19 +1,32 @@
 import Footer from "../../Organisms/Footer";
 import Navbar from "../../Pages/Page-6-Langkah1/Navbar3";
 import Surat from "./Surat";
+import Button from "../../Atoms/Button";
 import BreadCrumbs from "./BreadCrumbsCopy";
+import { Link } from "react-router-dom";
+
 const body7 = () => {
+
+  const handleButtonClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <>
       <Navbar />
-      <BreadCrumbs />
-      <div className="text-biruprimary  mx-8 mt-4 mb-24">
+      <div className="flex">
+        <div className="flex-1 pattern shadow-md"></div>
+        <div className="text-biruprimary font-bold px-8 pt-4 pb-10">
+        <BreadCrumbs />
         <div className="text-2xl font-bold">
           <p>Langkah 1</p>
           <p>Registrasi PPDB Sekolah Kak Seto Selesai</p>
         </div>
-        <div className=" grid lsm:grid-cols-2 lsm:gap-5 mb-5">
-          <div className=" lsm:border-r lsm:border-r-biruprimary pr-5">
+        <div className="  lsm:gap-5 mb-5">
+          <div className=" ">
             <div className="mt-10">
               <p className="text-justify text-md font-bold">
                 Siliahkan Mengunduh Product Knowledge dibawah ini untuk
@@ -62,17 +75,21 @@ const body7 = () => {
             </div>
           </div>
         </div>
-        <div className="border-t border-biruprimary m-w-auto my-10"></div>
-        <div className="flex">
-          {/* isi pdf */}
-          <div className="flex-1 pattern shadow-md mr-1"></div>
-          <Surat />
-          <div className="flex-1 pattern shadow-md ml-1"></div>
+        <Surat/>
+        <Link to="/langkah2">
+            <Button
+              label="Selanjutnya"
+              text="white"
+              className="bg-[#27b6c1] w-full mt-8"
+              onClick={handleButtonClick}
+            />
+          </Link>
         </div>
+        <div className="flex-1 pattern shadow-md"></div>
       </div>
       <Footer />
     </>
-  );
+  );;
 };
 
 export default body7;

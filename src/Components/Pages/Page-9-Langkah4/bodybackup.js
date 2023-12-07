@@ -3,57 +3,48 @@ import RegionSelector from "../../Atoms/RegionSelector";
 import Input from "../../Atoms/InputLangkah";
 import Footer from "../../Organisms/Footer";
 import Button from "../../Atoms/Button";
-import Pattern from "../../../Assets/Images/page-9/Pattern.svg";
+import BreadCrumbs from "../Page-6-Langkah1/BreadCrumbsCopy";
+import { Link } from "react-router-dom";
+
+
 const body9 = () => {
+
+  const handleButtonClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <>
       <Navbar />
       <div className="flex">
-        <div className="flex-1 pattern shadow-md">
-          {/* <img src={Pattern} alt="Pattern"/> */}
-        </div>
+        <div className="flex-1 pattern shadow-md"></div>
+        
         <div className="text-biruprimary font-bold mx-10 mt-4 mb-10">
-          <h2 className="mb-3">Langkah 4</h2>
-          <h2>Formulir Peserta Didik Sekolah Kak Seto</h2>
-          <h2 className="mt-4">Tambah Data</h2>
+        <BreadCrumbs />
+        <div className="text-2xl font-bold mb-5">
+          <p>Langkah 3</p>
+          <p>Formulir Peserta Didik Sekolah Kak Seto Tambah Data</p>
+        </div>
           <h6 className="mt-4">Data Peserta Didik</h6>
           <div>
             <form>
               <label className="block mt-2 mb-1">NIK :</label>
-              <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 text-gray-400"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-                <input
-                  class="pl-2 outline-none border-none"
-                  type="text"
-                  name=""
-                  id=""
-                  placeholder="Full name"
-                />
-              </div>
               <input
                 className="border-2 rounded-md border-black w-full p-2 font-normal"
-                placeholder="16 karakter"
+                placeholder="Masukin Sesuai KTP"
               ></input>
               <label className="block mt-4 mb-1">Nama :</label>
               <input
                 className="border-2 rounded-md border-black w-full p-2 font-normal"
-                placeholder="16 karakter"
+                placeholder="Masukan Ketik"
               ></input>
               <label className="block mt-4 mb-1">Nama Panggilan :</label>
               <input
                 className="border-2 rounded-md border-black w-full p-2 font-normal"
-                placeholder="16 karakter"
+                placeholder="Panggilan Sehari-hari"
               ></input>
               <div>
                 <label className="block mt-4 mb-1">Jenis Kelamin :</label>
@@ -73,7 +64,7 @@ const body9 = () => {
                 <label className="block mt-4 mb-1">Tempat Lahir :</label>
                 <input
                   className="border-2 rounded-md border-black w-full p-2 font-normal"
-                  placeholder="16 karakter"
+                  placeholder="Nama Kota"
                 ></input>
                 <label className="block mt-4 mb-1">Tanggal Lahir :</label>
                 <input
@@ -140,12 +131,10 @@ const body9 = () => {
                 </select>
               </div>
               <div>
-                <label className="block mt-4 mb-1">
-                  Bahasa Sehari - hari :
-                </label>
+              <label className="block mt-4 mb-1">Bahasa Sehari - hari :</label>
                 <input
-                  className="border-2 rounded-md font-normal border-black px-2 w-full"
-                  placeholder="Masukkan 1-100 Karakter"
+                  className="border-2 rounded-md border-black w-full p-2 font-normal"
+                  placeholder="Bahasa yang digunakan sehari-hari"
                 ></input>
               </div>
               <div>
@@ -343,7 +332,7 @@ const body9 = () => {
                 </div>
               </div>
               <div>
-                <h3>Apakah peserta didik memiliki wali ?</h3>
+                <h3 className="mt-5">Apakah peserta didik memiliki wali ?</h3>
                 <input
                   type="checkbox"
                   className="border-2 border-black"
@@ -351,11 +340,14 @@ const body9 = () => {
               </div>
             </form>
           </div>
-          <Button
-            label="Submit"
-            text="white"
-            className="bg-[#27b6c1] w-full mt-8"
-          />
+          <Link to="/langkah5">
+            <Button
+              label="Selanjutnya"
+              text="white"
+              className="bg-[#27b6c1] w-full mt-8"
+              onClick={handleButtonClick}
+            />
+          </Link>
         </div>
         <div className="flex-1 pattern shadow-md"></div>
       </div>

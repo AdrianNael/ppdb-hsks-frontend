@@ -5,7 +5,7 @@ import LogoHSKS from "../../../Assets/Images/page-1/LogoHSKSKop.png"
 const Surat = () => {
 
   return (
-    <div className="flex justify-center items-center text-center text-black">
+    <div className="flex justify-center items-center text-center text-black mt-10 mb-5">
     <div>
         <div>
             <p class="font-bold text-sm">HOMESCHOOLING KAK SETO BEKASI</p>

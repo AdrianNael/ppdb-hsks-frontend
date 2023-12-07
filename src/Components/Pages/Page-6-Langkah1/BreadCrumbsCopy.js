@@ -1,7 +1,19 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useLocation  } from "react-router-dom";
 
 function Navbar3() {
+  const location = useLocation();
+
+
+  const linkStyle = {
+    color: '#204397', 
+    textDecoration: 'none',
+  };
+
+  const activeLinkStyle = {
+    color: '#27B6C1', // Warna teks saat tautan aktif
+  };
+
   return (
     <nav
       className="flex flex-wrap py-3 text-white "
@@ -9,9 +21,10 @@ function Navbar3() {
     >
       <ol className="flex flex-wrap w-full">
         <li>
-          <Link
+        <Link
             to="/Langkah1"
-            className="inline-flex flex-nowrap items-center text-sm font-medium text-white hover:text-blue-600"
+            style={location.pathname === "/Langkah1" ? { ...linkStyle, ...activeLinkStyle } : linkStyle}
+            className="inline-flex flex-nowrap items-center text-sm font-medium"
           >
             <svg
               className="w-3 h-3 mr-2.5"
@@ -28,7 +41,8 @@ function Navbar3() {
         <li>
           <Link
             to="/Langkah2"
-            className="inline-flex items-center text-sm font-medium text-white hover:text-blue-600 md:text-xs"
+            style={location.pathname === "/Langkah2" ? { ...linkStyle, ...activeLinkStyle } : linkStyle}
+            className="inline-flex flex-nowrap items-center text-sm font-medium text-biruprimary"
           >
             <svg
               className="w-3 h-3 mx-1 text-gray-400"
@@ -51,7 +65,8 @@ function Navbar3() {
         <li>
           <Link
             to="/Langkah3"
-            className="inline-flex items-center text-sm font-medium text-white hover:text-blue-600 md:text-xs"
+            style={location.pathname === "/Langkah3" ? { ...linkStyle, ...activeLinkStyle } : linkStyle}
+            className="inline-flex flex-nowrap items-center text-sm font-medium text-biruprimary hover:text-BiruSecondary1"
           >
             <svg
               className="w-3 h-3 mx-1 text-gray-400"
@@ -74,7 +89,8 @@ function Navbar3() {
         <li>
           <Link
             to="/Langkah4"
-            className="inline-flex items-center text-sm font-medium text-white hover:text-blue-600 md:text-xs"
+            style={location.pathname === "/Langkah4" ? { ...linkStyle, ...activeLinkStyle } : linkStyle}
+            className="inline-flex flex-nowrap items-center text-sm font-medium text-biruprimary hover:text-BiruSecondary1"
           >
             <svg
               className="w-3 h-3 mx-1 text-gray-400"
@@ -97,7 +113,8 @@ function Navbar3() {
         <li>
           <Link
             to="/Langkah5"
-            className="inline-flex items-center text-sm font-medium text-white hover:text-blue-600 md:text-xs"
+            style={location.pathname === "/Langkah5" ? { ...linkStyle, ...activeLinkStyle } : linkStyle}
+            className="inline-flex flex-nowrap items-center text-sm font-medium text-biruprimary hover:text-BiruSecondary1"
           >
             <svg
               className="w-3 h-3 mx-1 text-gray-400"
@@ -120,7 +137,8 @@ function Navbar3() {
         <li>
           <Link
             to="/Langkah6"
-            className="inline-flex items-center text-sm font-medium text-white hover:text-blue-600 md:text-xs"
+            style={location.pathname === "/Langkah6" ? { ...linkStyle, ...activeLinkStyle } : linkStyle}
+            className="inline-flex flex-nowrap items-center text-sm font-medium text-biruprimary hover:text-BiruSecondary1"
           >
             <svg
               className="w-3 h-3 mx-1 text-gray-400"
