@@ -17,7 +17,8 @@ import { useMutation } from "react-query";
 import { axiosBaseUrl } from "../../lib/axios";
 import { useDataRegister } from "../../../features/useDataRegister";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { object, string, number, date, InferType } from "yup";
+import { object, string, boolean, number, date, InferType } from "yup";
+import isEqual from "lodash/isEqual";
 
 function Body() {
   const { isLoading: isLoadingGuardian, data: dataGuardian } =
@@ -57,7 +58,17 @@ function Body() {
   // }),
 
   const RegisterSchema = object({
-    email: string().email()
+    email: string().email().required("Email perlu diisi!"),
+    hubungan: string().required("Field ini perlu diisi!"),
+    namaorangtua: string().required("Field ini perlu diisi!"),
+    handphone: string().required("No.HP perlu diisi!"),
+    whatsapp: string().required("No.Whatsapp perlu diisi!"),
+    tanggal_lahir: date().required("Tanggal Lahir perlu diisi!"),
+    abk: boolean().oneOf([true], 'Centang jika "Ya"').required(),
+    pemeriksaan_psikolog: boolean()
+      .oneOf([true], 'Centang jika "Ya"')
+      .required(),
+    jenis_kelamin: string().required("Field ini perlu diisi!"),
   });
 
   const dataRegister = useFormik({
@@ -78,7 +89,7 @@ function Body() {
       id_tingkat: 3,
       id_kelompok_siswa: 27,
     },
-
+    validationSchema: RegisterSchema,
     onSubmit: async (values) => {
       await new Promise((r) => setTimeout(r, 500));
       alert(JSON.stringify(values, null, 2));
@@ -124,7 +135,14 @@ function Body() {
   let history = useHistory();
 
   function handleClick() {
-    history.push("/survei");
+    if (
+      dataRegister.isValid &&
+      !isEqual(dataRegister.values, dataRegister.initialValues)
+    ) {
+      history.push("/survei");
+    } else {
+      console.error("Form is not valid");
+    }
   }
   return (
     <>
@@ -154,6 +172,11 @@ function Body() {
                   onChange={handleFormInput}
                   value={dataRegister.values.email}
                 />
+                {dataRegister.touched.email && dataRegister.errors.email && (
+                  <div className="text-red-500 bg-white p-4 mt-1 rounded-lg w-48">
+                    {dataRegister.errors.email}
+                  </div>
+                )}
                 <Modal />
               </div>
 
@@ -222,6 +245,12 @@ function Body() {
                           })
                         : null}
                     </select>
+                    {dataRegister.touched.hubungan &&
+                      dataRegister.errors.hubungan && (
+                        <div className="text-red-500 bg-white p-4 mt-1 rounded-lg w-48">
+                          {dataRegister.errors.hubungan}
+                        </div>
+                      )}
                   </div>
 
                   <div className="relative">
@@ -236,6 +265,12 @@ function Body() {
                       onChange={handleFormInput}
                       value={dataRegister.values.namaorangtua}
                     />
+                    {dataRegister.touched.namaorangtua &&
+                      dataRegister.errors.namaorangtua && (
+                        <div className="text-red-500 bg-white p-4 mt-1 rounded-lg w-48">
+                          {dataRegister.errors.namaorangtua}
+                        </div>
+                      )}
                   </div>
 
                   <div className="relative">
@@ -250,6 +285,12 @@ function Body() {
                       onChange={handleFormInput}
                       value={dataRegister.values.handphone}
                     />
+                    {dataRegister.touched.handphone &&
+                      dataRegister.errors.handphone && (
+                        <div className="text-red-500 bg-white p-4 mt-1 rounded-lg w-48">
+                          {dataRegister.errors.handphone}
+                        </div>
+                      )}
                   </div>
 
                   <div className="relative">
@@ -264,6 +305,12 @@ function Body() {
                       onChange={handleFormInput}
                       value={dataRegister.values.whatsapp}
                     />
+                    {dataRegister.touched.whatsapp &&
+                      dataRegister.errors.whatsapp && (
+                        <div className="text-red-500 bg-white p-4 mt-1 rounded-lg w-48">
+                          {dataRegister.errors.whatsapp}
+                        </div>
+                      )}
                   </div>
                 </div>
 
@@ -287,6 +334,12 @@ function Body() {
                       onChange={handleFormInput}
                       value={dataRegister.values.namasiswa}
                     />
+                    {dataRegister.touched.namasiswa &&
+                      dataRegister.errors.namasiswa && (
+                        <div className="text-red-500 bg-white p-4 mt-1 rounded-lg w-48">
+                          {dataRegister.errors.namasiswa}
+                        </div>
+                      )}
                   </div>
 
                   <div className="relative">
@@ -320,6 +373,12 @@ function Body() {
                         Perempuan
                       </option>
                     </select>
+                    {dataRegister.touched.jenis_kelamin &&
+                      dataRegister.errors.jenis_kelamin && (
+                        <div className="text-red-500 bg-white p-4 mt-1 rounded-lg w-48">
+                          {dataRegister.errors.jenis_kelamin}
+                        </div>
+                      )}
                   </div>
 
                   <div className="relative">
@@ -335,6 +394,12 @@ function Body() {
                       onChange={handleFormInput}
                     />
                   </div>
+                  {dataRegister.touched.tanggal_lahir &&
+                    dataRegister.errors.tanggal_lahir && (
+                      <div className="text-red-500 bg-white p-4 mt-1 rounded-lg w-48">
+                        {dataRegister.errors.tanggal_lahir}
+                      </div>
+                    )}
                 </div>
 
                 <div className="relative">
@@ -358,6 +423,11 @@ function Body() {
                       </span>
                     </div>
                   </div>
+                  {dataRegister.touched.abk && dataRegister.errors.abk && (
+                    <div className="text-red-500 bg-white p-4 mt-1 rounded-lg w-48">
+                      {dataRegister.errors.abk}
+                    </div>
+                  )}
                 </div>
 
                 <div className="relative">
@@ -381,6 +451,12 @@ function Body() {
                       </span>
                     </div>
                   </div>
+                  {dataRegister.touched.pemeriksaan_psikolog &&
+                    dataRegister.errors.pemeriksaan_psikolog && (
+                      <div className="text-red-500 bg-white p-4 mt-1 rounded-lg w-48">
+                        {dataRegister.errors.pemeriksaan_psikolog}
+                      </div>
+                    )}
                 </div>
               </div>
 
