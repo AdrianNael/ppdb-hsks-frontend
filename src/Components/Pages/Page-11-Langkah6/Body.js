@@ -136,7 +136,274 @@ const body10 = () => {
                 </div>
                 <h6 className="mt-4 text-lg">9. Data Tambahan Orangtua/Wali</h6>
                 <h6 className="mt-2 text-md">Data Ayah :</h6>
+                <div class="lg:flex lg:items-center mb-4">
+                    <label class="w-full lg:w-1/3 mb-2 lg:mb-0 lg:mr-5 font-normal">Suku Bangsa :</label>
+                    <input
+                        placeholder="Masukkan 1-100 karakter"
+                        class="w-full lg:w-1/3 border-2 rounded-sm border-black px-2 font-normal"
+                    ></input>
+                </div>
+                <div class="lg:flex lg:items-center mb-4">
+                    <label class="w-full lg:w-auto mb-2 lg:mb-0 lg:mr-14 font-normal">Anak Ke :</label>
+                    <input
+                        placeholder=""
+                        class="w-full lg:w-auto border-2 rounded-sm border-black px-2 lg:mr-2"
+                    ></input>
+                    <label class="w-full lg:w-auto mb-2 lg:mb-0 lg:mr-5 font-normal">Dari :</label>
+                    <input
+                        placeholder=""
+                        class="w-full lg:w-auto border-2 rounded-sm border-black px-2"
+                    ></input>
+                </div>
+                <div class="lg:flex lg:items-center mb-4">
+                    <label class="w-full lg:w-1/3 mb-2 lg:mb-0 lg:mr-14 font-normal">Merupakan Pekawinan Ke :</label>
+                    <input
+                        placeholder=""
+                        class="w-full lg:w-1/3 border-2 rounded-sm border-black px-2 font-normal"
+                    ></input>
+                </div>
+                <div class="lg:flex lg:items-center mb-4">
+                    <label class="w-full lg:w-1/3 mb-2 lg:mb-0 lg:mr-5 font-normal">Perkawinan Pertama Pada Usia :</label>
+                    <input
+                        placeholder=""
+                        class="w-full lg:w-1/3 border-2 rounded-sm border-black px-2 font-normal"
+                    ></input>
+                    <label class="w-full lg:w-auto mb-2 lg:mb-0 ml-5 font-normal">Tahun</label>
+                </div>
+                <h6 className="mt-2 text-md">Data Ibu :</h6>
+                <div class="lg:flex lg:items-center mb-4">
+                    <label class="w-full lg:w-1/3 mb-2 lg:mb-0 lg:mr-5 font-normal">Suku Bangsa :</label>
+                    <input
+                        placeholder="Masukkan 1-100 karakter"
+                        class="w-full lg:w-1/3 border-2 rounded-sm border-black px-2 font-normal"
+                    ></input>
+                </div>
+                <div class="lg:flex lg:items-center mb-4">
+                    <label class="w-full lg:w-auto mb-2 lg:mb-0 lg:mr-14 font-normal">Anak Ke :</label>
+                    <input
+                        placeholder=""
+                        class="w-full lg:w-auto border-2 rounded-sm border-black px-2 lg:mr-2"
+                    ></input>
+                    <label class="w-full lg:w-auto mb-2 lg:mb-0 lg:mr-5 font-normal">Dari :</label>
+                    <input
+                        placeholder=""
+                        class="w-full lg:w-auto border-2 rounded-sm border-black px-2"
+                    ></input>
+                </div>
+                <div class="lg:flex lg:items-center mb-4">
+                    <label class="w-full lg:w-1/3 mb-2 lg:mb-0 lg:mr-14 font-normal">Merupakan Pekawinan Ke :</label>
+                    <input
+                        placeholder=""
+                        class="w-full lg:w-1/3 border-2 rounded-sm border-black px-2 font-normal"
+                    ></input>
+                </div>
+                <div class="lg:flex lg:items-center mb-4">
+                    <label class="w-full lg:w-1/3 mb-2 lg:mb-0 lg:mr-5 font-normal">Perkawinan Pertama Pada Usia :</label>
+                    <input
+                        placeholder=""
+                        class="w-full lg:w-1/3 border-2 rounded-sm border-black px-2 font-normal"
+                    ></input>
+                    <label class="w-full lg:w-auto mb-2 lg:mb-0 ml-5 font-normal">Tahun</label>
+                </div>
+                <div>
+                  <label className="block mt-2 mb-1">10. Riwayat Prenetal dan Kelahiran</label>
+                  <label className="flex items-center">
+                      <h3 className="mr-5">Adopsi :</h3>
+                      <input
+                        type="checkbox"
+                        className="border-2 border-black"
+                      />
+                    </label>   
+                  <label className="block mt-2 mb-1">Tolong berikan faktor-faktor yang anda kira berkontribusi pada perkembangannya sekarang</label>              
+                  <textarea placeholder="Masukkan 2-500 Karakter" className="w-full h-28"></textarea>
+                  <label className="block mt-2 mb-1">Kesehatan ibu selama kehamilan (sakit, kecelakaan, mengkonsumsi obat, dll)</label>              
+                  <textarea placeholder="Masukkan 2-500 Karakter" className="w-full h-28"></textarea>
+                  <label className="flex items-center">
+                      <h3 className="mr-5">Apakah proses kelahiran Caesar ? :</h3>
+                      <input
+                        type="checkbox"
+                        className="border-2 border-black"
+                      />
+                    </label>
+                    <label className="flex items-center">
+                      <h3 className="mr-5">Apakah kaki keluar terlebih dahulu ? :</h3>
+                      <input
+                        type="checkbox"
+                        className="border-2 border-black"
+                      />
+                    </label>
+                    <label className="flex items-center">
+                      <h3 className="mr-5">Adakah kondisi yang tidak biasa yang mungkin mempengaruhi kehamilan atau saat proses kelahiran terjadi ? :</h3>
+                      <input
+                        type="checkbox"
+                        className="border-2 border-black"
+                      />
+                    </label>
+                    <textarea placeholder="Masukkan 2-500 Karakter" className="w-full h-28"></textarea>
+                    <div>
+                    <label className="block mt-2 mb-1">11. Riwayat Perkembangan</label>
+                    <label className="block  mb-1">Pada usia berapa anak anda memenuhi tahap perkembangan di bawah ini ?</label>
+                    </div>
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Mengangkat Kepala : </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Berguling : </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Duduk Sendiri : </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Merangkak : </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Merambat disetiap furniture : </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Berjalan Sendiri : </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>  
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Minum dari gelas terbuka : </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div> 
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Makan makanan padat :  </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>  
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Makan dengan sendok :  </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>  
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Mengikat tali sepatu :  </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>  
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Berhasil toilet-training (buang air kecil dan besar di kamar mandi) :  </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>  
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Menggunakan satu kata (contoh: gak, mama) :  </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>  
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Menggabungkan Kata (contohnya : sepatu papa ) :  </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>  
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Menamai objek sederhana : ( contoh : mobil ) :  </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>  
+                    <div className="font-normal mt-3">
+                      <label className="flex items-center">
+                        <h3 className="mr-5">Bertanya (contoh : mama dimana ?) :  </h3>
+                        <input
+                          type="textarea"
+                          className="border-2 border-black"
+                        />
+                        <h3 className="ml-5 ">Tahun </h3>
+                      </label>
+                    </div>
+                    <div>
+                <label className="block mt-2 mb-1">12. Riwayat Sensoris</label>
+                <label className="block  ">Apakah ada hal-hal yang berbeda pada anak Anda dibandingkan dengan anak pada umumnya, dalam hal sensoris, sebagai</label>
+                <label className="block ">contoh: kesal jika keadaan berantakan atau kotor? (contohnya: kotoran, lem, finger painting, dll), terus-menerus </label>
+                <label className="block "> ingin lompat-lompat/ menjatuhkan/ menabrakkan dirinya, kesal jika mendengarkan suara keras, sulit membedakan</label>
+                <label className="block mb-5 "> bentuk, ukuran dari suatu objek, terlalu takut saat bermain dengan alat-alat playground?</label>
 
+                <textarea placeholder="Masukkan 2-500 Karakter" className="w-full h-16"></textarea>
+              </div>
+              </div>
           </form>
           <Link to="/langkah6">
             <Button
