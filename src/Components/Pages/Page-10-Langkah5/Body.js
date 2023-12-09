@@ -5,9 +5,11 @@ import Footer from "../../Organisms/Footer";
 import Button from "../../Atoms/Button";
 import BreadCrumbs from "../Page-6-Langkah1/BreadCrumbsCopy";
 import { Link } from "react-router-dom";
+import { object, string } from "yup";
+import { useFormik } from "formik";
 
 
-const body10 = () => {
+function Body() {
 
   const handleButtonClick = () => {
     window.scrollTo({
@@ -15,6 +17,52 @@ const body10 = () => {
       behavior: "smooth"
     });
   };
+
+  const parentSchema = object({
+    alasan: string().required('Kolom ini perlu diisi!'),
+    gambarananak: string().required('Kolom ini perlu diisi!'),
+    hambatananak: string().required('Kolom ini perlu diisi!'),
+    pengalamananak: string().required('Kolom ini perlu diisi!'),
+    hubungansaudara: string().required('Kolom ini perlu diisi!'),
+    peraturananak: string().required('Kolom ini perlu diisi!'),
+    peranortu: string().required('Kolom ini perlu diisi!'),
+    responanak: string().required('Kolom ini perlu diisi!'),
+    harapanortu_tutor: string().required('Kolom ini perlu diisi!'),
+    harapanortu_pendidikan: string().required('Kolom ini perlu diisi!'),
+    psikologianak1: string().required('Kolom ini perlu diisi!'),
+    psikologianak2: string().required('Kolom ini perlu diisi!'),
+    psikologianak3: string().required('Kolom ini perlu diisi!'),
+    psikologianak4: string().required('Kolom ini perlu diisi!'),
+    psikologianak5: string().required('Kolom ini perlu diisi!'),
+    psikologianak6: string().required('Kolom ini perlu diisi!'),
+    psikologianak7: string().required('Kolom ini perlu diisi!'),
+    psikologianak8: string().required('Kolom ini perlu diisi!'),
+  })
+
+  const dataParent = useFormik({
+    initialValues: {
+      alasan: "",
+      gambarananak: "",
+      hambatananak: "",
+      pengalamananak: "",
+      hubungansaudara: "",
+      peraturananak: "",
+      peranortu: "",
+      responanak: "",
+      harapanortu_tutor: "",
+      harapanortu_pendidikan: "",
+      psikologianak1: "",
+      psikologianak2: "",
+      psikologianak3: "",
+      psikologianak4: "",
+      psikologianak5: "",
+      psikologianak6: "",
+      psikologianak7: "",
+      psikologianak8: "",
+    },
+    validationSchema: parentSchema, // Add validation schema
+  });
+  
 
   return (
     <>
@@ -160,4 +208,4 @@ const body10 = () => {
   );
 };
 
-export default body10;
+export default Body;

@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import { useDataSurveiVoting } from "../../../features/useDataSurveiVoting";
-import axios from 'axios';
+import axios from "axios";
 
 function Survei1() {
   const { data: dataSurveiVoting } = useDataSurveiVoting();
@@ -13,11 +13,13 @@ function Survei1() {
     onSubmit: async (values) => {
       try {
         // Kirim data ke API menggunakan Axios
-        const votingResponse = await axios.post('http://206.189.82.46:80/api/v1/hsks/surveys', values);
-
-        console.log('Respon API:', votingResponse.data);
+        const votingResponse = await axios.post(
+          "http://168.63.239.37:80/api/v1/hsks/surveys",
+          values
+        );
+        console.log("Respon API:", votingResponse.data);
       } catch (error) {
-        console.error('Gagal mengirim formulir ke API:', error);
+        console.error("Gagal mengirim formulir ke API:", error);
       }
     },
   });
@@ -55,7 +57,10 @@ function Survei1() {
           ))}
         </div>
         <p className="mt-4">Anda memilih: {formik.values.experience}</p>
-        <button type="submit" className="mt-4 bg-green-500 text-white py-2 px-4 rounded">
+        <button
+          type="submit"
+          className="mt-4 bg-green-500 text-white py-2 px-4 rounded"
+        >
           Kirim
         </button>
       </form>

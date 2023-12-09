@@ -1,10 +1,7 @@
 import React, { useEffect } from "react";
 import Header2 from "../../Organisms/Header2";
-import Captcha from "../../../Assets/Images/page-2/Captcha.svg";
 import { Link } from "react-router-dom";
 import Footer from "../../Organisms/Footer";
-import { MdNavigateNext } from "react-icons/md";
-import Input from "../../Atoms/InputCaptcha";
 import Input2 from "../../Atoms/InputText";
 import Input3 from "../../Atoms/InputNum";
 import Input4 from "../../Atoms/InputDate";
@@ -159,7 +156,7 @@ function Body() {
                 Sudah Registrasi ? Klik Masuk Proses PPDB
               </div>
             </div>
-            <form onSubmit={dataRegister.handleSubmit} className="mx-10">
+            <form className="mx-10">
               <div className="relative lg:w-1/2">
                 <label
                   className="block text-xl text-white font-bold mb-2 pt-7"

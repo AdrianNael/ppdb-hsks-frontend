@@ -9,8 +9,8 @@ import Langkah1 from "./Components/Pages/Page-6-Langkah1/body";
 import Langkah2 from "./Components/Pages/Page-7-Langkah2/body";
 import Langkah3 from "./Components/Pages/Page-8-Langkah3/body";
 import Langkah4 from "./Components/Pages/Page-9-Langkah4/bodybackup";
-import Langkah5 from "./Components/Pages/Page-10-Langkah5/Body";
-import Langkah6 from "./Components/Pages/Page-11-Langkah6/Body";
+import Langkah5 from "./Components/Pages/Page-10-Langkah5/BodyTes";
+import Langkah6 from "./Components/Pages/Page-11-Langkah6/Body11";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";

@@ -6,13 +6,11 @@ import Button from "../../Atoms/Button";
 import BreadCrumbs from "../Page-6-Langkah1/BreadCrumbsCopy";
 import { Link } from "react-router-dom";
 
-
 const body9 = () => {
-
   const handleButtonClick = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   };
 
@@ -21,13 +19,13 @@ const body9 = () => {
       <Navbar />
       <div className="flex">
         <div className="flex-1 pattern shadow-md"></div>
-        
+
         <div className="text-biruprimary font-bold mx-10 mt-4 mb-10">
-        <BreadCrumbs />
-        <div className="text-2xl font-bold mb-5">
-          <p>Langkah 3</p>
-          <p>Formulir Peserta Didik Sekolah Kak Seto Tambah Data</p>
-        </div>
+          <BreadCrumbs />
+          <div className="text-2xl font-bold mb-5">
+            <p>Langkah 4</p>
+            <p>Formulir Peserta Didik Sekolah Kak Seto Tambah Data</p>
+          </div>
           <h6 className="mt-4">Data Peserta Didik</h6>
           <div>
             <form>
@@ -131,7 +129,9 @@ const body9 = () => {
                 </select>
               </div>
               <div>
-              <label className="block mt-4 mb-1">Bahasa Sehari - hari :</label>
+                <label className="block mt-4 mb-1">
+                  Bahasa Sehari - hari :
+                </label>
                 <input
                   className="border-2 rounded-md border-black w-full p-2 font-normal"
                   placeholder="Bahasa yang digunakan sehari-hari"

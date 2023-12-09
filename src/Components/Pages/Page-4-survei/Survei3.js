@@ -13,11 +13,15 @@ function Survei3() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://206.189.82.46:80/api/v1/hsks/surveys");
+        const response = await axios.get(
+          "http://168.63.239.37:80/api/v1/hsks/surveys"
+        );
         const data = response.data.data;
 
         // Extracting unique 'reff_kronologies' values
-        const uniqueReffKronologies = Array.from(new Set(data.media.map((item) => item.reff_kronologies)));
+        const uniqueReffKronologies = Array.from(
+          new Set(data.media.map((item) => item.reff_kronologies))
+        );
 
         setOptions(uniqueReffKronologies);
         setApiData(data);
@@ -30,7 +34,9 @@ function Survei3() {
         setCheckboxStates(initialState);
 
         // Set selected data based on the initial 'reff_kronologies'
-        const initialSelectedData = data.media.filter((item) => item.reff_kronologies === uniqueReffKronologies[0]);
+        const initialSelectedData = data.media.filter(
+          (item) => item.reff_kronologies === uniqueReffKronologies[0]
+        );
         setSelectedData(initialSelectedData);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -45,7 +51,9 @@ function Survei3() {
     setSelectedOption(selectedValue);
 
     // Set selected data based on the selected 'reff_kronologies'
-    const selectedData = apiData.media.filter((item) => item.reff_kronologies === selectedValue);
+    const selectedData = apiData.media.filter(
+      (item) => item.reff_kronologies === selectedValue
+    );
     setSelectedData(selectedData);
 
     // Reset checkbox states when a different radio option is selected
@@ -87,7 +95,9 @@ function Survei3() {
                       <input
                         type="checkbox"
                         checked={checkboxStates[data.reff_kronologies_sub]}
-                        onChange={() => handleCheckboxChange(data.reff_kronologies_sub)}
+                        onChange={() =>
+                          handleCheckboxChange(data.reff_kronologies_sub)
+                        }
                         className="mr-2"
                       />
                       {data.reff_kronologies_sub}
@@ -107,7 +117,8 @@ function Survei3() {
           </button>
         </Link>
       </div>
-      <div className="border-t-2 border-biruprimary mt-10"></div>    </div>
+      <div className="border-t-2 border-biruprimary mt-10"></div>{" "}
+    </div>
   );
 }
 
