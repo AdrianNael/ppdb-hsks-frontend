@@ -123,7 +123,7 @@ const body9 = () => {
                 <label className="block mt-4 mb-1">Status Anak :</label>
                 <select className="border-2 rounded-md border-black w-full">
                   <option className="bg-biruprimary text-white">
-                    Anak Kandung
+                    Anak Kandunng
                   </option>
                   <option className="bg-biruprimary text-white">
                     Anak Asuh 

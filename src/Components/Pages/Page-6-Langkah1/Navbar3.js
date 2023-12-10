@@ -86,7 +86,7 @@ function Navbar3() {
             </li>
             <li>
               <a
-                href="#"
+                href="/"
                 className="block py-2 pl-3 pr-4 text-white text-whiterounded      md:hover:bg-transparent  md:hover:scale-125 md:p-0    "
                 aria-current="page"
               >
@@ -96,7 +96,7 @@ function Navbar3() {
             </li>
             <li>
               <a
-                href="#"
+                href="/"
                 className="block py-2 pl-3 pr-4  text-white text-whiterounded  md:hover:bg-transparent  md:hover:scale-125 md:p-0 "
                 aria-current="page"
               >
@@ -107,7 +107,7 @@ function Navbar3() {
             </li>
             <li>
               <a
-                href="#"
+                href="/login"
                 className="block py-2 pl-3 pr-4  text-white text-whiterounded  md:hover:bg-transparent  md:hover:scale-125 md:p-0 "
                 aria-current="page"
               >
@@ -127,7 +127,7 @@ function Navbar3() {
         <div className="grid max-w-screen-xl px-4 py-5 mx-auto text-white  bg-BiruSecondary2 sm:grid-cols-2 md:px-6 sm:grid">
           <ul>
             <li>
-              <a href="#" className="block p-3 rounded-lg ">
+              <a href="/langkah1" className="block p-3 rounded-lg ">
                 <div className="font-bold text-xl">
                   Langkah 1{" "}
                   <span className="ml-2 pb-2">
@@ -140,7 +140,7 @@ function Navbar3() {
               </a>
             </li>
             <li>
-              <a href="#" className="block p-3 rounded-lg ">
+              <a href="/langkah2" className="block p-3 rounded-lg ">
                 <div className="font-bold text-xl">
                   Langkah 2
                   <span className="ml-2 pb-2">
@@ -154,7 +154,7 @@ function Navbar3() {
               </a>
             </li>
             <li>
-              <a href="#" className="block p-3 rounded-lg ">
+              <a href="/langkah3" className="block p-3 rounded-lg ">
                 <div className="font-bold text-xl">
                   Langkah 3{" "}
                   <span className="ml-2 pb-2">
@@ -165,7 +165,7 @@ function Navbar3() {
               </a>
             </li>
             <li>
-              <a href="#" className="block p-3 rounded-lg ">
+              <a href="/langkah4" className="block p-3 rounded-lg ">
                 <div className="font-bold text-xl">
                   Langkah 4
                   <span className="ml-2 pb-2">
@@ -176,7 +176,7 @@ function Navbar3() {
               </a>
             </li>
             <li>
-              <a href="#" className="block p-3 rounded-lg ">
+              <a href="/langkah5" className="block p-3 rounded-lg ">
                 <div className="font-bold text-xl">
                   Langkah 5{" "}
                   <span className="ml-2 pb-2">
@@ -187,7 +187,7 @@ function Navbar3() {
               </a>
             </li>
             <li>
-              <a href="#" className="block p-3 rounded-lg ">
+              <a href="/langkah6" className="block p-3 rounded-lg ">
                 <div className="font-bold text-xl">
                   Langkah 6{" "}
                   <span className="ml-2 pb-2">
@@ -197,8 +197,7 @@ function Navbar3() {
                 <span className="text-sm text-white ">Formulir Asesmen</span>
               </a>
             </li>
-            {/* Add more dropdown items here */}
-          </ul>
+]          </ul>
         </div>
       </div>
     </nav>

@@ -4,16 +4,24 @@ import Input from "../../Atoms/InputLangkah";
 import Footer from "../../Organisms/Footer";
 import Button from "../../Atoms/Button";
 import BreadCrumbs from "../Page-6-Langkah1/BreadCrumbsCopy";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+
 
 
 const body10 = () => {
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const handleButtonClick = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
+    // Show the modal
+    setIsModalOpen(true);
+
+    // You can perform other save-related actions here if needed
+  };
+
+  const handleModalClose = () => {
+    // Close the modal
+    setIsModalOpen(false);
   };
 
   return (
@@ -405,19 +413,40 @@ const body10 = () => {
               </div>
               </div>
           </form>
-          <Link to="/langkah6">
-            <Button
-              label="Simpan"
-              text="white"
-              className="bg-[#27b6c1] w-full mt-8"
-              onClick={handleButtonClick}
-            />
-          </Link>
+          <button
+            type="button"
+            className="bg-[#27b6c1] text-white px-4 py-2 mt-4 rounded-full w-full hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
+            onClick={handleButtonClick}
+          >
+            Simpan
+          </button>
         </div>
         </div>
         <div className="flex-1 pattern shadow-md"></div>
       </div>
       <Footer />
+      {/* Modal */}
+      {isModalOpen && (
+        <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-md">
+            <p>Tulisan di dalam modal</p>
+            <div className="flex justify-end mt-4">
+              <button
+                className="mr-2 bg-gray-300 px-3 py-1 rounded-md"
+                onClick={handleModalClose}
+              >
+                Exit
+              </button>
+              <button
+                className="bg-[#27b6c1] text-white px-3 py-1 rounded-md"
+                onClick={handleModalClose}
+              >
+                Kembali ke Langkah 1
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

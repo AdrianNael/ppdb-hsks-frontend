@@ -3,8 +3,9 @@ import Navbar from "../Page-6-Langkah1/Navbar3";
 import Footer from "../../Organisms/Footer";
 import Button from "../../Atoms/Button";
 import BreadCrumbs from "../Page-6-Langkah1/BreadCrumbsCopy";
-import { Link } from "react-router-dom";
 import { useFormik } from "formik";
+
+
 
 function Body11() {
   const handleButtonClick = () => {
@@ -118,7 +119,6 @@ function Body11() {
     sensoris: Yup.string().required("Kolom ini harus diisi!"),
   });
 
-  // Create a dataAssessment instance
   const dataAssessment = useFormik({
     initialValues: {
       namaDokter: "",
@@ -1049,13 +1049,12 @@ function Body11() {
 
               <div>
                 {" "}
-                <button
-                  type="button" // Change the button type to "button"
-                  className="bg-[#27b6c1] text-white px-4 py-2 mt-4 rounded-full w-full hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
-                  onClick={handleButtonClick}
-                >
-                  Simpan
-                </button>
+            <Button
+              label="Simpan"
+              text="white"
+              className="bg-[#27b6c1] w-full mt-8"
+              onClick={handleButtonClick}
+            />
               </div>
             </form>
           </div>
