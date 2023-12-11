@@ -132,6 +132,13 @@ const Body = () => {
     }
   }, [jenjang]);
 
+  const [selectedJenisPendidikan, setSelectedJenisPendidikan] = useState("FORMAL");
+
+  const handleSelectJenisPendidikan = (jenis) => {
+    setSelectedJenisPendidikan(jenis);
+  };
+
+
   return (
     <div className="font-sans">
       <Header />
@@ -148,7 +155,7 @@ const Body = () => {
         </h6>
       </div>
       <div className="flex justify-center gap-2">
-        <ButtonFormal />
+        <ButtonFormal onSelectJenisPendidikan={handleSelectJenisPendidikan} />
       </div>
       <div>
         <h4 className="ml-12 font-bold text-lg xl:text-[2.75rem] xl:leading-[3.5rem]">
@@ -161,7 +168,7 @@ const Body = () => {
         </h6>
       </div>
       <div className="lokasi-card grid grid-cols-2 xl:grid-cols-4 auto-cols-max mx-8 gap-6 max-w-full mt-4">
-        <CardBiru />
+        <CardBiru selectedJenisPendidikan={selectedJenisPendidikan} />
       </div>
       <div className="h-[9.375rem] z-50 -mb-2 lsm:mb-10 sm:mb-16 md:mb-24 lg:mb-48">
         <GelombangBawah />

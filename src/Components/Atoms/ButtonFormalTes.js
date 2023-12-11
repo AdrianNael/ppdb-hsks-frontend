@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDataJenisSekolah } from "../../features/useDataJenisSekolah";
 
-const ButtonFormalTes = ({ label }) => {
+const ButtonFormalTes = ({ onSelectJenisPendidikan }) => {
   const { isLoading, data: dataJenisSekolah } = useDataJenisSekolah();
-  const [selectedJenisSekolah, setSelectedJenisSekolah] = useState(null);
 
   const handleJenisSekolah = (event) => {
     const selectedId = event.target.id;
-    setSelectedJenisSekolah(
-      dataJenisSekolah.data.find((jenisSekolah) => jenisSekolah.jenis_pendidikan === selectedId)
-    );
+    onSelectJenisPendidikan(selectedId);
   };
 
   return (
@@ -36,7 +33,7 @@ const ButtonFormalTes = ({ label }) => {
         </div>
       )}
 
-      {!isLoading &&
+        {!isLoading &&
         dataJenisSekolah.data &&
         dataJenisSekolah.data.map((jenisSekolah) => (
           <button
@@ -50,14 +47,6 @@ const ButtonFormalTes = ({ label }) => {
             {jenisSekolah.jenis_pendidikan}
           </button>
         ))}
-
-      {selectedJenisSekolah && (
-        <div>
-          {/* Render content related to the selected jenis sekolah here */}
-          <p>Informasi untuk {selectedJenisSekolah.jenis_pendidikan}</p>
-          {/* Add more information or components as needed */}
-        </div>
-      )}
     </div>
   );
 };

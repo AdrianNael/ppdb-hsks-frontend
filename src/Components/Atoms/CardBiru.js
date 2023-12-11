@@ -1,32 +1,21 @@
-import React, {  useState } from "react";
+import React, {  useState, useEffect } from "react";
 import {axiosBaseUrl} from "../lib/axios";
 import { useDataSekolah } from "../../features/useDataSekolah";
 
 import hsksdepok from "../../Assets/Images/page-1/Sekolahdepo.svg";
 import akreditasA from "../../Assets/Images/page-1/akreditasi.svg";
 
-const CardBiru = () => {
-  const { isLoading, data : dataSekolah} = useDataSekolah ();
-
+const CardBiru = ({ jenisPendidikan }) => {
+  const { isLoading, data: dataSekolah, fetchDataSekolah } = useDataSekolah();
   const [selected, setSelected] = useState(false);
 
   const handleTerpilih = async () => {
-    // Lakukan aksi yang ingin Anda lakukan saat tombol "Pilih" diklik.
-    // Misalnya, mengirim data ke API.
-    try {
-      const response = await axiosBaseUrl.post("https://example.com/api/choose", { data: "data yang ingin dikirim" });
-
-      // Tambahkan logika lain sesuai dengan respons dari API jika diperlukan.
-      console.log(response.data);
-
-      // Set state atau lakukan aksi lain sesuai kebutuhan.
-      
-      setSelected(true);
-    } catch (error) {
-      // Tangani kesalahan jika permintaan gagal.
-      console.error(error);
-    }
   };
+
+  useEffect(() => {
+    fetchDataSekolah(jenisPendidikan);
+  }, [jenisPendidikan]);
+
   return (
     <>
       {isLoading && (
@@ -39,7 +28,7 @@ const CardBiru = () => {
     </div>
       )}
 
-      {!isLoading &&
+    {!isLoading &&
         dataSekolah.data &&
         dataSekolah.data.map((sekolah) => (
           <div key={sekolah.id} className="block rounded-lg bg-biruprimary text-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20p x_-2px_rgba(0,0,0,0.04)] hover:-translate-y-10 hover:scale-105 hover:transition hover:duration-300 hover:ease-linear">
