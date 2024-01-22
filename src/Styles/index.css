@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Stroke tulisan di card sekolah*/
+
+.text-stroke {
+  -webkit-text-stroke: 0.2px white;
+}
+
+.text-stroke-blue {
+  -webkit-text-stroke: 0.5px #000080;
+}
+/* CustomerServiceButton.css */
+.cs-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+
+@media screen and (min-width:768px){
+  .cs-container{
+    bottom: 2rem;
+    right: 2rem;;
+  }
+}
+
+.cs-button {
+  color: white;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* CS Button MOdal cssnya*/
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardcs {
+  flex: 1;
+  padding: 1rem;
+  min-height: 300px;
+  border-radius: 15px;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.round-image {
+  border-radius: 100%;
+}
+
+.center-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* focus:bg-green-400 focus:border-2 focus:border-biruprimary; */
+.mark-green {
+  --tw-bg-opacity: 1;
+  background-color:rgb(49 196 141 / var(--tw-bg-opacity));
+  border-width: 2px;
+  border-color: #204397;
+}
+.mark-green-jenjang {
+  --tw-bg-opacity: 1;
+  background-color:rgb(49 196 141 / var(--tw-bg-opacity));
+  border-width: 2px;
+  border-color: #fff;
+}
+
+.pattern {
+  background-image: url('../Assets/Images/page-9/Pattern.svg');
+  background-repeat: repeat; /* Gambar akan diulang di kedua sumbu (horizontal dan vertikal) */
+}
